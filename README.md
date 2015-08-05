@@ -3,12 +3,15 @@ Our corporate website
 
 ## Aws
 
-### Setup
+### S3 bucket
 ```
 aws s3 mb s3://www.datavorelabs.com
 aws s3 website s3://www.datavorelabs.com --index-document index.html --error-document error.html
 ```
-Use the ui to create another bucket `s3://datavorelabs.com` and set to __Redirect all requests to another host name__ `www.datavorelabs.com`
+
+### Dns
++ Use our dns provider to setup a root domain redirect from `datavore.com` to `www.datavore.com` 
++ Setup a cname for `www` to `www.datavorelabs.com.s3-website-us-east-1.amazonaws.com`
 
 ### Deploy
 ```
