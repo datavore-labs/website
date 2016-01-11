@@ -68,22 +68,6 @@ menu {
 	position: fixed;
 	transition: all 100ms;
 	z-index: 1000;
-	.logo {
-		text-align: center;
-		color: @datavore;
-//		line-height: 3.5em;
-//		background: @datavore;
-//		width: 3em;
-//		height: 3em;
-		margin: 0 auto;
-		color: white;
-//		border-bottom-left-radius: 50%;
-//		border-bottom-right-radius: 50%;
-//		cursor: pointer;
-		&:hover {
-//			color: #222;
-		}
-	}
 	ul {
 		display: flex;
 		flex-flow: row wrap;
@@ -132,6 +116,21 @@ menu {
 
 ///////////////////
 // SOME UI ELEMENTS
+
+.logo,
+.logo a {
+	text-align: center;
+	color: @datavore !important;
+	border: none;
+	margin: 0 auto;
+	color: white;
+	cursor: pointer;
+	opacity: 0.9;
+	&:hover {
+		opacity: 1;
+	}
+}
+
 
 .button {
 	border: none;
