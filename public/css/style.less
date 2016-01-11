@@ -240,6 +240,7 @@ aside {}
 	color: white;
 	padding: 0;
 	top: 0;
+	min-height: 100%;
 	aside {
 		.centered;
 		width: 100%;
@@ -263,8 +264,27 @@ aside {}
 	}
 }
 
-#get {
+#how {
 	top: 200%;
+	height: 75%;
+	background: #666;
+	color: white;
+	h2 {
+		border-bottom: 2px solid @datavore;
+	}
+	aside {
+		h3 {
+			color: rgba(255,255,255,0.7);
+			span {
+				color: @datavore;
+			}
+		}
+	}
+}
+
+#get {
+	top: 275%;
+	height: 50%;
 	text-align: center;
 	.button {
 		.centered;
@@ -288,25 +308,8 @@ aside {}
 	}
 }
 
-#how {
-	top: 300%;
-	background: #666;
-	color: white;
-	h2 {
-		border-bottom: 2px solid @datavore;
-	}
-	aside {
-		h3 {
-			color: rgba(255,255,255,0.7);
-			span {
-				color: @datavore;
-			}
-		}
-	}
-}
-
 #who {
-	top: 400%;
+	top: 325%;
 	color: #eee;
 	ul {
 		li {
