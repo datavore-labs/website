@@ -1,14 +1,14 @@
-menu.disabled
-	//add .disabled
-	.logo
-		span.icon-logo
+menu
 	ul
+		li
+			.logo
+				span.icon-logo
 		li: a(href="#what") What We Do
 		li: a(href="#how") How We Do It
 		li: a(href="#who") About Us
-		li: a(href="#get") Get the Demo
-		li: a(href="#login") Log In
-
+		li: a.toggle_signup Get the Demo
+		// login button disabled until soon
+		//li: a(href="#login").button Log In
 
 // "It's like all the data boxes are coming at him but the frog's just chilling!" -Jake
 
@@ -26,36 +26,43 @@ section#what
 				h3
 					span.icon-functions 
 					| Capture Your Domain Expertise
-				p ...
+				.widget ...
 			.back
+				h3: span.icon-functions 
 				p Our platform classifies and stores data in the way you think about it, capturing context and relationships instead of just rows and columns.
 		.card
 			.front
 				h3
 					span.icon-directions 
 					| Automate Your Workflows
-				p ...
+				.widget ...
 			.back
+				h3: span.icon-directions 
 				p Capture and repeat multi-step data cleaning and analytical processes across diverse data sources to automate your workflows.
 		.card
 			.front
 				h3
 					span.icon-map 
 					| Instantly Visualize Relationships
-				p ...
+				.widget ...
 			.back
+				h3: span.icon-map 
 				p Simply select multiple variables from any number of data sources to instantly illustrate graphical relationships and trends.
 		.card
 			.front
 				h3
 					span.icon-query_builder 
 					| Easy Time Series Analysis
-				p ...
+				.widget ...
 			.back
+				h3: span.icon-query_builder 
 				p Quickly find leading or lagging indicators and key relationships by comparing multi-frequency data sets.
 
 //section#pause
 	p
+
+section#get.toggle_signup
+	.button Get the Demo	
 
 section#how
 	h2 How We Do It
@@ -73,11 +80,34 @@ section#how
 		h3
 			span.icon-check_box 
 			| Business User Friendly
-		p No coding is necessary as calculations use familiar formula syntax and queries are built visually
+		p No coding is necessary as calculations use familiar formula syntax and queries are built visually.
 
-section#get
-	.button Get the Demo	
-	footer.disabled
+section#who
+	h2 About Us
+	aside
+		p
+			b Datavore 
+			| is a venture backed data analytics software company founded in 2014.  Our team has a successful track record of building technology in the financial services sector.  We have experience working at companies such as Goldman Sachs, Thomson Reuters, Ernst & Young, and KPMG.
+	aside
+		ul
+			li
+				b Phone: 
+					a(tel="12125248351") 212 524 8351
+			li
+				b Email: 
+				a(href="mailto:info@datavorelabs.com") info@datavorelabs.com
+			li
+				b Address: 
+				| 43 West 23rd Street, 
+				| 6th Floor, 
+				| New York, NY 10010
+
+
+#signup.disabled
+	.content
+		.widget.toggle_signup
+			span.icon-close
+		h2 Get Datavore
 		form
 			p(style="line-height: 0;"): b You
 			p: input(type="text" placeholder="Name *") 
@@ -113,29 +143,9 @@ section#get
 					input(type="checkbox") 
 					| Hadoop Clusters
 			p
-				.button Get Datavore
-				.button X
-
-section#who
-	h2 About Us
-	aside
-		p
-			b Datavore 
-			| is a venture backed data analytics software company founded in 2014.  Our team has a successful track record of building technology in the financial services sector.  We have experience working at companies such as Goldman Sachs, Thomson Reuters, Ernst & Young, and KPMG.
-	aside
-		ul
-			li
-				b Phone: 
-					a(tel="12125248351") 212 524 8351
-			li
-				b Email: 
-				a(href="mailto:info@datavorelabs.com") info@datavorelabs.com
-			li
-				b Address: 
-				| 43 West 23rd Street, 
-				| 6th Floor, 
-				| New York, NY 10010
+				a.button Get Datavore
+	.shim
 
 code
-	| clicking on ".logo" toggles class "disabled" on "menu"
-	| clicking on ".button" toggles class "disabled" on "footer"
+	| clicking on ".toggle_signup" toggles class "disabled" on "#signup"
+//	| clicking on ".logo" toggles class "disabled" on "menu"
