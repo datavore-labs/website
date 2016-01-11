@@ -2,7 +2,11 @@
 <html >
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
 <title>OMAR GETS A WEBSITE</title>
+
+
 
 <!-- webfonts -->
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500' rel='stylesheet' type='text/css'>
@@ -136,64 +140,61 @@
   <div class="content">
     <div class="widget toggle_signup"><span class="icon-close"></span></div>
     <h2>Get Datavore</h2>
-    <form>
-      <p style="line-height: 0;"><b>You</b></p>
-      <p>
-        <input type="text" placeholder="Name *"/>
-      </p>
-      <p>
-        <input type="text" placeholder="Company"/>
-      </p>
-      <p>
-        <input type="email" placeholder="Email *"/>
-      </p>
-      <p style="line-height: 0; padding-top: 2em;"><b>Your Job</b></p>
-      <div class="selector">
-        <select> 
-          <option>Executive</option>
-          <option>Analyst</option>
-          <option>Data Scientist</option>
-        </select>
-      </div>
-      <p style="line-height: 0; padding-top: 3em;"><b>Your Data Sources</b></p>
-      <ul>
-        <li>
-          <label>
-            <input type="checkbox"/>Bloomberg Data Feed
-          </label>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox"/>Bloomberg API
-          </label>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox"/>FactSet
-          </label>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox"/>S&P CapIQ
-          </label>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox"/>Thomson Reuters
-          </label>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox"/>SQL Database
-          </label>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox"/>Hadoop Clusters
-          </label>
-        </li>
-      </ul>
-      <p><a class="button">Get Datavore</a></p>
+
+    <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+    <input type=hidden name="oid" value="00D36000000HUNh">
+    <input type=hidden name="retURL" value="http://www.datavorelabs.com">
+
+    <!--
+    optional elements for debugging
+
+    <input type="hidden" name="debug" value=1>  
+    <input type="hidden" name="debugEmail" value="jpg@datavorelabs.com">
+    -->
+
+    <label for="first_name">First Name</label>
+    <input  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+
+    <label for="last_name">Last Name</label>
+    <input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+
+    <label for="email">Email</label>
+    <input  id="email" maxlength="80" name="email" size="20" type="text" />
+
+    <label for="company">Company</label>
+    <input  id="company" maxlength="40" name="company" size="20" type="text" />
+
+    <label for="00N36000000evXm">Current Tools</label>
+    <select  id="00N36000000evXm" multiple="multiple" name="00N36000000evXm" title="Current Tools">
+      <option value="Microsoft Excel">Microsoft Excel</option>
+      <option value="R">R</option>
+      <option value="Matlab">Matlab</option>
+      <option value="Notebook (Jupyter, Zeppelin, Beaker)">Notebook (Jupyter, Zeppelin, Beaker)</option>
+      <option value="Tableau">Tableau</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="00N36000000evXh">External Data Sources</label>
+    <select  id="00N36000000evXh" multiple="multiple" name="00N36000000evXh" title="External Data Sources">
+      <option value="Bloomberg">Bloomberg</option>
+      <option value="Factset">Factset</option>
+      <option value="Other">Other</option>
+      <option value="S&amp;P Capital IQ">S&amp;P Capital IQ</option>
+      <option value="Thomson Reuters">Thomson Reuters</option>
+      <option value="Xignite">Xignite</option>
+    </select>
+
+    <label for="00N36000000evXr">Internal Data Sources</label>
+    <select  id="00N36000000evXr" multiple="multiple" name="00N36000000evXr" title="Internal Data Sources">
+      <option value="Excel File">Excel File</option>
+      <option value="PDF">PDF</option>
+      <option value="Database">Database</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <input type="submit" name="submit">
+
     </form>
   </div>
   <div class="shim"></div>
