@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html >
-  <head>
-    <meta charset="UTF-8">
-    <title>OMAR GETS A WEBSITE</title>
-    <!-- @todo may want to make local copies of these for production -->
+<head>
+<meta charset="UTF-8">
+<title>OMAR GETS A WEBSITE</title>
+
+<!-- webfonts -->
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://i.icomoon.io/public/188ac2dd2d/DV/style.css">
+
+<!-- icon library -->
+<link rel="stylesheet" href="css/icomoon/style.css">
+
 <!-- standard meta sizing fix -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="css/reset.css">
+<!-- move this down for prod -->
+<!--
 
-    
-        <link rel="stylesheet" href="css/style.css">
+-->
 
-    
-    
-    
-  </head>
+<link rel="stylesheet" href="css/reset.css">
 
-  <body>
 
-    
-<menu class="disabled">
-  <!--add .disabled-->
-  <div class="logo"><span class="icon-logo"></span></div>
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+
+<menu>
   <ul>
+    <li>
+      <div class="logo"><span class="icon-logo"></span></div>
+    </li>
     <li><a href="#what">What We Do</a></li>
     <li><a href="#how">How We Do It</a></li>
     <li><a href="#who">About Us</a></li>
-    <li><a href="#get">Get the Demo</a></li>
-    <li><a href="#login">Log In</a></li>
+    <li><a class="toggle_signup">Get the Demo</a></li>
+    <!-- login button disabled until soon-->
+    <!--li: a(href="#login").button Log In-->
   </ul>
 </menu>
+
 <!-- "It's like all the data boxes are coming at him but the frog's just chilling!" -Jake-->
+
 <section id="header">
   <aside>
     <h1 class="title">Data Your Way</h1>
@@ -41,51 +51,57 @@
     <h3 title="Datavore" class="icon-logo-full"></h3>
   </aside>
 </section>
+
 <section id="what">
   <h2>What We Do</h2>
   <aside>
     <div class="card">
       <div class="front">
         <h3><span class="icon-functions"> </span>Capture Your Domain Expertise</h3>
-        <p>...</p>
+        <div class="widget">...</div>
       </div>
       <div class="back">
+        <h3><span class="icon-functions"> </span></h3>
         <p>Our platform classifies and stores data in the way you think about it, capturing context and relationships instead of just rows and columns.</p>
       </div>
     </div>
     <div class="card">
       <div class="front">
         <h3><span class="icon-directions"> </span>Automate Your Workflows</h3>
-        <p>...</p>
+        <div class="widget">...</div>
       </div>
       <div class="back">
+        <h3><span class="icon-directions"> </span></h3>
         <p>Capture and repeat multi-step data cleaning and analytical processes across diverse data sources to automate your workflows.</p>
       </div>
     </div>
     <div class="card">
       <div class="front">
         <h3><span class="icon-map"> </span>Instantly Visualize Relationships</h3>
-        <p>...</p>
+        <div class="widget">...</div>
       </div>
       <div class="back">
+        <h3><span class="icon-map"> </span></h3>
         <p>Simply select multiple variables from any number of data sources to instantly illustrate graphical relationships and trends.</p>
       </div>
     </div>
     <div class="card">
       <div class="front">
         <h3><span class="icon-query_builder"> </span>Easy Time Series Analysis</h3>
-        <p>...</p>
+        <div class="widget">...</div>
       </div>
       <div class="back">
+        <h3><span class="icon-query_builder"> </span></h3>
         <p>Quickly find leading or lagging indicators and key relationships by comparing multi-frequency data sets.</p>
       </div>
     </div>
   </aside>
 </section>
-<!--section#pause
-p
 
--->
+<section id="get" class="toggle_signup">
+  <div class="button">Get the Demo  </div>
+</section>
+
 <section id="how">
   <h2>How We Do It</h2>
   <aside>
@@ -98,12 +114,28 @@ p
   </aside>
   <aside>
     <h3><span class="icon-check_box"> </span>Business User Friendly</h3>
-    <p>No coding is necessary as calculations use familiar formula syntax and queries are built visually</p>
+    <p>No coding is necessary as calculations use familiar formula syntax and queries are built visually.</p>
   </aside>
 </section>
-<section id="get">
-  <div class="button">Get the Demo	</div>
-  <footer class="disabled">
+
+<section id="who">
+  <h2>About Us</h2>
+  <aside>
+    <p><b>Datavore</b> is a venture backed data analytics software company founded in 2014. Our team has a successful track record of building technology in the financial services sector. We have experience working at companies such as Goldman Sachs, Thomson Reuters, Ernst & Young, and KPMG.</p>
+  </aside>
+  <aside>
+    <ul>
+      <li><b>Phone:</b> <a tel="12125248351">212 524 8351</a></li>
+      <li><b>Email:</b> <a href="mailto:info@datavorelabs.com">info@datavorelabs.com</a></li>
+      <li><b>Address:</b> 43 West 23rd Street, 6th Floor, New York, NY 10010</li>
+    </ul>
+  </aside>
+</section>
+
+<div id="signup" class="disabled">
+  <div class="content">
+    <div class="widget toggle_signup"><span class="icon-close"></span></div>
+    <h2>Get Datavore</h2>
     <form>
       <p style="line-height: 0;"><b>You</b></p>
       <p>
@@ -161,41 +193,34 @@ p
           </label>
         </li>
       </ul>
-      <p>
-        <div class="button">Get Datavore</div>
-        <div class="button">X</div>
-      </p>
+      <p><a class="button">Get Datavore</a></p>
     </form>
-  </footer>
-</section>
-<section id="who">
-  <h2>About Us</h2>
-  <aside>
-    <p><b>Datavore </b>is a venture backed data analytics software company founded in 2014.  Our team has a successful track record of building technology in the financial services sector.  We have experience working at companies such as Goldman Sachs, Thomson Reuters, Ernst & Young, and KPMG.</p>
-  </aside>
-  <aside>
-    <ul>
-      <li><b>Phone: <a tel="12125248351">212 524 8351</a></b></li>
-      <li><b>Email: </b><a href="mailto:info@datavorelabs.com">info@datavorelabs.com</a></li>
-      <li><b>Address: </b>43 West 23rd Street, 
-        6th Floor, 
-        New York, NY 10010
-      </li>
-    </ul>
-  </aside>
-</section><code>
-  clicking on ".logo" toggles class "disabled" on "menu"
-  clicking on ".button" toggles class "disabled" on "footer"</code>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/102827/parallax.min.js'></script>
-<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/102827/jquery.scrollify.min.js'></script>
-<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/102827/jquery.flip.min.js'></script>
-<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/102827/uilang.js'></script>
+  </div>
+  <div class="shim"></div>
+</div>
 
-        <script src="js/index.js"></script>
+<!-- required scripts -->
+<script src='js/jquery.min.js'></script>
+<script src='js/parallax.min.js'></script>
+<script src='js/jquery.scrollify.min.js'></script>
+<script src='js/jquery.flip.min.js'></script>
 
-    
-    
-    
-  </body>
+<!-- main scripts for page -->
+<script src="js/index.js"></script>
+
+<!-- uilang for signup interactions -->
+<script src='js/uilang.js'></script>
+<code>clicking on ".toggle_signup" toggles class "disabled" on "#signup"</code>
+
+<!-- google analytics -->
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ ga('create', 'UA-72211801-1', 'auto');
+ ga('send', 'pageview');
+</script>
+
+</body>
 </html>
