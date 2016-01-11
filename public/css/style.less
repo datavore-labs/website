@@ -17,6 +17,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	line-height: 1.2;
 	&.paused {
+		overflow: hidden;
 		pointer-events: none;
 	}
 }
@@ -78,9 +79,9 @@ menu {
 		color: white;
 //		border-bottom-left-radius: 50%;
 //		border-bottom-right-radius: 50%;
-	//	cursor: pointer;
+//		cursor: pointer;
 		&:hover {
-		//	color: #222;
+//			color: #222;
 		}
 	}
 	ul {
@@ -133,10 +134,11 @@ menu {
 // SOME UI ELEMENTS
 
 .button {
+	border: none;
+	font-size: 1em;
 	background: @datavore;
 	color: rgba(255,255,255,0.8);
 	padding: 0.25em 0.5em;
-	border-bottom: none;
 	border-radius: 0.25em;
 	text-transform: uppercase;
 	padding: 0.5em 0.8em;
@@ -147,6 +149,7 @@ menu {
 	}
 	&:active {
 		color: #333;
+		outline: none;
 	}
 }
 
@@ -409,6 +412,13 @@ form {
 			line-height: 1.5;
 		}
 	}
+}
+
+label {
+	color: #666;
+	font-weight: 500;
+	display: block;
+	line-height: 1;
 }
 
 input[type=text],
