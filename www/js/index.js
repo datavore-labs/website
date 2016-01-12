@@ -5,7 +5,11 @@ $('#header').parallax({
 	imageSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/102827/omar-style.jpg'
 });
 
-$('#get').parallax({
+$('#get1').parallax({
+	imageSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/102827/omar-style.jpg'
+});
+
+$('#get2').parallax({
 	imageSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/102827/omar-style.jpg'
 });
 

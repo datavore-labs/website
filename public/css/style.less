@@ -151,6 +151,27 @@ menu {
 	}
 }
 
+.button-cta {
+	.centered;
+	margin: 0 auto;
+	background: white;
+	color: #444;
+	display: inline-block;
+	padding: 1em;
+	font-size: 1.5em;
+	font-weight: 500;
+	border-radius: 0.25em;
+	text-align: center;
+	box-shadow: 0 0 2em rgba(0,0,0,0.3);
+	cursor: pointer;
+	user-select: none;
+	&:active {
+		color: @datavore;
+		background: white;
+		box-shadow: 0 0 2em rgba(255,255,255,0.5);
+	}
+}
+
 .widget {
 	font-weight: 700;
 	height: 1.5em;
@@ -267,8 +288,14 @@ aside {}
 	}
 }
 
-#how {
+#get1 {
 	top: 200%;
+	height: 25%;
+	text-align: center;
+}
+
+#how {
+	top: 230%;
 	height: 75%;
 	background: #666;
 	color: white;
@@ -285,34 +312,14 @@ aside {}
 	}
 }
 
-#get {
-	top: 275%;
+#get2 {
+	top: 300%;
 	height: 25%;
 	text-align: center;
-	.button {
-		.centered;
-		margin: 0 auto;
-		background: white;
-		color: #444;
-		display: inline-block;
-		padding: 1em;
-		font-size: 1.5em;
-		font-weight: 500;
-		border-radius: 0.25em;
-		text-align: center;
-		box-shadow: 0 0 2em rgba(0,0,0,0.3);
-		cursor: pointer;
-		user-select: none;
-		&:active {
-			color: @datavore;
-			background: white;
-			box-shadow: 0 0 2em rgba(255,255,255,0.5);
-		}
-	}
 }
 
 #who {
-	top: 300%;
+	top: 325%;
 	height: 75%;
 	color: #eee;
 	ul {
