@@ -151,58 +151,65 @@
 
 		<form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
-		<input type="hidden" name="oid" value="00D36000000HUNh">
-		<input type="hidden" name="retURL" value="http://www.datavorelabs.com">
+			<input type="hidden" name="oid" value="00D36000000HUNh">
+			<input type="hidden" name="retURL" value="http://www.datavorelabs.com">
 
-		<!--
-		optional elements for debugging
+			<!--
+			optional elements for debugging
+			<input type="hidden" name="debug" value=1>  
+			<input type="hidden" name="debugEmail" value="jpg@datavorelabs.com">
+			-->
 
-		<input type="hidden" name="debug" value=1>  
-		<input type="hidden" name="debugEmail" value="jpg@datavorelabs.com">
-		-->
-<p>
-		<label for="first_name">First Name *</label>
-		<input  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
-</p><p>
-		<label for="last_name">Last Name *</label>
-		<input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />
-</p><p>
-		<label for="email">Email *</label>
-		<input  id="email" maxlength="80" name="email" size="20" type="text" />
-</p><p>
-		<label for="company">Company</label>
-		<input  id="company" maxlength="40" name="company" size="20" type="text" />
-</p><p>
-		<label for="00N36000000evXm">Current Tools</label>
-		<select  id="00N36000000evXm" multiple="multiple" name="00N36000000evXm" title="Current Tools">
-			<option value="Microsoft Excel">Microsoft Excel</option>
-			<option value="R">R</option>
-			<option value="Matlab">Matlab</option>
-			<option value="Notebook (Jupyter, Zeppelin, Beaker)">Notebook (Jupyter, Zeppelin, Beaker)</option>
-			<option value="Tableau">Tableau</option>
-			<option value="Other">Other</option>
-		</select>
-</p><p>
-		<label for="00N36000000evXh">External Data Sources</label>
-		<select  id="00N36000000evXh" multiple="multiple" name="00N36000000evXh" title="External Data Sources">
-			<option value="Bloomberg">Bloomberg</option>
-			<option value="Factset">Factset</option>
-			<option value="Other">Other</option>
-			<option value="S&amp;P Capital IQ">S&amp;P Capital IQ</option>
-			<option value="Thomson Reuters">Thomson Reuters</option>
-			<option value="Xignite">Xignite</option>
-		</select>
-</p><p>
-		<label for="00N36000000evXr">Internal Data Sources</label>
-		<select  id="00N36000000evXr" multiple="multiple" name="00N36000000evXr" title="Internal Data Sources">
-			<option value="Excel File">Excel File</option>
-			<option value="PDF">PDF</option>
-			<option value="Database">Database</option>
-			<option value="Other">Other</option>
-		</select>
-</p><p>
-		<input type="submit" name="submit" class="button">
-</p>
+			<p>
+				<label for="first_name">First Name *</label>
+				<input  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+			</p>
+			<p>
+				<label for="last_name">Last Name *</label>
+				<input  id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+			</p>
+			<p>
+				<label for="email">Email *</label>
+				<input  id="email" maxlength="80" name="email" size="20" type="text" />
+			</p>
+			<p>
+				<label for="company">Company</label>
+				<input  id="company" maxlength="40" name="company" size="20" type="text" />
+			</p>
+			<p>
+				<label for="00N36000000evXm">Current Tools</label>
+				<select  id="00N36000000evXm" multiple="multiple" name="00N36000000evXm" title="Current Tools">
+					<option value="Microsoft Excel">Microsoft Excel</option>
+					<option value="R">R</option>
+					<option value="Matlab">Matlab</option>
+					<option value="Notebook (Jupyter, Zeppelin, Beaker)">Notebook (Jupyter, Zeppelin, Beaker)</option>
+					<option value="Tableau">Tableau</option>
+					<option value="Other">Other</option>
+				</select>
+			</p>
+			<p>
+				<label for="00N36000000evXh">External Data Sources</label>
+				<select  id="00N36000000evXh" multiple="multiple" name="00N36000000evXh" title="External Data Sources">
+					<option value="Bloomberg">Bloomberg</option>
+					<option value="Factset">Factset</option>
+					<option value="Other">Other</option>
+					<option value="S&amp;P Capital IQ">S&amp;P Capital IQ</option>
+					<option value="Thomson Reuters">Thomson Reuters</option>
+					<option value="Xignite">Xignite</option>
+				</select>
+			</p>
+			<p>
+				<label for="00N36000000evXr">Internal Data Sources</label>
+				<select  id="00N36000000evXr" multiple="multiple" name="00N36000000evXr" title="Internal Data Sources">
+					<option value="Excel File">Excel File</option>
+					<option value="PDF">PDF</option>
+					<option value="Database">Database</option>
+					<option value="Other">Other</option>
+				</select>
+			</p>
+			<p>
+				<input type="submit" name="submit" class="button">
+			</p>
 		</form>
 	</div>
 	<div class="shim"></div>
