@@ -363,6 +363,13 @@ aside {}
 	transform: translate(-50%, -50%);
 }
 
+.flex-row {
+	display: flex;
+	text-align: left;
+	justify-content: space-between;
+	flex-flow: row;
+}
+
 #signup {
 	.fill;
 	z-index: 1001;
@@ -456,31 +463,21 @@ input[type=email] {
 		background-image: none;
 		background-color: transparent;
 		border: none;
-		border-bottom: 2px solid @datavore;
+		border: 2px solid @datavore;
 		border-radius: 0;
 		box-shadow: none;
 		box-sizing: border-box;
 		color: #333;
 		cursor: pointer;
-		font-size: 1rem;
+		font-size: 0.75em;
 		line-height: 1.8;
 		position: relative;
-		padding: 0 1em 0 0;
+		padding: 0.5em;
 		width: 100%;
 		&:focus {
 			outline: none;
 			border-bottom: 2px solid @datavore;
 		}
-	}
-	&:after {
-		position: absolute;
-		color: #333;
-		right: 0.25em;
-		z-index: 9999;
-		top: 0.3em;
-		pointer-events:none;
-		display: inline-block;
-		content: "\25be";
 	}
 }
 
