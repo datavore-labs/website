@@ -17,6 +17,10 @@ To compile finished production ready build into `/www`:
 harp compile
 ```
 
+The `www` directory is what should be pushed to webhosting.
+
+---
+
 ## AWS
 
 ### S3 bucket
