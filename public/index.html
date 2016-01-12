@@ -148,7 +148,6 @@
 	<div class="content">
 		<div class="widget toggle_signup"><span class="icon-close"></span></div>
 		<h2>Get Datavore</h2>
-
 		<form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
 			<input type="hidden" name="oid" value="00D36000000HUNh">
@@ -192,7 +191,7 @@
 			</p>
 			<div class="flex-row">
 
-				<div class="selector">
+				<div class="selector" style="margin-right: 4px;">
 					<label for="00N36000000evXh">External Data Sources</label>
 					<select  id="00N36000000evXh" multiple="multiple" size="6" name="00N36000000evXh" title="External Data Sources">
 						<option value="Bloomberg">Bloomberg</option>
@@ -215,9 +214,11 @@
 				</div>
 
 			</div>
-			<p>
-				<br><input type="submit" name="submit" class="button">
-			</p>
+			<br>
+			<div class="flex-row">
+				<input type="submit" name="submit" class="button">
+				<small>* Required</small>
+			</div>
 		</form>
 	</div>
 	<div class="shim"></div>
