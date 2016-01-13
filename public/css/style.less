@@ -397,6 +397,23 @@ aside {}
 		pointer-events: none;
 		z-index: -1;
 	}
+	.thanks {
+		.fill;
+		background: white;
+		z-index: 1;
+		border-radius: 0.25em;
+		aside {
+			text-align: center;
+			.centered;
+			width: 100%;
+			h1 {
+				color: @datavore;
+			}
+		}
+		&.disabled {
+			display: none;
+		}
+	}
 	.content {
 		.centered;
 		background: rgba(255,255,255,0.97);
@@ -413,6 +430,7 @@ aside {}
 			right: 1em;
 			top: 1em;
 			line-height: 1.6;
+			z-index: 2;
 		}
 		h2 {
 			line-height: 1;

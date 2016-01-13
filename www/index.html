@@ -7,8 +7,13 @@
 
 <!-- general page meta -->
 <title>Datavore Labs</title>
-<meta name="description" content="Datavore is a data analytics software company founded in 2014. Our team has a successful track record of building technology in financial services.">
 <link rel="icon", href="img/favicon.ico" />
+<meta name="description" content="Datavore is a data analytics software company founded in 2014. Our team has a successful track record of building technology in financial services.">
+
+
+<!-- "It's like all the data boxes are coming at him
+                         but the frog's just chilling!" -Jake-->
+
 
 <!-- twitter card meta -->
 <meta name="twitter:card" content="summary">
@@ -52,8 +57,6 @@
 		<!--<li><a href="http://login.datavorelabs.com" class="button">Log In</a></li>-->
 	</ul>
 </menu>
-
-<!-- "It's like all the data boxes are coming at him but the frog's just chilling!" -Jake-->
 
 <section id="header">
 	<aside>
@@ -110,7 +113,10 @@
 </section>
 
 <section id="get1">
+	<p> </p>
+	<!--
 	<div class="button-cta toggle_signup">Get the Demo</div>
+	-->
 </section>
 
 <section id="how">
@@ -130,7 +136,7 @@
 </section>
 
 <section id="get2">
-	<div class="button-cta toggle_signup">Get the Demo</div>
+	<div class="button-cta toggle_signup"><span class="icon-logo"></span> Get Datavore</div>
 </section>
 
 <section id="who">
@@ -160,9 +166,10 @@
 
 			<!--
 			optional elements for debugging
-			-->
+			
 			<input type="hidden" name="debug" value=1>  
 			<input type="hidden" name="debugEmail" value="jpg@datavorelabs.com">
+			-->
 
 			<div class="flex-row">
 				<p>
@@ -221,19 +228,17 @@
 			</div>
 			<br>
 			<div class="flex-row">
-				<input type="submit" name="submit" class="button">
+				<input type="submit" name="submit" value="Get Datavore" class="button" id="submit">
 				<small>* Required</small>
 			</div>
 		</form>
 
-		<div id="thanks" class="disabled" style="display: none;">
-			<h1><span class="icon-logo"> </span></h1>
-			<h3>Thank you for your interest in Datavore.</h3>
-			<!-- Omar is pleased. -->
-			<!-- Omar is pleased. -->
-			<!-- Omar is pleased. -->
-			<!-- Omar is pleased. -->
-			<!-- Omar is pleased. -->
+		<div class="thanks disabled">
+			<aside>
+				<h1><span class="icon-logo"> </span></h1>
+				<h3>Thank you for choosing Datavore.</h3>
+				<!-- Omar is pleased. -->
+			</aside>
 		</div>
 
 	</div>
@@ -242,7 +247,10 @@
 
 <!-- uilang for signup interactions -->
 <script src='js/uilang.js'></script>
-<code>clicking on ".toggle_signup" toggles class "disabled" on "#signup"</code>
+<code>
+clicking on ".toggle_signup" toggles class "disabled" on "#signup"
+clicking on "#submit" toggles class "disabled" on ".thanks"
+</code>
 
 <!-- required scripts -->
 <script src='js/jquery.min.js'></script>
