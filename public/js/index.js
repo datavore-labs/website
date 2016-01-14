@@ -2,19 +2,19 @@
 // see http://pixelcog.github.io/parallax.js/
 
 $('#header').parallax({
-	imageSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/102827/omar-style.jpg'
+	imageSrc: 'img/backgrounds/omar-style.jpg'
 });
 
 $('#get1').parallax({
-	imageSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/102827/omar-style.jpg'
+	imageSrc: 'img/backgrounds/omar-style.jpg'
 });
 
 $('#get2').parallax({
-	imageSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/102827/omar-style.jpg'
+	imageSrc: 'img/backgrounds/omar-style.jpg'
 });
 
 $('#who').parallax({
-	imageSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/102827/43West23rdStreetNY.jpg'
+	imageSrc: 'img/backgrounds/43West23rdStreetNY.jpg'
 });
 
 // card flipping animation
