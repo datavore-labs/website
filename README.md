@@ -34,6 +34,12 @@ aws s3 website s3://www.datavorelabs.com --index-document index.html --error-doc
 + Setup a cname for `www` to `www.datavorelabs.com.s3-website-us-east-1.amazonaws.com`
 
 ### Deploy
+> Preview
 ```
-aws s3 sync . s3://www.datavorelabs.com --acl public-read --delete --exclude ".git/*"
+aws s3 sync www s3://preview.datavorelabs.com --acl public-read --delete
+```
+
+> Prod
+```
+aws s3 sync www s3://www.datavorelabs.com --acl public-read --delete
 ```
