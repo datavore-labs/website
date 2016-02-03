@@ -16,6 +16,7 @@ body {
 	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
 	line-height: 1.2;
+	margin: 0;
 	&.paused {
 		overflow: hidden;
 		pointer-events: none;
@@ -62,15 +63,6 @@ small {
 	font-size: 0.75em;
 }
 
-///////////////////
-// SOME LAYOUT STUFF
-
-main {
-	padding: 4em 0;
-	min-width: 320px;
-	max-width: 70%;
-	margin: 0 auto;
-}
 
 ///////////////////
 // NAV MENU
@@ -379,6 +371,32 @@ aside {}
 		color: @datavore;
 		border-color: @datavore;
 	}
+}
+
+#working {
+	position: relative;
+	padding: 20em 10% 10em 10%;
+	width: 100%;
+	text-align: center;
+	color: white;
+	width: 100%;
+	text-align: center;
+	color: white;
+	h1 {
+		.centered;
+		transform: translate(-50%, -40%);
+		margin: 0;
+	}
+}
+
+///////////////////
+// SOME LAYOUT STUFF
+
+main {
+	padding: 3em 0;
+	min-width: 320px;
+	max-width: 70%;
+	margin: 0 auto;
 }
 
 ///////////////////
