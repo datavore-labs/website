@@ -28,6 +28,7 @@ body {
 h1 {
 	font-size: 5em;
 	font-weight: 100;
+	text-align: center;
 }
 
 h2 {
@@ -62,6 +63,16 @@ small {
 }
 
 ///////////////////
+// SOME LAYOUT STUFF
+
+main {
+	padding: 4em 0;
+	min-width: 320px;
+	max-width: 70%;
+	margin: 0 auto;
+}
+
+///////////////////
 // NAV MENU
 
 menu {
@@ -69,15 +80,20 @@ menu {
 	color: #fff;
 	box-shadow: 0 1em 1em rgba(0,0,0,0.1);
 	top: 0;
+	left: 0;
 	width: 100%;
 	position: fixed;
 	transition: all 100ms;
 	z-index: 1000;
+	margin: 0;
 	padding: 0.5em 0;
 	ul {
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: center;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
 		li {
 			margin: 0.5em 1em;
 			font-size: 1em;
@@ -175,6 +191,11 @@ menu {
 		color: @datavore;
 		background: white;
 		box-shadow: 0 0 2em rgba(255,255,255,0.5);
+	}
+	&.blue {
+		background: @datavore;
+		color: white;
+		border-bottom-color: #444;
 	}
 }
 
