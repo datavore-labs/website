@@ -7,27 +7,30 @@ html
 		meta(charset="utf-8")
 		//display
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		link(rel="icon", href="img/favicon.ico")
+		link(rel="icon", href="../img/favicon.ico")
 		// webfonts
 		link(href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500" rel="stylesheet" type="text/css")
 		// icon library
-		link(rel="stylesheet" href="css/icomoon/style.css")
+		link(rel="stylesheet" href="../css/icomoon/style.css")
 		// styles
-		link(rel="stylesheet" href="css/reset.css")
-		link(rel="stylesheet" href="css/style.css")
+		link(rel="stylesheet" href="../css/style.css")
 		title Datavore
 	body
 		// hack for page share previews
 		img(src="img/logo-web.png" style="display: none;")
 
-		!= partial("_shared/menu")
-		!= yield
+		!= partial("../_shared/menu")
+
+		section#working
+			h1 Work with Datavore
+
+		main
+			!= yield
 
 		// required scripts
-		script(src="js/jquery.min.js")
-		script(src="js/parallax.min.js")
-		script(src="js/jquery.flip.min.js")
-		// unloaded scripts script(src="js/jquery.scrollify.min.js")
+		script(src="../js/jquery.min.js")
+		script(src="../js/parallax.min.js")
+		script(src="../js/jquery.flip.min.js")
 
 		// main page script
-		script(src="js/index.js")
+		script(src="../js/index.js")

@@ -17,6 +17,11 @@ $('#who').parallax({
 	imageSrc: 'img/backgrounds/43West23rdStreetNY.jpg'
 });
 
+$('#working').parallax({
+	imageSrc: '../img/backgrounds/omar-style.jpg'
+});
+
+
 // card flipping animation
 // https://nnattawat.github.io/flip/
 

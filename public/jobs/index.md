@@ -1,5 +1,3 @@
-# Work with Datavore
-
 **POSITION:** Software Engineer
 
 **LOCATION:** New York, NY
@@ -44,8 +42,5 @@
 
 
 <section>
-	<a href="mailto:jobs@datavorelabs.com" class="button-cta blue"> Apply</a>
+	<a href="mailto:jobs@datavorelabs.com" class="button-cta blue">Email to Apply</a>
 </section>
-
-
-

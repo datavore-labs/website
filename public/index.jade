@@ -1,0 +1,190 @@
+section#header
+	aside
+		h1.title Data Your Way
+		h3.subtitle Better Analytics for Financial Services
+		h3.icon-logo-full(title='Datavore')
+
+section#what
+	h2 What We Do
+	aside
+		.card
+			.front
+				h3
+					span.icon-functions  
+					| Capture Your Domain Expertise
+				.widget ...
+			.back
+				h3
+					span.icon-functions  
+				p
+					| Our platform classifies and stores data in the way you think about it, capturing context and relationships instead of just rows and columns.
+		.card
+			.front
+				h3
+					span.icon-directions  
+					| Automate Your Workflows
+				.widget ...
+			.back
+				h3
+					span.icon-directions  
+				p
+					| Capture and repeat multi-step data cleaning and analytical processes across diverse data sources to automate your workflows.
+		.card
+			.front
+				h3
+					span.icon-map  
+					| Instantly Visualize Relationships
+				.widget ...
+			.back
+				h3
+					span.icon-map  
+				p
+					| Simply select multiple variables from any number of data sources to instantly illustrate graphical relationships and trends.
+		.card
+			.front
+				h3
+					span.icon-query_builder  
+					| Easy Time Series Analysis
+				.widget ...
+			.back
+				h3
+					span.icon-query_builder  
+				p
+					| Quickly find leading or lagging indicators and key relationships by comparing multi-frequency data sets.
+
+section#get1
+	p
+	//.button-cta.toggle_signup Get the Demo
+
+section#how
+	h2 How We Do It
+	aside
+		h3
+			span.icon-check_box
+			| Hassle-Free Roll Out
+		p Browser-based solution does not require installation, maintenance or updates.
+	aside
+		h3
+			span.icon-check_box
+			| Compliant and Secure
+		p
+			| Compliance and IT department friendly, all data is stored locally behind existing security measures with no external servers.
+	aside
+		h3
+			span.icon-check_box
+			| Business User Friendly
+		p
+			| No coding is necessary as calculations use familiar formula syntax and queries are built visually.
+
+section#get2
+	.button-cta.toggle_signup
+		span.icon-logo
+		| Get Datavore
+
+section#who
+	h2 About Us
+	aside
+	p
+		b Datavore 
+		| is a data analytics software company founded in 2014. Our team has a successful track record of building technology in the financial services sector. We have experience working at companies such as Goldman Sachs, Thomson Reuters, Ernst & Young, and KPMG.
+	aside
+		ul
+			li
+				b Email: 
+				a(href='mailto:info@datavorelabs.com') info@datavorelabs.com
+			li
+				b Phone: 
+				a(tel='12125248351') 212 524 8351
+			li
+				b Address: 
+				a(href="https://www.google.com/maps/place/Rise+New+York/@40.7426139,-73.9910847,15z/data=!4m2!3m1!1s0x0:0xdf27fb2d21d8eac" target='_blank') 43 West 23rd Street, 6th Floor, New York, NY 10010
+			li
+				b Work with us: 
+				a(href='/jobs') Jobs
+			li
+				br
+				br
+				ul.flex-row
+					li
+						b: a(href='https://www.linkedin.com/company/datavorelabs' title='LinkedIn' target='_blank')
+							span.icon-linkedin 
+							| LinkedIn
+					li
+						b: a(href='https://twitter.com/datavorelabs' title='Twitter' target='_blank')
+							span.icon-twitter 
+							| Twitter
+					li
+						b: a(href='http://devpost.com/teams/datavore-labs' title='Devpost' target='_blank')
+							span.icon-devpost 
+							| Devpost
+
+#signup.disabled
+	.content
+		.widget.toggle_signup
+			span.icon-close
+		h2 Get Datavore
+		form(action='https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8', method='POST')
+			input(type='hidden', name='oid', value='00D36000000HUNh')
+			input(type='hidden', name='retURL', value='http://www.datavorelabs.com')
+			// optional elements for debugging
+				input(type="hidden" name="debug" value=1)
+				input(type="hidden" name="debugEmail" value="jpg@datavorelabs.com")
+			.flex-row
+				p
+					label(for='first_name') First Name *
+					input#first_name(maxlength='40', name='first_name', size='20', type='text')
+				p
+					label(for='last_name') Last Name *
+					input#last_name(maxlength='80', name='last_name', size='20', type='text')
+			p
+				label(for='email') Email *
+				input#email(maxlength='80', name='email', size='20', type='text')
+			p
+				label(for='company') Company
+				input#company(maxlength='40', name='company', size='20', type='text')
+			p
+				.selector
+					label(for='00N36000000evXm')
+					| Current Tools 
+					small (Select any that apply.)
+					select#00N36000000evXm(multiple='multiple', size='6', name='00N36000000evXm', title='Current Tools')
+						option(value='Microsoft Excel') Microsoft Excel
+						option(value='R') R
+						option(value='Matlab') Matlab
+						option(value='Notebook (Jupyter, Zeppelin, Beaker)') Notebook (Jupyter, Zeppelin, Beaker)
+						option(value='Tableau') Tableau
+						option(value='Other') Other
+			.flex-row
+				.selector(style='margin-right: 4px;')
+					label(for='00N36000000evXh') External Data Sources
+					select#00N36000000evXh(multiple='multiple', size='6', name='00N36000000evXh', title='External Data Sources')
+						option(value='Bloomberg') Bloomberg
+						option(value='Factset') Factset
+						option(value='S&P Capital IQ') S&P Capital IQ
+						option(value='Thomson Reuters') Thomson Reuters
+						option(value='Xignite') Xignite
+						option(value='Other') Other
+				.selector
+					label(for='00N36000000evXr') Internal Data Sources
+					select#00N36000000evXr(multiple='multiple', size='4', name='00N36000000evXr', title='Internal Data Sources')
+						option(value='Excel File') Excel File
+						option(value='PDF') PDF
+						option(value='Database') Database
+						option(value='Other') Other
+			br
+			.flex-row
+				input#submit.button(type='submit', name='submit', value='Get Datavore')
+				small * Required
+		.thanks.disabled
+			aside
+				h1
+					span.icon-logo  
+				h3 Thank you for choosing Datavore.
+				// Omar is pleased.
+	.shim
+
+// uilang for signup interactions
+script(src='js/uilang.js')
+code
+	| clicking on ".toggle_signup" toggles class "disabled" on "#signup" 
+	| clicking on "#submit" toggles class "disabled" on ".thanks" 
