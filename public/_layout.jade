@@ -1,13 +1,24 @@
 doctype
 html
 	head
+		// "It's like all the data boxes are coming at him but the frog's just chilling!" -Jake
 		meta(http-equiv="content-type" content="text/html")
 		meta(name="robots" content="index")
-		// "It's like all the data boxes are coming at him but the frog's just chilling!" -Jake
 		meta(charset="utf-8")
+		// general meta
+		title Datavore
+		meta(name="description" content="Datavore is an adaptive analytics platform that captures users’ domain expertise in order to help merge, clean, manipulate and visualize data.")
+		link(rel="icon", href="img/favicon.ico")
+		// twitter card meta
+		meta(name="twitter:card" content="summary")
+		meta(name="twitter:site" content="@datavorelabs")
+		meta(name="twitter:image" content="http://www.datavorelabs.com/img/logo-web.png")
+		// facebook opengraph meta
+		meta(property="og:type" content="website")
+		meta(property="og:url" content="http://www.datavorelabs.com/")
+		meta(property="og:image" content="http://www.datavorelabs.com/img/logo-web.png")
 		//display
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		link(rel="icon", href="img/favicon.ico")
 		// webfonts
 		link(href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500" rel="stylesheet" type="text/css")
 		// icon library
@@ -15,7 +26,6 @@ html
 		// styles
 		link(rel="stylesheet" href="css/reset.css")
 		link(rel="stylesheet" href="css/style.css")
-		title Datavore
 	body
 		// hack for page share previews
 		img(src="img/logo-web.png" style="display: none;")
@@ -28,6 +38,9 @@ html
 		script(src="js/parallax.min.js")
 		script(src="js/jquery.flip.min.js")
 		// unloaded scripts script(src="js/jquery.scrollify.min.js")
-
 		// main page script
 		script(src="js/index.js")
+		// google rich snippets schema
+		script(src="js/schema.js")
+		// google analytics
+		script(src="js/analytics.js")
