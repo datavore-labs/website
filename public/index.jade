@@ -86,58 +86,7 @@ section#get2
 		.widget.toggle_signup
 			span.icon-close
 		h2 Get Datavore
-		form(action='https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8', method='POST')
-			input(type='hidden', name='oid', value='00D36000000HUNh')
-			input(type='hidden', name='retURL', value='http://www.datavorelabs.com')
-			// optional elements for debugging
-				input(type="hidden" name="debug" value=1)
-				input(type="hidden" name="debugEmail" value="jpg@datavorelabs.com")
-			.flex-row
-				p
-					label(for='first_name') First Name *
-					input#first_name(maxlength='40', name='first_name', size='20', type='text')
-				p
-					label(for='last_name') Last Name *
-					input#last_name(maxlength='80', name='last_name', size='20', type='text')
-			p
-				label(for='email') Email *
-				input#email(maxlength='80', name='email', size='20', type='text')
-			p
-				label(for='company') Company
-				input#company(maxlength='40', name='company', size='20', type='text')
-			p
-				.selector
-					label(for='00N36000000evXm')
-					| Current Tools 
-					small (Select any that apply.)
-					select#00N36000000evXm(multiple='multiple', size='6', name='00N36000000evXm', title='Current Tools')
-						option(value='Microsoft Excel') Microsoft Excel
-						option(value='R') R
-						option(value='Matlab') Matlab
-						option(value='Notebook (Jupyter, Zeppelin, Beaker)') Notebook (Jupyter, Zeppelin, Beaker)
-						option(value='Tableau') Tableau
-						option(value='Other') Other
-			.flex-row
-				.selector(style='margin-right: 4px;')
-					label(for='00N36000000evXh') External Data Sources
-					select#00N36000000evXh(multiple='multiple', size='6', name='00N36000000evXh', title='External Data Sources')
-						option(value='Bloomberg') Bloomberg
-						option(value='Factset') Factset
-						option(value='S&P Capital IQ') S&P Capital IQ
-						option(value='Thomson Reuters') Thomson Reuters
-						option(value='Xignite') Xignite
-						option(value='Other') Other
-				.selector
-					label(for='00N36000000evXr') Internal Data Sources
-					select#00N36000000evXr(multiple='multiple', size='4', name='00N36000000evXr', title='Internal Data Sources')
-						option(value='Excel File') Excel File
-						option(value='PDF') PDF
-						option(value='Database') Database
-						option(value='Other') Other
-			br
-			.flex-row
-				input#submit.button(type='submit', name='submit', value='Get Datavore')
-				small * Required
+		script(type="text/javascript" src="https://datavorelabs.planso.de/embed/forms/66368270ffd51418ec58bd793f2d9b1b.js")
 		.thanks.disabled
 			aside
 				h1
