@@ -95,8 +95,94 @@ section#get2
 				// Omar is pleased.
 	.shim
 
-// uilang for signup interactions
-script(src='js/uilang.js')
-code
-	| clicking on ".toggle_signup" toggles class "disabled" on "#signup" 
-	//- | clicking on "#submit" toggles class "disabled" on ".thanks" 
+// Scripts for everything else
+script(type="application/javascript", async="", defer="").
+	'use strict';
+	function init()
+	{
+		var i;
+		
+		// Toggle signup buttons
+		var toggleSignupNodes = document.querySelectorAll('.toggle_signup');
+		for (i = 0; i < toggleSignupNodes.length; i++)
+		{
+			toggleSignupNodes[i].addEventListener('click', toggleSignup);
+		}
+
+		// Other checkboxes
+		var otherCheckboxes = document.querySelectorAll('[value=__other_option__]');
+		for (i = 0; i < otherCheckboxes.length; i++)
+		{
+			var input = document.querySelector('[name="' + otherCheckboxes[i].name + '.other_option_response"]');
+			input.addEventListener('input', function()
+			{
+				var entryName = this.name.split('.').slice(0, 2).join('.');
+				var checkbox = document.querySelector('[name="' + entryName + '"][value=__other_option__]')
+				if (!this.value)
+				{
+					checkbox.checked = false;
+				}
+				else
+				{
+					checkbox.checked = true;
+				}
+			});
+		}
+	};
+
+	function showThanks()
+	{
+		var thanks = document.querySelector('#signup .thanks');
+		if (thanks)
+		{
+			thanks.classList.remove('disabled');
+		}
+	}
+
+	function toggleSignup()
+	{
+		var signup = document.getElementById('signup');
+		var thanks = document.querySelector('#signup .thanks');
+		var isDisabled = signup.classList.contains('disabled');
+		if (isDisabled)
+		{
+			signup.classList.remove('disabled');
+		}
+		else
+		{
+			signup.classList.add('disabled');
+			thanks.classList.add('disabled');
+			var form = document.getElementById('get-dv-form');
+			if (form)
+			{
+				form.reset();
+			}
+		}
+	}
+
+	function ajaxSuccess()
+	{
+		showThanks();
+	}
+
+	function ajaxError()
+	{
+		// Also thanks on error?
+		showThanks();
+	}
+
+	function AJAXSubmit(oFormElement)
+	{
+		if (!oFormElement.action) { return; }
+
+		var oReq = new XMLHttpRequest();
+		oReq.onload = ajaxSuccess;
+		oReq.onerror = ajaxError;
+
+		oReq.open("post", oFormElement.action);
+		oReq.send(new FormData(oFormElement));
+
+		return false;
+	}
+
+	init(); // Set up dom callbacks
