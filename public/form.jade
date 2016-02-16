@@ -1,11 +1,43 @@
 script(type="application/javascript").
-	function submitDvForm() {
+	'use strict';
 		// var ep = https://docs.google.com/forms/d/167A1VPlztNXqp7mgkFYvZgquc6zFrD7Hlvx89otoXnU/formResponse;
-		console.log('@todo: submit form', arguments);
+
+	// @see: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
+	function ajaxSuccess()
+	{
+		console.log('success', this);
+		console.log('@todo: FORM SUBMITTED. GO TO THANKS.');
+	}
+
+	function ajaxError()
+	{
+		// Also thanks on error?
+		console.log('error', this);
+		console.log('@todo: FORM SUBMITTED. GO TO THANKS.');
+		console.log('@todo: discover if the error prevented google from saving the info down.');
+	}
+
+	function AJAXSubmit(oFormElement)
+	{
+		if (!oFormElement.action) { return; }
+		
+		var oReq = new XMLHttpRequest();
+		oReq.onload = ajaxSuccess;
+		oReq.onerror = ajaxError;
+
+		oReq.open("post", oFormElement.action);
+		oReq.send(new FormData(oFormElement));
+
 		return false;
 	}
 
-form#get-dv-form(target='_self', onsubmit='return submitDvForm();')
+
+form#get-dv-form(
+	target='_self',
+	method='POST',
+	action="https://docs.google.com/forms/d/167A1VPlztNXqp7mgkFYvZgquc6zFrD7Hlvx89otoXnU/formResponse",
+	onsubmit='AJAXSubmit(this); return false;'
+)
 	.first-name
 		label(for='entry_524429341') First Name *
 		input#entry_524429341(
