@@ -423,7 +423,7 @@ main {
 .flex-row {
 	display: flex;
 	text-align: left;
-	justify-content: space-between;
+	justify-content: flex-start;//space-between;
 	flex-flow: row;
 }
 
@@ -489,6 +489,23 @@ main {
 ///////////////////
 // FORM
 
+#get-dv-form {
+	fieldset {
+		margin: 1em 0;
+		legend {
+			font-weight: bold;
+			font-size: 1.1em;
+		}
+	}
+	li {
+		margin-bottom: 0.25em;
+		label {
+			position: relative;
+			top: -3px;
+		}
+	}
+}
+
 form {
 	max-width: 30em;
 	margin: 0 auto;
@@ -517,12 +534,31 @@ input[type=email] {
 	font-family: "Roboto", sans-serif;
 	border: 0;
 	line-height: 1.8;
-	padding: 0;
+	padding: 0 0.5em;
 	width: 100%;
 	border-bottom: 2px solid @datavore;
 	&:focus {
 		border-bottom: 2px solid #2394BE;
 		outline: none;
+	}
+}
+
+input[type=checkbox] { 
+background-color: transparent;
+	border: 2px solid @datavore;
+	display: inline-block;
+	border-radius: 0.25em;
+	bottom: -5px;
+	position: relative;
+	font-size: 1em;
+	height: 1em;
+	width: 1em;
+	-webkit-appearance: none;
+	&:focus {
+		outline: none;
+	}
+	&:checked {
+		background-color: @datavore;
 	}
 }
 

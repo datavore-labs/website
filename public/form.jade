@@ -38,30 +38,32 @@ form#get-dv-form(
 	action="https://docs.google.com/forms/d/167A1VPlztNXqp7mgkFYvZgquc6zFrD7Hlvx89otoXnU/formResponse",
 	onsubmit='AJAXSubmit(this); return false;'
 )
-	.first-name
-		label(for='entry_524429341') First Name *
-		input#entry_524429341(
-			type='text',
-			name='entry.524429341',
-			value='',
-			dir='auto',
-			aria-label='First Name',
-			aria-required='true',
-			required='',
-			title=''
-		)
-	.last-name
-		label(for='entry_659803005') Last Name *
-		input#entry_659803005(
-			type='text',
-			name='entry.659803005',
-			value='',
-			dir='auto',
-			aria-label='Last Name',
-			aria-required='true',
-			required='',
-			title=''
-		)
+	.flex-row
+		.first-name
+			label(for='entry_524429341') First Name *
+			input#entry_524429341(
+				type='text',
+				name='entry.524429341',
+				value='',
+				dir='auto',
+				aria-label='First Name',
+				aria-required='true',
+				required='',
+				title=''
+			)
+		.last-name
+			label(for='entry_659803005') Last Name *
+			input#entry_659803005(
+				type='text',
+				name='entry.659803005',
+				value='',
+				dir='auto',
+				aria-label='Last Name',
+				aria-required='true',
+				required='',
+				title=''
+			)
+	br
 	.email
 		label(for='entry_1487913489') Email *
 		input#entry_1487913489.ss-q-short(
@@ -74,6 +76,7 @@ form#get-dv-form(
 			required='',
 			title='Must be a valid email address'
 		)
+	br
 	.company
 		label(for='entry_1134074082') Company
 		input#entry_1134074082.ss-q-short(
@@ -84,8 +87,8 @@ form#get-dv-form(
 			aria-label='Company',
 			title=''
 		)
-	.current-tools
-		label(for='entry_2036453663') Current Tools (select any that apply)
+	fieldset.current-tools
+		legend(for='entry_2036453663') Current Tools (select any that apply)
 		//- What languages or platforms do you use when building a thesis or analysis?
 		ul(
 			role='group',
@@ -137,7 +140,7 @@ form#get-dv-form(
 						role='checkbox'
 					)
 					span Tableau
-			li
+			li.flex-row
 				label
 					input#group_1485986210_6(
 						type='checkbox',
@@ -154,8 +157,8 @@ form#get-dv-form(
 						dir='auto',
 						aria-label='Other'
 					)
-	.external-data
-		label.ss-q-item-label(for='entry_1752542274') External Data Sources
+	fieldset.external-data
+		legend.ss-q-item-label(for='entry_1752542274') External Data Sources
 		//- What are some external places you get your data from?
 		ul(
 			role='group',
@@ -206,7 +209,7 @@ form#get-dv-form(
 						role='checkbox'
 					)
 					span Xignite
-			li
+			li.flex-row
 				label
 					input#group_1587616094_7(
 						type='checkbox',
@@ -223,8 +226,8 @@ form#get-dv-form(
 						dir='auto',
 						aria-label='Other'
 					)
-	.internal-data
-		label(for='entry_2085689548') Internal Data Sources
+	fieldset.internal-data
+		legend(for='entry_2085689548') Internal Data Sources
 			//- What do you use internally to share and access data?
 		ul(
 			role='group',
@@ -257,7 +260,7 @@ form#get-dv-form(
 						role='checkbox'
 					)
 					span Database
-			li
+			li.flex-row
 				label
 					input#group_142526704_4(
 						type='checkbox',
@@ -277,4 +280,4 @@ form#get-dv-form(
 		input(type='hidden', name='pageHistory', value='0')
 		input(type='hidden', name='fvv', value='0')
 	.submit
-		input#submit(type='submit', name='submit', value='Submit')
+		input#submit(type='submit', name='submit', value='Get Datavore').button
