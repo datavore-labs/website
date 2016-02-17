@@ -33,10 +33,12 @@ function init()
 
 function showThanks()
 {
+	var form = document.getElementById('get-dv-form');
 	var thanks = document.querySelector('#signup .thanks');
 	if (thanks)
 	{
 		thanks.classList.remove('disabled');
+		form.classList.add('disabled');
 	}
 }
 
@@ -48,12 +50,14 @@ function toggleSignup()
 	if (isDisabled)
 	{
 		signup.classList.remove('disabled');
+		form.classList.remove('disabled');
 	}
 	else
 	{
+		var form = document.getElementById('get-dv-form');
 		signup.classList.add('disabled');
 		thanks.classList.add('disabled');
-		var form = document.getElementById('get-dv-form');
+		form.classList.add('disabled');
 		if (form)
 		{
 			form.reset();
