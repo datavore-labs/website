@@ -46,18 +46,17 @@ function toggleSignup()
 {
 	var signup = document.getElementById('signup');
 	var thanks = document.querySelector('#signup .thanks');
+	var form = document.getElementById('get-dv-form');
 	var isDisabled = signup.classList.contains('disabled');
 	if (isDisabled)
 	{
 		signup.classList.remove('disabled');
 		form.classList.remove('disabled');
+		thanks.classList.add('disabled');
 	}
 	else
 	{
-		var form = document.getElementById('get-dv-form');
 		signup.classList.add('disabled');
-		thanks.classList.add('disabled');
-		form.classList.add('disabled');
 		if (form)
 		{
 			form.reset();
