@@ -423,9 +423,17 @@ main {
 .flex-row {
 	display: flex;
 	text-align: left;
-	justify-content: flex-start;//space-between;
+	justify-content: space-between;
 	flex-flow: row;
 }
+
+.flex-row-start {
+//	display: flex;
+//	text-align: left;
+//	justify-content: flex-start;
+//	flex-flow: row;
+}
+
 
 #signup {
 	.fill;
@@ -491,7 +499,7 @@ main {
 
 #get-dv-form {
 	fieldset {
-		margin: 1em 0;
+		margin: 1.5em 0;
 		legend {
 			font-weight: bold;
 			font-size: 1.1em;
@@ -539,6 +547,7 @@ input[type=email] {
 	border-bottom: 2px solid @datavore;
 	&:focus {
 		border-bottom: 2px solid #2394BE;
+		box-shadow: 0 0.15em 0.3em 1px rgba(56, 110, 130, 0.47);
 		outline: none;
 	}
 }
@@ -556,6 +565,7 @@ background-color: transparent;
 	-webkit-appearance: none;
 	&:focus {
 		outline: none;
+		box-shadow: 0 0.15em 0.3em 1px rgba(56, 110, 130, 0.47);
 	}
 	&:checked {
 		background-color: @datavore;

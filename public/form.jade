@@ -106,7 +106,7 @@ form#get-dv-form(
 						role='checkbox'
 					)
 					span Tableau
-			li.flex-row
+			li.flex-row-start
 				label
 					input#group_1485986210_6(
 						type='checkbox',
@@ -123,126 +123,128 @@ form#get-dv-form(
 						dir='auto',
 						aria-label='Other'
 					)
-	fieldset.external-data
-		legend.ss-q-item-label(for='entry_1752542274') External Data Sources
-		//- What are some external places you get your data from?
-		ul(
-			role='group',
-			aria-label='External Data Sources What are some external places you get your data from?'
-		)
-			li
-				label
-					input#group_1587616094_1(
-						type='checkbox',
-						name='entry.1587616094',
-						value='Bloomberg',
-						role='checkbox'
-					)
-					span Bloomberg
-			li
-				label
-					input#group_1587616094_2(
-						type='checkbox',
-						name='entry.1587616094',
-						value='Factset',
-						role='checkbox'
-					)
-					span Factset
-			li
-				label
-					input#group_1587616094_3(
-						type='checkbox',
-						name='entry.1587616094',
-						value='S&P Capital IQ',
-						role='checkbox'
-					)
-					span S&amp;P Capital IQ
-			li
-				label
-					input#group_1587616094_4(
-						type='checkbox',
-						name='entry.1587616094',
-						value='Thomson Reuters',
-						role='checkbox'
-					)
-					span Thomson Reuters
-			li
-				label
-					input#group_1587616094_5(
-						type='checkbox',
-						name='entry.1587616094',
-						value='Xignite',
-						role='checkbox'
-					)
-					span Xignite
-			li.flex-row
-				label
-					input#group_1587616094_7(
-						type='checkbox',
-						name='entry.1587616094',
-						value='__other_option__',
-						role='checkbox'
-					)
-					span Other:
-				span
-					input#entry_1587616094_other_option_response(
-						type='text',
-						name='entry.1587616094.other_option_response',
-						value='',
-						dir='auto',
-						aria-label='Other'
-					)
-	fieldset.internal-data
-		legend(for='entry_2085689548') Internal Data Sources
-			//- What do you use internally to share and access data?
-		ul(
-			role='group',
-			aria-label='Internal Data Sources What do you use internally to share and access data?'
-		)
-			li
-				label
-					input#group_142526704_1(
-						type='checkbox',
-						name='entry.142526704',
-						value='Excel File',
-						role='checkbox'
-					)
-					span Excel File
-			li
-				label
-					input#group_142526704_2(
-						type='checkbox',
-						name='entry.142526704',
-						value='PDF',
-						role='checkbox'
-					)
-					span PDF
-			li
-				label
-					input#group_142526704_3(
-						type='checkbox',
-						name='entry.142526704',
-						value='Database',
-						role='checkbox'
-					)
-					span Database
-			li.flex-row
-				label
-					input#group_142526704_4(
-						type='checkbox',
-						name='entry.142526704',
-						value='__other_option__',
-						role='checkbox'
-					)
-					span Other:
-				span
-					input#entry_142526704_other_option_response(
-						type='text',
-						name='entry.142526704.other_option_response',
-						value='',
-						dir='auto',
-						aria-label='Other'
-					)
+
+	.flex-row
+		fieldset.external-data
+			legend.ss-q-item-label(for='entry_1752542274') External Data Sources
+			//- What are some external places you get your data from?
+			ul(
+				role='group',
+				aria-label='External Data Sources What are some external places you get your data from?'
+			)
+				li
+					label
+						input#group_1587616094_1(
+							type='checkbox',
+							name='entry.1587616094',
+							value='Bloomberg',
+							role='checkbox'
+						)
+						span Bloomberg
+				li
+					label
+						input#group_1587616094_2(
+							type='checkbox',
+							name='entry.1587616094',
+							value='Factset',
+							role='checkbox'
+						)
+						span Factset
+				li
+					label
+						input#group_1587616094_3(
+							type='checkbox',
+							name='entry.1587616094',
+							value='S&P Capital IQ',
+							role='checkbox'
+						)
+						span S&amp;P Capital IQ
+				li
+					label
+						input#group_1587616094_4(
+							type='checkbox',
+							name='entry.1587616094',
+							value='Thomson Reuters',
+							role='checkbox'
+						)
+						span Thomson Reuters
+				li
+					label
+						input#group_1587616094_5(
+							type='checkbox',
+							name='entry.1587616094',
+							value='Xignite',
+							role='checkbox'
+						)
+						span Xignite
+				li.flex-row-start
+					label
+						input#group_1587616094_7(
+							type='checkbox',
+							name='entry.1587616094',
+							value='__other_option__',
+							role='checkbox'
+						)
+						span Other:
+					span
+						input#entry_1587616094_other_option_response(
+							type='text',
+							name='entry.1587616094.other_option_response',
+							value='',
+							dir='auto',
+							aria-label='Other'
+						)
+		fieldset.internal-data
+			legend(for='entry_2085689548') Internal Data Sources
+				//- What do you use internally to share and access data?
+			ul(
+				role='group',
+				aria-label='Internal Data Sources What do you use internally to share and access data?'
+			)
+				li
+					label
+						input#group_142526704_1(
+							type='checkbox',
+							name='entry.142526704',
+							value='Excel File',
+							role='checkbox'
+						)
+						span Excel File
+				li
+					label
+						input#group_142526704_2(
+							type='checkbox',
+							name='entry.142526704',
+							value='PDF',
+							role='checkbox'
+						)
+						span PDF
+				li
+					label
+						input#group_142526704_3(
+							type='checkbox',
+							name='entry.142526704',
+							value='Database',
+							role='checkbox'
+						)
+						span Database
+				li.flex-row-start
+					label
+						input#group_142526704_4(
+							type='checkbox',
+							name='entry.142526704',
+							value='__other_option__',
+							role='checkbox'
+						)
+						span Other:
+					span
+						input#entry_142526704_other_option_response(
+							type='text',
+							name='entry.142526704.other_option_response',
+							value='',
+							dir='auto',
+							aria-label='Other'
+						)
 		input(type='hidden', name='pageHistory', value='0')
 		input(type='hidden', name='fvv', value='0')
 	.submit
