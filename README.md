@@ -1,3 +1,5 @@
+[![Build Status](https://snap-ci.com/datavore-labs/website/branch/master/build_image)](https://snap-ci.com/datavore-labs/website/branch/master)
+
 # website
 Our corporate website
 
