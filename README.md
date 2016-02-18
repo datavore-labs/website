@@ -19,27 +19,3 @@ harp compile
 
 The `www` directory is what should be pushed to webhosting.
 
----
-
-## AWS
-
-### S3 bucket
-```
-aws s3 mb s3://www.datavorelabs.com
-aws s3 website s3://www.datavorelabs.com --index-document index.html --error-document error.html
-```
-
-### Dns
-+ Use our dns provider to setup a root domain redirect from `datavore.com` to `www.datavore.com` 
-+ Setup a cname for `www` to `www.datavorelabs.com.s3-website-us-east-1.amazonaws.com`
-
-### Deploy
-> Preview
-```
-aws s3 sync www s3://preview.datavorelabs.com --acl public-read --delete
-```
-
-> Prod
-```
-aws s3 sync www s3://www.datavorelabs.com --acl public-read --delete
-```
