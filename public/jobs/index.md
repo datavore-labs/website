@@ -6,7 +6,7 @@
 
 **OUR PRODUCT:** Datavore is a web-based adaptive analytics platform that allows users to import data from various sources and adapts to learn rules and relationships about the data ingested that are customized to the user. Once the data is in the platform, an intuitive tagging system allows the data to be easily accessed through visual queries, pivot tables and automatic visualizations illustrating possible relationships. Additionally, through machine learning, users will also be able to teach the platform to identify patterns existing within the data as well as test hypotheses.
 
-**OPPORTUNITY:** The company is looking for a senior software developer to be a key member of the core engineering team, which currently consists of three full-time developers as well as a developer and two designers that work part-time remotely.
+**OPPORTUNITY:** The company is looking for a software developer to be a key member of the core engineering team, which currently consists of three full-time developers as well as a developer and two designers that work part-time remotely.
 
 **RESPONSIBILITIES:**
 
@@ -42,5 +42,5 @@
 
 
 <section>
-	<a href="mailto:jobs@datavorelabs.com" class="button-cta blue">Email to Apply</a>
+	<a href="mailto:jobs@datavorelabs.com" class="button-cta blue">Apply Now</a>
 </section>
