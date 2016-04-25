@@ -101,6 +101,7 @@ script(type="application/javascript", async="", defer="").
 	function init()
 	{
 		var i;
+		var email = document.getElementById('entry_1487913489');
 		
 		// Toggle signup buttons
 		var toggleSignupNodes = document.querySelectorAll('.toggle_signup');
@@ -118,17 +119,24 @@ script(type="application/javascript", async="", defer="").
 			{
 				var entryName = this.name.split('.').slice(0, 2).join('.');
 				var checkbox = document.querySelector('[name="' + entryName + '"][value=__other_option__]')
-				if (!this.value)
-				{
-					checkbox.checked = false;
-				}
-				else
-				{
-					checkbox.checked = true;
+				checkbox.checked = !!this.value;
+			});
+		}
+
+		var parts = window.location.href.split('?');
+		if (parts.length > 1) {
+			var prams = parts[1].split('&').map(function(x) {
+				return x.split('=');
+			});
+
+			prams.forEach(function(pair) {
+				if (pair[0] === 'email') {
+					toggleSignup();
+					email.value = pair[1];
 				}
 			});
 		}
-	};
+	}
 
 	function showThanks()
 	{
