@@ -1,4 +1,4 @@
-**POSITION:** Software Engineer
+**POSITION:** Design Lead
 
 **LOCATION:** New York, NY
 
@@ -6,21 +6,21 @@
 
 **OUR PRODUCT:** Datavore is a web-based adaptive analytics platform that allows users to import data from various sources and adapts to learn rules and relationships about the data ingested that are customized to the user. Once the data is in the platform, an intuitive tagging system allows the data to be easily accessed through visual queries, pivot tables and automatic visualizations illustrating possible relationships. Additionally, through machine learning, users will also be able to teach the platform to identify patterns existing within the data as well as test hypotheses.
 
-**OPPORTUNITY:** The company is looking for a software developer to be a key member of the core engineering team, which currently consists of three full-time developers as well as a developer and two designers that work part-time remotely.
+**OPPORTUNITY:** The company is looking for a design lead to be responsible for its software products user interface (UI) and user interaction (UX).
 
 **RESPONSIBILITIES:**
 
-- Work closely with the engineering to develop the platform’s data loading, storage, querying, analysis and visualization functionality
-- Module ownership including design and coding
-- Comfortable with different layers of the stack including underlying algorithms, database and UI
+- Work closely with the engineering team to develop a cohesive and composed product
+- User research including direct communication with users, creating user stories, designing and executing tests, and extracting actionable items from user feedback
+- Interaction design including identifying the correct UI elements, wire framing products, and developing user workflows
 
 **REQUIREMENTS:**
 
-- Experience with functional programming, reactive streams, or asynchronous programming
-- Proficiency coding in JavaScript, CSS or C++
-- Working knowledge of graph theory, databases or big data platforms
+- Experience in information architecture and information design
+- Expertise in interaction design driven by user research and testing
+- Technical ownership and the ability to implement designs with responsibilities ranging from testing frameworks for users to implementing CSS/Styles for products.
 
-**BONUS EXPERTISE:**
+**PREFERRED EXPERTISE:**
 
 - Formal education in computer science or math
 - Understanding of machine learning methodologies and techniques
@@ -39,8 +39,3 @@
 - Unlimited free coffee, soda, fruit and some snacks
 - Dart board in the office, ping pong table down the hall
 - Culture of gamers, music enthusiasts and rock climbers
-
-
-<section>
-	<a href="mailto:jobs@datavorelabs.com" class="button-cta blue">Apply Now</a>
-</section>

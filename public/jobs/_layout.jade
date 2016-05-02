@@ -27,16 +27,10 @@ html
 		link(rel="stylesheet" href="../css/style.css")
 	body
 		// hack for page share previews
-		img(src="img/logo-web.png" style="display: none;")
+		img(src="../img/logo-web.png" style="display: none;")
 
-		!= partial("../_shared/menu")
-
-		section#working
-			h1 Work with Datavore
-
-		main
-			!= yield
-
+		!= partial("./_menu")
+		!= yield
 		!= partial("../_shared/about")
 
 		// required scripts

@@ -167,7 +167,6 @@ menu {
 }
 
 .button-cta {
-	.centered;
 	margin: 0 auto;
 	background: white;
 	color: #444;
@@ -395,13 +394,32 @@ aside {}
 }
 
 ///////////////////
-// SOME LAYOUT STUFF
-
-main {
+// JOBS
+.job {
 	padding: 3em 0;
 	min-width: 320px;
 	max-width: 70%;
 	margin: 0 auto;
+
+	&.hidden {
+		display: none;
+	}
+}
+
+.job-list {
+	text-align: center;
+	padding: 2em 0 0 0;
+
+	& > a {
+		margin: 0 2em;
+		&:hover {
+			color: rgba(10,10,10,1);
+		}
+		&:active, &.toggled {
+			color: @datavore;
+			border-color: @datavore;
+		}
+	}
 }
 
 ///////////////////

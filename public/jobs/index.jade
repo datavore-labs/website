@@ -1,0 +1,64 @@
+section#working
+	h1 Work with Datavore
+
+section.job-list
+	a(data-job="software-engineer").job-toggle Software Engineer
+	a(data-job="design-lead").job-toggle Design Lead
+
+section.software-engineer.job
+	include:markdown _software-engineer.md
+
+section.design-lead.job
+	include:markdown _design-lead.md
+
+section
+	a(href="mailto:jobs@datavorelabs.com").button-cta.blue.centered Apply Now
+
+script(type="application/javascript").
+	var jobs = Array.prototype.slice.call(document.querySelectorAll('.job'));
+	var toggles = Array.prototype.slice.call(document.querySelectorAll('.job-toggle'), 0);
+
+	function hideSections() {
+		jobs.forEach(function(elt){ elt.classList.add('hidden'); });
+	}
+
+	function clearToggles() {
+		toggles.forEach(function(elt){ elt.classList.remove('toggled'); });
+	}
+
+	function setActive(target) {
+		var section = document.querySelector('.job.' + target);
+		var btn = document.querySelector('[data-job=' + target + '].job-toggle');
+		window.location.hash = target;
+		btn.classList.add('toggled');
+		section.classList.remove('hidden');
+	}
+
+	toggles.forEach(function(btn, i) {
+		btn.addEventListener('click', function() {
+			var target = btn.getAttribute('data-job');
+			hideSections();
+			clearToggles();
+			setActive(target);
+		});
+	});
+
+
+	var active = 'software-engineer';
+	function navigateToHash() {
+		hideSections();
+		clearToggles();
+
+		try {
+			var n = window.location.hash.substr(1);
+			if (document.querySelector('.job.' + n)) {
+				active = n;
+			}
+		} catch (err) {
+		}
+
+		setActive(active);
+	}
+
+	window.addEventListener('hashchange', navigateToHash);
+	navigateToHash();
