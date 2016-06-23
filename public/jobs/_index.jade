@@ -1,18 +1,18 @@
 section#working
 	h1 Work with Datavore
 
-section.job-list
-	a(data-job="software-engineer").job-toggle Software Engineer
-	a(data-job="design-lead").job-toggle Design Lead
+//section.job-list
+//	a(data-job="software-engineer").job-toggle Software Engineer
+//	a(data-job="design-lead").job-toggle Design Lead
 
-section.software-engineer.job
-	include:markdown _software-engineer.md
-
-section.design-lead.job
-	include:markdown _design-lead.md
-
-section
-	a(href="mailto:jobs@datavorelabs.com").button-cta.blue.centered Apply Now
+//section.software-engineer.job
+//	include:markdown _software-engineer.md
+//
+//section.design-lead.job
+//	include:markdown _design-lead.md
+//
+//section
+//	a(href="mailto:jobs@datavorelabs.com").button-cta.blue.centered Apply Now
 
 script(type="application/javascript").
 	var jobs = Array.prototype.slice.call(document.querySelectorAll('.job'));
