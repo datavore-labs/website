@@ -5,16 +5,19 @@ section#working
 //	a(data-job="software-engineer").job-toggle Software Engineer
 //	a(data-job="design-lead").job-toggle Design Lead
 
+section.frontend-developer.job
+	include:markdown _frontend_developer.md
+
 //section.software-engineer.job
 //	include:markdown _software-engineer.md
 //
 //section.design-lead.job
 //	include:markdown _design-lead.md
-//
-//section
-//	a(href="mailto:jobs@datavorelabs.com").button-cta.blue.centered Apply Now
 
-script(type="application/javascript").
+section
+	a(href="mailto:jobs@datavorelabs.com").button-cta.blue.centered Apply Now
+
+//script(type="application/javascript").
 	var jobs = Array.prototype.slice.call(document.querySelectorAll('.job'));
 	var toggles = Array.prototype.slice.call(document.querySelectorAll('.job-toggle'), 0);
 

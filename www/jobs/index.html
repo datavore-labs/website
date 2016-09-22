@@ -1,0 +1,94 @@
+<!DOCTYPE html><html><head><!-- "It's like all the data boxes are coming at him but the frog's just chilling!" -Jake--><meta http-equiv="content-type" content="text/html"><meta name="robots" content="index"><meta charset="utf-8"><!-- general meta--><title>Datavore</title><meta name="description" content="Datavore is an adaptive analytics platform that captures users’ domain expertise in order to help merge, clean, manipulate and visualize data."><link rel="icon" href="../img/favicon.ico"><!-- twitter card meta--><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@datavorelabs"><meta name="twitter:image" content="http://www.datavorelabs.com/img/logo-web.png"><!-- facebook opengraph meta--><meta property="og:type" content="website"><meta property="og:url" content="http://www.datavorelabs.com/"><meta property="og:image" content="http://www.datavorelabs.com/img/logo-web.png"><!--display--><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- webfonts--><link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500" rel="stylesheet" type="text/css"><!-- icon library--><link rel="stylesheet" href="../css/icomoon/style.css"><!-- styles--><link rel="stylesheet" href="../css/style.css"></head><body><!-- hack for page share previews--><img src="../img/logo-web.png" style="display: none;"><menu><ul><li><div class="logo"><a href="/" title="Datavore"><span class="icon-logo"></span></a></div></li><li><a href="../#what">What We Do</a></li><li><a href="../#how">How We Do It</a></li><li><a href="../#who">About Us</a></li><li><a href="/jobs">Jobs</a></li><li><a href="../#?email=">Get Datavore</a></li><!-- login button disabled until soon--><!-- li: a(href="http://login.datavorelabs.com").button Log In--></ul></menu><section id="working"><h1>Work with Datavore</h1></section><!--section.job-list--><!--	a(data-job="software-engineer").job-toggle Software Engineer--><!--	a(data-job="design-lead").job-toggle Design Lead--><section class="frontend-developer job"><p><strong>POSITION:</strong> Software Engineer</p>
+<p><strong>LOCATION:</strong> New York, NY</p>
+<p><strong>ABOUT US:</strong> Datavore is an early stage software company founded in 2014 that makes a smart web-based analytics platform for financial services customers with the goal of enhancing user efficiency by integrating domain expertise and machine intelligence.</p>
+<p><strong>OUR PRODUCT:</strong> Datavore is a web-based adaptive analytics platform that allows users to import data from various sources and adapts to learn rules and relationships about the data ingested that are customized to the user. Once the data is in the platform, an intuitive tagging system allows the data to be easily accessed through visual queries, pivot tables and automatic visualizations illustrating possible relationships. Additionally, through machine learning, users will also be able to teach the platform to identify patterns existing within the data as well as test hypotheses.</p>
+<p><strong>OPPORTUNITY:</strong> The company is looking for a front end developer to be responsible for helping design and implement its software products user interface.</p>
+<p><strong>RESPONSIBILITIES:</strong></p>
+<ul>
+<li>Join a 4-member engineering team to develop a cohesive and composed product</li>
+<li>Ownership of designing the company’s software products including the implementation of styles created</li>
+<li>Interaction design including the identification of correct UI elements and wire framing screens</li>
+</ul>
+<p><strong>REQUIREMENTS:</strong></p>
+<ul>
+<li>Self-starter comfortable working in a small and collaborative environment</li>
+<li>Expert in CSS/HTML5 and styling</li>
+<li>Experience with user interface (UI) and interaction (UX) design</li>
+<li>Artistic talent and a general eye for design</li>
+</ul>
+<p><strong>PREFERRED EXPERTISE:</strong></p>
+<ul>
+<li>Experience with the AngularJS template language</li>
+<li>Experience with the D3 JavaScript Library</li>
+<li>Experience with SVG</li>
+<li>An eye for simplicity in a complex environment</li>
+<li>Ability to create style guides by implementing or modifying a UI kit</li>
+<li>Portfolio demonstrating work accomplished in a production environment</li>
+</ul>
+<p><strong>BONUS POINTS:</strong></p>
+<ul>
+<li>Experience writing JavaScript</li>
+<li>Prior work experience at a bank or other financial institution</li>
+</ul>
+<p><strong>COMPENSATION:</strong> Competitive Salary and Equity</p>
+<p><strong>CULTURE AND PERKS:</strong></p>
+<ul>
+<li>Tight-knit, flat team with a developer driven culture</li>
+<li>Opportunity for leadership and contribution to company direction as an early employee</li>
+<li>“Work hard play hard” approach including unlimited PTO</li>
+<li>Company-paid quality health, dental and vision insurance</li>
+<li>Sweet corner office in brand new startup community based in Flatiron</li>
+<li>Unlimited free coffee, soda, fruit and some snacks</li>
+<li>Dart board in the office, ping pong table down the hall</li>
+<li>Culture of gamers, music enthusiasts and rock climbers</li>
+<li>Two adorable pet lizards, Jay and Silent Bob</li>
+</ul>
+<p><strong>TIMING:</strong> Immediate</p>
+<p><strong>CONTACT:</strong></p>
+</section><!--section.software-engineer.job--><!--	include:markdown _software-engineer.md--><!----><!--section.design-lead.job--><!--	include:markdown _design-lead.md--><section><a href="mailto:jobs@datavorelabs.com" class="button-cta blue centered">Apply Now</a></section><!--script(type="application/javascript").var jobs = Array.prototype.slice.call(document.querySelectorAll('.job'));
+var toggles = Array.prototype.slice.call(document.querySelectorAll('.job-toggle'), 0);
+
+function hideSections() {
+	jobs.forEach(function(elt){ elt.classList.add('hidden'); });
+}
+
+function clearToggles() {
+	toggles.forEach(function(elt){ elt.classList.remove('toggled'); });
+}
+
+function setActive(target) {
+	var section = document.querySelector('.job.' + target);
+	var btn = document.querySelector('[data-job=' + target + '].job-toggle');
+	window.location.hash = target;
+	btn.classList.add('toggled');
+	section.classList.remove('hidden');
+}
+
+toggles.forEach(function(btn, i) {
+	btn.addEventListener('click', function() {
+		var target = btn.getAttribute('data-job');
+		hideSections();
+		clearToggles();
+		setActive(target);
+	});
+});
+
+
+var active = 'software-engineer';
+function navigateToHash() {
+	hideSections();
+	clearToggles();
+
+	try {
+		var n = window.location.hash.substr(1);
+		if (document.querySelector('.job.' + n)) {
+			active = n;
+		}
+	} catch (err) {
+	}
+
+	setActive(active);
+}
+
+window.addEventListener('hashchange', navigateToHash);
+navigateToHash();--><section id="who"><h2>About Us</h2><aside></aside><p><b>Datavore </b>is a data analytics software company founded in 2014. Our team has a successful track record of building technology in the financial services sector. We have experience working at companies such as Goldman Sachs, Thomson Reuters, Ernst & Young, and KPMG.</p><aside><ul><li><b>Email: </b><a href="mailto:info@datavorelabs.com">info@datavorelabs.com</a></li><li><b>Phone: </b><a tel="12125248351">212 524 8351</a></li><li><b>Address: </b><a href="https://www.google.com/maps/place/Rise+New+York/@40.7426139,-73.9910847,15z/data=!4m2!3m1!1s0x0:0xdf27fb2d21d8eac" target="_blank">43 West 23rd Street, 6th Floor, New York, NY 10010</a></li><li><b>Work with us:</b><a href="/jobs">Jobs</a></li><li><br/><br/><ul class="flex-row"><li><b><a href="https://www.linkedin.com/company/datavorelabs" title="LinkedIn" target="_blank"><span class="icon-linkedin"> </span>LinkedIn</a></b></li><li><b><a href="https://twitter.com/datavorelabs" title="Twitter" target="_blank"><span class="icon-twitter"> </span>Twitter</a></b></li></ul></li></ul></aside></section><!-- required scripts--><script src="../js/jquery.min.js"></script><script src="../js/parallax.min.js"></script><script src="../js/jquery.flip.min.js"></script><!-- main page script--><script src="../js/index.js"></script><!-- google rich snippets schema--><script src="../js/schema.js"></script><!-- google analytics--><script src="../js/analytics.js"></script></body></html>
