@@ -8,6 +8,12 @@ Our corporate website
 
 Built with HarpJS: http://harpjs.com/docs/
 
+---
+**!!NOTE!!**
+Harp references a missing package `node-sass` for node `v6.5.0`.
+You might need to `nvm use v5.0.0` or something.
+---
+
 To set up and run a local server:
 ```
 npm install harp

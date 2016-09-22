@@ -1,4 +1,4 @@
-**POSITION:** Software Engineer
+**POSITION:** Frontend Developer
 
 **LOCATION:** New York, NY
 
@@ -50,5 +50,3 @@
 - Two adorable pet lizards, Jay and Silent Bob
 
 **TIMING:** Immediate
-
-**CONTACT:**
