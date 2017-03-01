@@ -1,17 +1,17 @@
 // parallaxy backgrounds
 // see http://pixelcog.github.io/parallax.js/
 
-$('#header').parallax({
-	imageSrc: 'img/backgrounds/omar-style.jpg'
-});
+// $('#header').parallax({
+// 	imageSrc: 'img/backgrounds/omar-style.jpg'
+// });
 
 $('#get1').parallax({
 	imageSrc: 'img/backgrounds/omar-style.jpg'
 });
 
-$('#get2').parallax({
-	imageSrc: 'img/backgrounds/omar-style.jpg'
-});
+// $('#get2').parallax({
+// 	imageSrc: 'img/backgrounds/omar-style.jpg'
+// });
 
 $('#who').parallax({
 	imageSrc: 'img/backgrounds/43West23rdStreetNY.jpg'
@@ -25,7 +25,11 @@ $('#working').parallax({
 // card flipping animation
 // https://nnattawat.github.io/flip/
 
-$(".card").flip();
+// $(".card").flip();
+
+$('#what .card').on('click', function() {
+    $(this).toggleClass('flipped');
+});
 
 
 // @todo: figure out a new scrollspy method

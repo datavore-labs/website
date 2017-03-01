@@ -1,7 +1,9 @@
 ///////////////////
 // VARIABLES
 
-@datavore: #22afe3;
+@brand-base: #012946; //logo color
+@brand-mid: #09668c; //for actions
+@brand-high: #81afc4;
 
 ///////////////////
 // BASELINE
@@ -10,8 +12,9 @@
 }
 
 body {
+  background: #333;
 	font-family: "Roboto", sans-serif;
-	color: #333;
+	color: #000;
 	font-weight: 400;
 	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
@@ -33,7 +36,7 @@ h1 {
 }
 
 h2 {
-	font-size: 3em;
+	font-size: 2.5em;
 	font-weight: 300;
 	margin-bottom: 1em;
 	width: 100%;
@@ -56,7 +59,7 @@ b {
 a {
 	cursor: pointer;
 	text-decoration: none;
-	border-bottom: 2px solid;
+	//border-bottom: 2px solid;
 }
 
 sup {
@@ -67,6 +70,17 @@ small {
 	font-size: 0.75em;
 }
 
+.wai {
+  display: block;
+  position: absolute;
+  z-index: -9999em;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
 
 ///////////////////
 // NAV MENU
@@ -74,7 +88,7 @@ small {
 menu {
 	background: #333;
 	color: #fff;
-	box-shadow: 0 1em 1em rgba(0,0,0,0.1);
+	box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -91,22 +105,24 @@ menu {
 		margin: 0;
 		padding: 0;
 		li {
+            display: flex;
+            align-items: center;
+            flex-flow: row;
 			margin: 0.5em 1em;
 			font-size: 1em;
 			line-height: 1.1;
 		}
 		a {
-			color: rgba(255,255,255,0.8);
+			color: rgba(255,255,255,0.9);
 			font-weight: 500;
 			text-decoration: none;
-			border-bottom: 2px solid rgba(255,255,255,0.2);
+			//border-bottom: 2px solid rgba(255,255,255,0.2);
 		}
 		a:hover {
 			color: rgba(255,255,255,1);
 		}
 		a:active {
-			color: @datavore;
-			border-color: @datavore;
+			color: @brand-mid;
 		}
 	}
 	&.disabled{
@@ -114,11 +130,11 @@ menu {
 		box-shadow: none;
 		.logo {
 			background-color: white;
-			color: @datavore;
+			color: @brand-mid;
 			box-shadow: 0 0.5em 0.5em rgba(0,0,0,0.1);
 			&:hover {
 				color: white;
-				background: @datavore;
+				background: @brand-mid;
 			}
 			&:active {
 				color: #111;
@@ -138,7 +154,7 @@ menu {
 .logo,
 .logo a {
 	text-align: center;
-	color: @datavore !important;
+	color: @brand-mid !important;
 	border: none;
 	margin: 0 auto;
 	color: white;
@@ -147,53 +163,46 @@ menu {
 	&:hover {
 		opacity: 1;
 	}
+
+    img {
+        display: block;
+        width: 40px;
+    }
 }
 
 .button {
 	border: none;
 	font-size: 1em;
-	background: @datavore;
-	color: rgba(255,255,255,0.8);
+	background: @brand-mid;
+	color: #fff;
 	cursor: pointer;
-	padding: 0.25em 0.5em;
-	border-radius: 0.25em;
-	text-transform: uppercase;
-	padding: 0.5em 0.8em;
+    line-height: 1.25;
+    padding: 0.5em 1em;
 	user-select: none;
 	vertical-align: middle;
-	&:hover {
-		color: rgba(255,255,255,1);
-	}
-	&:active {
-		color: #333;
-		outline: none;
+    transition: background 200ms ease;
+    -webkit-appearance: none;
+
+	&:hover, &:focus, &:active {
+		background: @brand-base;
 	}
 }
 
 .button-cta {
-	.centered;
 	margin: 0 auto;
-	background: white;
-	color: #444;
+	background: @brand-mid;
+	color: #fff;
 	display: inline-block;
-	padding: 1em;
+	padding: 1em 2em;
 	font-size: 1.5em;
-	font-weight: 500;
-	border-radius: 0.25em;
+	font-weight: 300;
 	text-align: center;
-	box-shadow: 0 0 2em rgba(0,0,0,0.3);
 	cursor: pointer;
 	user-select: none;
-	&:active {
-		color: @datavore;
-		background: white;
-		box-shadow: 0 0 2em rgba(255,255,255,0.5);
-	}
-	&.blue {
-		background: @datavore;
-		color: white;
-		border-bottom-color: #444;
-	}
+    transition: all 200ms ease;
+	&:hover, &:focus, &:active {
+      background: lighten(@brand-mid, 5%);
+    }
 }
 
 .widget {
@@ -213,44 +222,101 @@ menu {
 		color: rgba(255,255,255,0.8);
 	}
 	&:active {
-		background: @datavore;
+		background: @brand-mid;
 	}
 }
 
 .card {
-	height:12em;
+	height:17em;
 	width: 18em;
 	cursor: pointer;
 	margin-bottom: 1em;
 	margin-right: 1em;
+    position: relative;
+    overflow: hidden;
+   -webkit-tap-highlight-color: rgba(0,0,0,0);
+    user-select: none;
+
+    @media (min-width: 1100px) {
+      height: 12em;
+    }
+
+  span {
+      display: block;
+      font-size: 15rem;
+      margin-bottom: 10px;
+      position: absolute;
+      opacity: 0.075;
+      top: -50px;
+      left: -50px;
+      z-index: 3;
+      transition: all 300ms ease;
+    }
+
 	.front {
-		padding: 1rem 1rem 0 1rem;
+        height: 100%;
+		padding: 1.5rem 1.5rem 0 1.5rem;
 		display: flex;
-		justify-content: center;
-		align-items: flex-end;
-		flex-flow: column;
-		background: rgba(0,0,0,0.2);
 		justify-content: space-between;
+		align-items: flex-start;
+		flex-flow: column;
+		background: #ddd;
+		justify-content: space-between;
+        backface-visibility: hidden;
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        bottom: 0;
+        right: 0;
+        transition: all 300ms ease;
+
 		h3 {
-			span {
-				display: block;
-			}
+            margin: 0;
+           padding-right: 30px;
 		}
+
+        .widget {
+          align-self: flex-end;
+        }
 	}
 	.back {
-		padding: 1rem;
+		padding: 1.5rem;
 		font-size: 1.3em;
-		h3 {
-			.fill;
-			position: absolute;
-			color: rgba(0,0,0,0.1);
-			z-index: -1;
-			font-size: 8em;
-			text-align: left;
-			vertical-align: middle;
-			overflow: hidden;
-		}
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        font-weight: 300;
+        display: flex;
+        flex-flow: column;
+        align-content: flex-end;
+        justify-content: flex-end;
+
+        p {
+          text-align: right;
+          margin: 0;
+        }
+
+		span {
+          color: @brand-mid;
+          opacity: 0.1;
+        }
 	}
+
+    &.flipped {
+        .front {
+           transform: translate3d(-102%,0,0);
+        }
+        span {
+          opacity: 0.05;
+        }
+    }
 }
 
 ///////////////////
@@ -266,7 +332,7 @@ section {
 
 @media (min-width: 1024px) {
 	section {
-		padding: 8em 20%;
+		padding: 6em 20%;
 	}
 }
 
@@ -282,29 +348,77 @@ aside {}
 // SECTIONS
 
 #header {
+    background: @brand-base;
 	//top: 0;
 	//min-height: 100%;
 	text-align: center;
 	color: white;
-	padding: 12em 0 5em 0;
-	aside {
-		//.centered;
-		//width: 100%;
-	}
-	h3 {
-		font-weight: 500;
-		margin-bottom: 2em;
+	padding-top: 12em;
+    padding-bottom: 5em;
+
+    img {
+        display: block;
+       margin: 0 auto 3rem;
+        width: 40%;
+        max-width: 200px;
+        transform: translateX(1%);
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: 100;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2em;
+      font-weight: 100;
+    }
+
+    @media (min-width: 650px) {
+        padding-top: 10em;
+    }
+
+    @media (min-width: 900px) {
+        aside {
+            align-items: center;
+            display: flex;
+            flex-flow: row nowrap;
+            margin: 0 auto;
+            width: 42rem;
+        }
+
+        h1, h2 {
+          text-align: left;
+        }
+
+        h1 {
+          font-size: 4em;
+        }
+
+        h2 {
+          margin: 0;
+        }
+
+        div {
+          margin-left: 60px;
+        }
 
         img {
-            width: 150px;
+          margin: 0;
         }
-	}
-}
+    }
 
-@media (max-width: 768px) {
-	#header {
-		//min-height: 50em;
-	}
+    @media (min-width: 1000px) {
+      padding: 10em 20px 7.5em;
+      aside {
+        width: 49rem;
+      }
+
+      h1 {
+        font-size: 5em;
+      }
+    }
 }
 
 #what {
@@ -312,37 +426,66 @@ aside {}
 	//top: 100%;
 	//min-height: 100%;
 	h2 {
-		border-bottom: 2px solid @datavore;
+		border-bottom: 2px solid @brand-base;
 	}
 	aside {
 		display: flex;
 		flex-flow: row wrap;
-		justify-content: space-around;
+		justify-content: space-between;
 	}
+
+    .card {
+        margin-right: 0;
+        width: 100%;
+
+        @media (min-width: 500px) {
+          width: calc(~"50% - 10px");
+        }
+    }
 }
 
 #get1 {
 	//top: 200%;
 	//height: 25%;
+    background: @brand-base;
 }
 
 #how {
 	//top: 225%;
 	//height: 75%;
-	background: #666;
-	color: white;
+	background: #ddd;
 	h2 {
-		border-bottom: 2px solid @datavore;
+		border-bottom: 2px solid @brand-base;
 	}
 	aside {
 		h3 {
-			color: rgba(255,255,255,0.7);
-			span {
-				color: @datavore;
-			}
+            color: @brand-base;
+            padding-left: 40px;
+            position: relative;
+
+            &:before {
+              background: @brand-base;
+              content: "";
+              height: 1em;
+              position: absolute;
+              left: 0;
+              top: 0.1em;
+              width: 1em;
+            }
+
+          &:after {
+            content: "";
+            background: url("/img/tether-select-check.png") no-repeat right center / auto 100%;
+            height: 15px;
+            left: 5px;
+            position: absolute;
+            top: 9px;
+            width: 19px;
+          }
 		}
 		p {
 			font-size: 1.3em;
+            margin-bottom: 2em;
 		}
 	}
 }
@@ -350,6 +493,8 @@ aside {}
 #get2 {
 	//top: 300%;
 	//height: 25%;
+    background: @brand-base;
+    text-align: center;
 }
 
 #who {
@@ -371,18 +516,16 @@ aside {}
 		font-size: 1.3em;
 	}
 	a {
-		color: @datavore;
+		color: rgba(255,255,255,0.8);
 		cursor: pointer;
 		font-weight: 500;
 		text-decoration: none;
 		border-bottom: 2px solid rgba(255,255,255,0.2);
+        transition: all 200ms ease;
 	}
-	a:hover {
-		color: rgba(255,255,255,1);
-	}
-	a:active {
-		color: @datavore;
-		border-color: @datavore;
+	a:hover, &:focus, &:active {
+        color: rgba(255,255,255,1);
+        border-bottom: 2px solid rgba(255,255,255,1);
 	}
 }
 
@@ -438,8 +581,8 @@ aside {}
 			color: rgba(10,10,10,1);
 		}
 		&:active, &.toggled {
-			color: @datavore;
-			border-color: @datavore;
+			color: @brand-mid;
+			border-color: @brand-mid;
 		}
 	}
 }
@@ -466,7 +609,14 @@ aside {}
 	display: flex;
 	text-align: left;
 	justify-content: space-between;
-	flex-flow: row;
+	flex-flow: row wrap;
+
+    .flex-half {
+      width: 100%;
+      @media (min-width: 600px) {
+        width: calc(~"50% - 10px");
+      }
+    }
 }
 
 .flex-row-start {
@@ -480,7 +630,7 @@ aside {}
 #signup {
 	.fill;
 	z-index: 1001;
-	transition: all 500ms;
+	transition: opacity 500ms ease;
 	opacity: 1;
 	overflow: hidden;
 	.shim {
@@ -499,7 +649,7 @@ aside {}
 			.centered;
 			width: 100%;
 			h1 {
-				color: @datavore;
+				color: @brand-mid;
 			}
 		}
 		h2 {
@@ -511,15 +661,14 @@ aside {}
 	}
 	.content {
 		.centered;
-		background: rgba(255,255,255,0.97);
+		background: #fff;
 		box-shadow: 0 1em 2em rgba(0,0,0,0.4);
 		width: 95%;
 		max-height: 95%;
 		overflow: scroll;
-		max-width: 45rem;
+		max-width: 40rem;
 		overflow: auto;
-		padding: 2em 3em;
-		border-radius: 0.25em;
+		padding: 1.5em;
 		.widget {
 			position: absolute;
 			right: 1em;
@@ -530,11 +679,17 @@ aside {}
 		h1 {
 			line-height: 1;
 		}
+        @media (min-width: 600px) {
+            padding: 2em 3em;
+        }
 
+        .flex-half {
+            margin-bottom: 2em;
+        }
 	}
 	&.disabled {
-		height: 0;
-		opacity: 1;
+		//height: 0;
+		opacity: 0;
 		padding: 0;
 		z-index: -999;
 	}
@@ -547,12 +702,18 @@ aside {}
 	fieldset {
 		margin: 1.5em 0;
 		legend {
-			font-weight: bold;
-			font-size: 1.1em;
+			font-weight: 300;
+			font-size: 1.125em;
+            display: block;
+            margin-bottom: 0.5em;
 		}
+
+      &.current-tools {
+        margin: 0;
+      }
 	}
 	li {
-		margin-bottom: 0.25em;
+		margin: 0.5em 0;
 		label {
 			position: relative;
 			top: -3px;
@@ -562,65 +723,119 @@ aside {}
 	&.disabled {
 		display: none;
 	}
+
+    .submit {
+      text-align: right;
+    }
+
+    .other-field {
+      display: block;
+      margin-top: 0.25rem;
+    }
 }
 
 form {
-	max-width: 30em;
 	margin: 0 auto;
 	ul {
 		li {
-			margin-right: 2em;
 			line-height: 1.5;
 		}
 	}
 }
 
 label {
-	color: #666;
-	font-weight: 500;
-	display: block;
-	line-height: 1;
+  color: @brand-mid;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin: 0 0 0.25em;
+  padding: 0;
 }
 
 input[type=text],
 input[type=email] {
-	background: transparent;
-	box-sizing: border-box;
-	color: #333;
-	cursor: text;
-	font-size: 1rem;
-	font-family: "Roboto", sans-serif;
-	border: 0;
-	line-height: 1.8;
-	padding: 0 0.5em;
-	width: 100%;
-	border-bottom: 2px solid @datavore;
-	&:focus {
-		border-bottom: 2px solid #2394BE;
-		box-shadow: 0 0.15em 0.3em 1px rgba(56, 110, 130, 0.47);
-		outline: none;
-	}
+  appearance: none;
+  border: 1px solid @brand-mid;
+  border-radius: 0;
+  box-sizing: border-box;
+  font-size: 0.875rem;
+  margin: 0;
+  padding: 0.5em;
+  transition: all 200ms ease;
+  width: 100%;
+
+  &:focus {
+    border: 1px solid @brand-mid;
+    box-shadow: 0 -2px 0 0 @brand-mid inset;
+    outline: none;
+  }
 }
 
-input[type=checkbox] { 
-	cursor: pointer;
-	background-color: transparent;
-	border: 2px solid @datavore;
-	display: inline-block;
-	border-radius: 0.25em;
-	bottom: -5px;
-	position: relative;
-	font-size: 1em;
-	height: 1em;
-	width: 1em;
-	-webkit-appearance: none;
-	&:focus {
-		outline: none;
-		box-shadow: 0 0.15em 0.3em 1px rgba(56, 110, 130, 0.47);
-	}
-	&:checked {
-		background-color: @datavore;
-	}
+input[type="checkbox"] {
+  display: block;
+  position: absolute;
+  z-index: -9999em;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &:hover, &:focus {
+    border: 0;
+    outline: none;
+  }
+
+  & + label {
+    color: #000;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin: 0;
+    min-height: 20px;
+    padding-left: 30px;
+    display: block;
+    position: relative;
+    user-select: none;
+
+    &:before {
+      background: @brand-mid;
+      color: #fff;
+      content: "";
+      height: 20px;
+      left: 0;
+      position: absolute;
+      transition: background 300ms ease;
+      top: 0;
+      width: 20px;
+    }
+  }
+
+  &:checked {
+    border: 0;
+
+    & + label {
+      &:after {
+        content: "";
+        background: url("/img/tether-select-check.png") no-repeat right center / auto 100%;
+        height: 10px;
+        left: 4px;
+        position: absolute;
+        top: 5px;
+        width: 12px;
+      }
+    }
+
+    &:hover + label, &:focus + label {
+      &:before {
+        background-color: @brand-base;
+      }
+    }
+  }
 }
 
 .selector {
@@ -633,7 +848,7 @@ input[type=checkbox] {
 		background-image: none;
 		background-color: transparent;
 		border: none;
-		border: 2px solid @datavore;
+		border: 2px solid @brand-mid;
 		border-radius: 0;
 		box-shadow: none;
 		box-sizing: border-box;
@@ -646,7 +861,7 @@ input[type=checkbox] {
 		width: 100%;
 		&:focus {
 			outline: none;
-			border-bottom: 2px solid @datavore;
+			border-bottom: 2px solid @brand-mid;
 		}
 	}
 }
@@ -655,7 +870,7 @@ input[type=checkbox] {
 // EXTRAS
 
 ::selection {
-	background-color: @datavore;
+	background-color: @brand-mid;
 	color: white;
 }
 

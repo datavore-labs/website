@@ -5,7 +5,7 @@ form#get-dv-form(
 	onsubmit='AJAXSubmit(this); return false;'
 )
 	.flex-row
-		.first-name
+		.first-name.flex-half
 			label(for='entry_524429341') First Name *
 			input#entry_524429341(
 				type='text',
@@ -17,7 +17,7 @@ form#get-dv-form(
 				required='',
 				title=''
 			)
-		.last-name
+		.last-name.flex-half
 			label(for='entry_659803005') Last Name *
 			input#entry_659803005(
 				type='text',
@@ -29,29 +29,28 @@ form#get-dv-form(
 				required='',
 				title=''
 			)
-	br
-	.email
-		label(for='entry_1487913489') Email *
-		input#entry_1487913489.ss-q-short(
-			type='email',
-			name='entry.1487913489',
-			value='',
-			dir='auto',
-			aria-label='EmailMust be a valid email address',
-			aria-required='true',
-			required='',
-			title='Must be a valid email address'
-		)
-	br
-	.company
-		label(for='entry_1134074082') Company
-		input#entry_1134074082.ss-q-short(
-			type='text',
-			name='entry.1134074082',
-			value='',
-			dir='auto',
-			aria-label='Company',
-			title=''
+	.flex-row
+		.email.flex-half
+			label(for='entry_1487913489') Email *
+			input#entry_1487913489.ss-q-short(
+				type='email',
+				name='entry.1487913489',
+				value='',
+				dir='auto',
+				aria-label='EmailMust be a valid email address',
+				aria-required='true',
+				required='',
+				title='Must be a valid email address'
+			)
+		.company.flex-half
+			label(for='entry_1134074082') Company
+			input#entry_1134074082.ss-q-short(
+				type='text',
+				name='entry.1134074082',
+				value='',
+				dir='auto',
+				aria-label='Company',
+				title=''
 		)
 	fieldset.current-tools
 		legend(for='entry_2036453663') Current Tools (select any that apply)
@@ -61,61 +60,56 @@ form#get-dv-form(
 			aria-label='Current Tools (select any that apply) What languages or platforms do you use when building a thesis or analysis?'
 		)
 			li
-				label
-					input#group_1485986210_1(
-						type='checkbox',
-						name='entry.1485986210',
-						value='Microsoft Excel',
-						role='checkbox'
-					)
-					span Microsoft Excel
+				input#group_1485986210_1(
+					type='checkbox',
+					name='entry.1485986210',
+					value='Microsoft Excel',
+					role='checkbox'
+				)
+				label(for="group_1485986210_1") Microsoft Excel
 			li
-				label
-					input#group_1485986210_2(
-						type='checkbox',
-						name='entry.1485986210',
-						value='R',
-						role='checkbox'
-					)
-					span R
+				input#group_1485986210_2(
+					type='checkbox',
+					name='entry.1485986210',
+					value='R',
+					role='checkbox'
+				)
+				label(for="group_1485986210_2") R
 			li
-				label
-					input#group_1485986210_3(
-						type='checkbox',
-						name='entry.1485986210',
-						value='Matlab',
-						role='checkbox'
-					)
-					span Matlab
+				input#group_1485986210_3(
+					type='checkbox',
+					name='entry.1485986210',
+					value='Matlab',
+					role='checkbox'
+				)
+				label(for="group_1485986210_3") Matlab
 			li
-				label
-					input#group_1485986210_4(
-						type='checkbox',
-						name='entry.1485986210',
-						value='Notebook (Jupyter, Zeppelin, Beaker)',
-						role='checkbox'
-					)
-					span Notebook (Jupyter, Zeppelin, Beaker)
+				input#group_1485986210_4(
+					type='checkbox',
+					name='entry.1485986210',
+					value='Notebook (Jupyter, Zeppelin, Beaker)',
+					role='checkbox'
+				)
+				label(for="group_1485986210_4") Notebook (Jupyter, Zeppelin, Beaker)
 			li
-				label
-					
-					input#group_1485986210_5(
-						type='checkbox',
-						name='entry.1485986210',
-						value='Tableau',
-						role='checkbox'
-					)
-					span Tableau
+				input#group_1485986210_5(
+					type='checkbox',
+					name='entry.1485986210',
+					value='Tableau',
+					role='checkbox'
+				)
+				label(for="group_1485986210_5") Tableau
 			li.flex-row-start
-				label
-					input#group_1485986210_6(
-						type='checkbox',
-						name='entry.1485986210',
-						value='__other_option__',
-						role='checkbox'
-					)
-					span Other:
-				span
+				input#group_1485986210_6(
+					type='checkbox',
+					name='entry.1485986210',
+					value='__other_option__',
+					role='checkbox'
+				)
+				label(for="group_1485986210_6") Other:
+
+				span.other-field
+					label.wai(for="entry_1485986210_other_option_response")
 					input#entry_1485986210_other_option_response(
 						type='text',
 						name='entry.1485986210.other_option_response',
@@ -125,7 +119,7 @@ form#get-dv-form(
 					)
 
 	.flex-row
-		fieldset.external-data
+		fieldset.external-data.flex-half
 			legend.ss-q-item-label(for='entry_1752542274') External Data Sources
 			//- What are some external places you get your data from?
 			ul(  
@@ -133,60 +127,55 @@ form#get-dv-form(
 				aria-label='External Data Sources What are some external places you get your data from?'
 			)
 				li
-					label
-						input#group_1587616094_1(
-							type='checkbox',
-							name='entry.1587616094',
-							value='Bloomberg',
-							role='checkbox'
-						)
-						span Bloomberg
+					input#group_1587616094_1(
+						type='checkbox',
+						name='entry.1587616094',
+						value='Bloomberg',
+						role='checkbox'
+					)
+					label(for="group_1587616094_1") Bloomberg
 				li
-					label
-						input#group_1587616094_2(
-							type='checkbox',
-							name='entry.1587616094',
-							value='Factset',
-							role='checkbox'
-						)
-						span Factset
+					input#group_1587616094_2(
+						type='checkbox',
+						name='entry.1587616094',
+						value='Factset',
+						role='checkbox'
+					)
+					label(for="group_1587616094_2") Factset
 				li
-					label
-						input#group_1587616094_3(
-							type='checkbox',
-							name='entry.1587616094',
-							value='S&P Capital IQ',
-							role='checkbox'
-						)
-						span S&amp;P Capital IQ
+					input#group_1587616094_3(
+						type='checkbox',
+						name='entry.1587616094',
+						value='S&P Capital IQ',
+						role='checkbox'
+					)
+					label(for="group_1587616094_3") S&amp;P Capital IQ
 				li
-					label
-						input#group_1587616094_4(
-							type='checkbox',
-							name='entry.1587616094',
-							value='Thomson Reuters',
-							role='checkbox'
-						)
-						span Thomson Reuters
+					input#group_1587616094_4(
+						type='checkbox',
+						name='entry.1587616094',
+						value='Thomson Reuters',
+						role='checkbox'
+					)
+					label(for="group_1587616094_4") Thomson Reuters
 				li
-					label
-						input#group_1587616094_5(
-							type='checkbox',
-							name='entry.1587616094',
-							value='Xignite',
-							role='checkbox'
-						)
-						span Xignite
+					input#group_1587616094_5(
+						type='checkbox',
+						name='entry.1587616094',
+						value='Xignite',
+						role='checkbox'
+					)
+					label(for="group_1587616094_5") Xignite
 				li.flex-row-start
-					label
-						input#group_1587616094_7(
-							type='checkbox',
-							name='entry.1587616094',
-							value='__other_option__',
-							role='checkbox'
-						)
-						span Other:
-					span
+					input#group_1587616094_7(
+						type='checkbox',
+						name='entry.1587616094',
+						value='__other_option__',
+						role='checkbox'
+					)
+					label(for="group_1587616094_7") Other:
+					span.other-field
+						label.wai(for="entry_1587616094_other_option_response")
 						input#entry_1587616094_other_option_response(
 							type='text',
 							name='entry.1587616094.other_option_response',
@@ -194,7 +183,7 @@ form#get-dv-form(
 							dir='auto',
 							aria-label='Other'
 						)
-		fieldset.internal-data
+		fieldset.internal-data.flex-half
 			legend(for='entry_2085689548') Internal Data Sources
 				//- What do you use internally to share and access data?
 			ul(
@@ -202,42 +191,39 @@ form#get-dv-form(
 				aria-label='Internal Data Sources What do you use internally to share and access data?'
 			)
 				li
-					label
-						input#group_142526704_1(
-							type='checkbox',
-							name='entry.142526704',
-							value='Excel File',
-							role='checkbox'
-						)
-						span Excel File
+					input#group_142526704_1(
+						type='checkbox',
+						name='entry.142526704',
+						value='Excel File',
+						role='checkbox'
+					)
+					label(for="group_142526704_1") Excel File
 				li
-					label
-						input#group_142526704_2(
-							type='checkbox',
-							name='entry.142526704',
-							value='PDF',
-							role='checkbox'
-						)
-						span PDF
+					input#group_142526704_2(
+						type='checkbox',
+						name='entry.142526704',
+						value='PDF',
+						role='checkbox'
+					)
+					label(for="group_142526704_2") PDF
 				li
-					label
-						input#group_142526704_3(
-							type='checkbox',
-							name='entry.142526704',
-							value='Database',
-							role='checkbox'
-						)
-						span Database
+					input#group_142526704_3(
+						type='checkbox',
+						name='entry.142526704',
+						value='Database',
+						role='checkbox'
+					)
+					label(for="group_142526704_3") Database
 				li.flex-row-start
-					label
-						input#group_142526704_4(
-							type='checkbox',
-							name='entry.142526704',
-							value='__other_option__',
-							role='checkbox'
-						)
-						span Other:
-					span
+					input#group_142526704_4(
+						type='checkbox',
+						name='entry.142526704',
+						value='__other_option__',
+						role='checkbox'
+					)
+					label(for="group_142526704_4") Other:
+					span.other-field
+						label(for="entry_142526704_other_option_response")
 						input#entry_142526704_other_option_response(
 							type='text',
 							name='entry.142526704.other_option_response',
