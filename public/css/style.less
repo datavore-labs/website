@@ -6,6 +6,19 @@
 @brand-high: #81afc4;
 
 ///////////////////
+// ANIMATIONS
+
+@keyframes dataloop {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+///////////////////
 // BASELINE
 * {
 	box-sizing: border-box;
@@ -342,8 +355,6 @@ section {
 	}
 }
 
-aside {}
-
 ///////////////////
 // SECTIONS
 
@@ -355,6 +366,77 @@ aside {}
 	color: white;
 	padding-top: 12em;
     padding-bottom: 5em;
+    position: relative;
+    overflow: hidden;
+
+    .lines span, .lines:before, .lines:after {
+      animation: dataloop 60s linear infinite;
+      background: url("/img/infinite_line_3.svg") no-repeat center center / 100% auto;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: 0;
+      opacity: 0.125;
+      width: 400%;
+      transition: opacity 500ms ease;
+
+      @media (min-width: 900px) {
+        background-position: center bottom;
+        background-size: 100% auto;
+        width: 200%;
+      }
+    }
+
+    .lines span {
+      background-position: center 55%;
+      @media (min-width: 900px) {
+        animation-duration: 30s;
+        background-position: center 90%;
+      }
+    }
+
+    .lines:after {
+      background-image: url("/img/infinite_line_1.svg");
+      animation-duration: 90s;
+
+      @media (min-width: 900px) {
+        animation-duration: 45s;
+      }
+    }
+
+    .lines:before {
+      background-image: url("/img/infinite_line_2.svg");
+      animation-duration: 140s;
+
+      @media (min-width: 900px) {
+        animation-duration: 70s;
+      }
+    }
+
+    &[data-highlight="1"] {
+      .lines:before {
+        opacity: 0.4;
+      }
+    }
+
+    &[data-highlight="2"] {
+      .lines:after {
+        opacity: 0.4;
+      }
+    }
+
+    &[data-highlight="3"] {
+      .lines span {
+        opacity: 0.4;
+      }
+    }
+
+    aside {
+      position: relative;
+      z-index: 2;
+    }
 
     img {
         display: block;
@@ -365,14 +447,24 @@ aside {}
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       font-weight: 100;
       margin-bottom: 10px;
     }
 
     h2 {
-      font-size: 2em;
+      font-size: 1.5em;
       font-weight: 100;
+    }
+
+    @media (min-width: 400px) {
+      h1 {
+        font-size: 3em;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
     }
 
     @media (min-width: 650px) {
@@ -380,6 +472,9 @@ aside {}
     }
 
     @media (min-width: 900px) {
+        padding-top: 12em;
+        padding-bottom: 9em;
+
         aside {
             align-items: center;
             display: flex;
@@ -410,7 +505,7 @@ aside {}
     }
 
     @media (min-width: 1000px) {
-      padding: 10em 20px 7.5em;
+      padding: 13em 20px 10em;
       aside {
         width: 49rem;
       }
