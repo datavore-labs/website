@@ -33,24 +33,26 @@ $('#what .card').on('click', function() {
     $(this).toggleClass('flipped');
 });
 
-var highlightCounter = 1;
-var hasHighlight = false;
+if ($('#header').length) {
+    var highlightCounter = 1;
+    var hasHighlight = false;
 
-setInterval(function() {
-    if (!hasHighlight) {
-        if (highlightCounter > 3) {
-            highlightCounter = 1;
+    setInterval(function() {
+        if (!hasHighlight) {
+            if (highlightCounter > 3) {
+                highlightCounter = 1;
+            }
+            $('#header').attr('data-highlight', highlightCounter);
+            highlightCounter++;
+            hasHighlight = true;
+
+            setTimeout(function() {
+                $('#header').removeAttr('data-highlight');
+                hasHighlight = false;
+            }, 5000);
         }
-        $('#header').attr('data-highlight', highlightCounter);
-        highlightCounter++;
-        hasHighlight = true;
-
-        setTimeout(function() {
-            $('#header').removeAttr('data-highlight');
-            hasHighlight = false;
-        }, 5000);
-    }
-}, 30000);
+    }, 30000);
+}
 
 
 // @todo: figure out a new scrollspy method
