@@ -94,6 +94,24 @@ small {
   margin: 0;
 }
 
+.bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  top: -75%;
+  z-index: 0;
+}
+
+.over-bg {
+  position: relative;
+  z-index: 2;
+}
+
 
 ///////////////////
 // NAV MENU
@@ -338,9 +356,11 @@ menu {
 section {
 	position: relative;
 	//position: absolute;
+    overflow: hidden;
 	padding: 6em 10%;
 	//height: 100%;
 	width: 100%;
+    z-index: 3;
 }
 
 @media (min-width: 1024px) {
@@ -543,6 +563,22 @@ section {
 	//top: 200%;
 	//height: 25%;
     background: @brand-base;
+    z-index: 1;
+
+    @media (max-width: 899px) {
+      padding: 4em;
+    }
+}
+
+.parallax-lines {
+  .bg {
+    background-size: 100% auto;
+    height: 100%;
+    width: 200%;
+    opacity: 0.25;
+    top: 0;
+    left: -100%;
+  }
 }
 
 #how {
@@ -622,9 +658,14 @@ section {
         color: rgba(255,255,255,1);
         border-bottom: 2px solid rgba(255,255,255,1);
 	}
+
+    .bg {
+      background-position: 35% center;
+    }
 }
 
 #working {
+    background: @brand-base;
 	position: relative;
 	padding: 20em 10% 10em 10%;
 	width: 100%;
@@ -635,13 +676,48 @@ section {
 	color: white;
 	h1 {
 		.centered;
+        font-size: 2.5em;
 		transform: translate(-50%, -40%);
 		margin: 0;
 	}
+
+    .parallax-lines {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 10rem;
+    }
+
+    @media (min-width: 400px) {
+      h1 {
+        font-size: 3em;
+      }
+    }
+
+    @media (min-width: 900px) {
+      h1 {
+        font-size: 4em;
+      }
+    }
+
+    @media (min-width: 1000px) {
+      h1 {
+        font-size: 5em;
+      }
+
+      .parallax-lines .bg {
+        background-position: center top;
+      }
+    }
 }
 
 ///////////////////
 // JOBS
+#jobs {
+  padding: 0;
+  background: #fff;
+}
 .job {
 	padding: 3em 0;
 	min-width: 320px;
@@ -649,12 +725,9 @@ section {
 	margin: 0 auto;
 
     &-cta {
-        padding-bottom: 6em;
-    }
-
-    .button-cta {
-        top: 0;
-        transform: translate3d(-50%,0,0);
+      padding-bottom: 4em;
+      padding-top: 0;
+      text-align: center;
     }
 
 	&.hidden {
@@ -734,6 +807,26 @@ section {
 		pointer-events: none;
 		z-index: -1;
 	}
+
+    h2 {
+      background: #eee;
+      padding: 10px 20px;
+      margin: -25px -24px 1.5rem;
+      width: auto;
+
+      @media (min-width: 600px) {
+        margin: -32px -48px 1.5rem;
+        padding: 15px 48px;
+      }
+
+      span {
+        font-size: 1.625rem;
+        font-weight: 300;
+        padding: 0.25em 0;
+        display: block;
+      }
+    }
+
 	.thanks {
 		.fill;
 		background: white;
@@ -760,16 +853,50 @@ section {
 		box-shadow: 0 1em 2em rgba(0,0,0,0.4);
 		width: 95%;
 		max-height: 95%;
-		overflow: scroll;
+		//overflow: scroll;
 		max-width: 40rem;
-		overflow: auto;
+		overflow: hidden;
 		padding: 1.5em;
 		.widget {
-			position: absolute;
-			right: 1em;
-			top: 1em;
-			line-height: 1.6;
-			z-index: 2;
+            background: none;
+            height: 2rem;
+            width: 2rem;
+            z-index: 3;
+            right: 20px;
+            top: 1rem;
+            position: absolute;
+            border-radius: 0;
+
+            &:before, &:after {
+              background: #9b9b9b;
+              content: "";
+              display: block;
+              width: 1px;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transition: all 200ms ease;
+            }
+
+            &:before {
+              transform: translate3d(-50%,0,0) rotate(45deg);
+            }
+
+            &:after {
+              transform: translate3d(-50%,0,0) rotate(-45deg);
+            }
+
+            @media (min-width: 600px) {
+              top: 1.25rem;
+              right: 2rem;
+            }
+
+            &:hover, &:focus {
+              &:before, &:after {
+                background: @brand-base;
+              }
+            }
 		}
 		h1 {
 			line-height: 1;
@@ -780,6 +907,13 @@ section {
 
         .flex-half {
             margin-bottom: 2em;
+        }
+
+        form {
+          max-height: 75vh;
+          overflow: auto;
+          -webkit-overflow-scrolling: touch;
+
         }
 	}
 	&.disabled {

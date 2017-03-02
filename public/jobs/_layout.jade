@@ -38,12 +38,14 @@ html
 		!= partial("../_shared/about")
 
 		// required scripts
-		script(src="../js/jquery.min.js")
-		script(src="../js/parallax.min.js")
-		script(src="../js/jquery.flip.min.js")
+		script(src="/js/jquery.min.js", type="application/javascript")
+		// for animations
+		script(src="/js/ScrollMagic_plugins/TweenMax.min.js")
+		script(src="/js/ScrollMagic.min.js")
+		script(src="/js/ScrollMagic_plugins/animation.gsap.min.js")
 		// main page script
-		script(src="../js/index.js")
+		script(src="/js/index.js", type="application/javascript")
 		// google rich snippets schema
-		script(src="../js/schema.js")
+		script(src="/js/schema.js", type="application/ld+json")
 		// google analytics
-		script(src="../js/analytics.js")
+		script(src="/js/analytics.js", type="application/javascript")

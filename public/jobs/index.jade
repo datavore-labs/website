@@ -1,6 +1,10 @@
 section#working
 	h1 Work with Datavore
 		sup &reg;
+	.parallax-lines
+		.bg(aria-hidden="true" style="background-image:url('/img/infinite_line_1.svg');")
+		.bg(aria-hidden="true" style="background-image:url('/img/infinite_line_2.svg');")
+		.bg(aria-hidden="true" style="background-image:url('/img/infinite_line_3.svg');")
 
 //section.job-list
 //	a(data-job="software-engineer").job-toggle Software Engineer
@@ -15,11 +19,12 @@ section#working
 //section.design-lead.job
 //	include:markdown _design-lead.md
 
-section.job
-	p.text--center We're always looking to work with talented people who love data.
+section#jobs
+	section.job
+		p.text--center We're always looking to work with talented people who love data.
 
-section.job.job-cta
-	a(href="mailto:jobs@datavorelabs.com").button-cta.blue Apply Now
+	section.job.job-cta
+		a(href="mailto:jobs@datavorelabs.com").button-cta.blue Apply Now
 
 //script(type="application/javascript").
 	var jobs = Array.prototype.slice.call(document.querySelectorAll('.job'));

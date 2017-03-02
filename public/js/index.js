@@ -1,34 +1,3 @@
-// parallaxy backgrounds
-// see http://pixelcog.github.io/parallax.js/
-
-// $('#header').parallax({
-// 	imageSrc: 'img/lines_1.svg',
-//     position: 'center 200px',
-//     zIndex: 2,
-// });
-
-$('#get1').parallax({
-	imageSrc: 'img/backgrounds/omar-style.jpg'
-});
-
-// $('#get2').parallax({
-// 	imageSrc: 'img/backgrounds/omar-style.jpg'
-// });
-
-$('#who').parallax({
-	imageSrc: 'img/backgrounds/43West23rdStreetNY.jpg'
-});
-
-$('#working').parallax({
-	imageSrc: '../img/backgrounds/omar-style.jpg'
-});
-
-
-// card flipping animation
-// https://nnattawat.github.io/flip/
-
-// $(".card").flip();
-
 $('#what .card').on('click', function() {
     $(this).toggleClass('flipped');
 });
@@ -37,7 +6,7 @@ if ($('#header').length) {
     var highlightCounter = 1;
     var hasHighlight = false;
 
-    setInterval(function() {
+    function changeHighlight() {
         if (!hasHighlight) {
             if (highlightCounter > 3) {
                 highlightCounter = 1;
@@ -51,8 +20,34 @@ if ($('#header').length) {
                 hasHighlight = false;
             }, 5000);
         }
-    }, 30000);
+    }
+
+    setTimeout(function() {
+       setInterval(changeHighlight, 30000);
+       changeHighlight();
+    }, 10000);
 }
+
+// parallax animation for divider section
+// init controller
+var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+
+// build scenes
+new ScrollMagic.Scene({triggerElement: "#who"})
+    .setTween("#who > div.bg", {y: "80%", ease: Linear.easeNone})
+    .addTo(controller);
+
+new ScrollMagic.Scene({triggerElement: ".parallax-lines"})
+    .setTween(".parallax-lines > div.bg:nth-child(1)", {x: "20%", ease: Linear.easeNone})
+    .addTo(controller);
+
+new ScrollMagic.Scene({triggerElement: ".parallax-lines"})
+    .setTween(".parallax-lines > div.bg:nth-child(2)", {x: "10%", ease: Linear.easeNone})
+    .addTo(controller);
+
+new ScrollMagic.Scene({triggerElement: ".parallax-lines"})
+    .setTween(".parallax-lines > div.bg:nth-child(3)", {x: "5%", ease: Linear.easeNone})
+    .addTo(controller);
 
 
 // @todo: figure out a new scrollspy method
