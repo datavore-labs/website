@@ -8,7 +8,7 @@ if ($('#header').length) {
 
     function changeHighlight() {
         if (!hasHighlight) {
-            if (highlightCounter > 3) {
+            if (highlightCounter > 2) {
                 highlightCounter = 1;
             }
             $('#header').attr('data-highlight', highlightCounter);
@@ -23,7 +23,7 @@ if ($('#header').length) {
     }
 
     setTimeout(function() {
-       setInterval(changeHighlight, 30000);
+       setInterval(changeHighlight, 20000);
        changeHighlight();
     }, 10000);
 }

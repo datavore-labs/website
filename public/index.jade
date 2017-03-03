@@ -1,5 +1,18 @@
 section#header
 	.lines(aria-hidden="true"): span
+	.graphs(aria-hidden="true")
+		.graph-1
+			.bar
+			.bar
+			.bar
+			.bar
+		.graph-2
+			.bar
+			.bar
+			.bar
+			.bar
+			.bar
+
 	aside
 		img(src="/img/logo_header.png" alt="Datavore Logo")
 		div
@@ -146,10 +159,12 @@ script(type="application/javascript", async="", defer="").
 			signup.classList.remove('disabled');
 			form.classList.remove('disabled');
 			thanks.classList.add('disabled');
+			document.body.classList.add('paused');
 		}
 		else
 		{
 			signup.classList.add('disabled');
+			document.body.classList.remove('paused');
 			if (form)
 			{
 				form.reset();
