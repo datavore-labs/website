@@ -79,9 +79,61 @@ section#how
 			| No coding is necessary as calculations use familiar formula syntax and queries are built visually.
 
 section#get2
-	.button-cta.toggle_signup Sign up to get early access to our beta&nbsp;platform.
+	h2 Join our mailing list for updates on our beta&nbsp;platform.
 
-#signup.disabled
+	form#mc-embedded-subscribe-form(
+		action="//datavorelabs.us9.list-manage.com/subscribe/post?u=76c93f4e35a4e2ebbb325bbfd&amp;id=7c9a2a57ba"
+		method="post"
+		name="mc-embedded-subscribe-form"
+		class="validate"
+		target="_blank"
+		novalidate
+	)
+		#mc_embed_signup_scroll
+			.mc-field-group
+				label.wai(
+					for="mce-EMAIL"
+				) Email Address
+				input(
+					type="email"
+					value=""
+					name="EMAIL"
+					placeholder="Email Address"
+					class="required email"
+					id="mce-EMAIL"
+					required="required"
+					aria-required="true"
+					autocomplete="off"
+				)
+			.mc-field-group(
+				style="position: absolute; left: -5000px;"
+				aria-hidden="true"
+			)
+				input(
+					type="text"
+					name="b_76c93f4e35a4e2ebbb325bbfd_7c9a2a57ba"
+					tabindex="-1"
+					value=""
+				)
+
+			button(
+				type="submit"
+				name="subscribe"
+				id="mc-embedded-subscribe"
+			) Join
+
+		#mc_loader
+			svg(viewBox="0 0 405.2 258.3")
+				g
+					g
+						rect.bar-3(x="168" y="31.7" width="69.3" height="154.9")
+						rect.bar-2(x="84" y="65.8" width="69.3" height="120.8")
+						rect.bar-4(x="251.9" y="45.1" width="69.3" height="141.5")
+						polygon.bar-1(points="0,189 69.3,258.3 69.3,85.2 0,85.2")
+						polygon.bar-5(points="405.2,189 335.9,258.3 335.9,76 335.9,74.1 335.9,0 405.2,0")
+
+
+//- #signup.disabled
 	.content
 		.widget.toggle_signup
 		h2: span Get Early Access
@@ -95,7 +147,7 @@ section#get2
 	.shim
 
 // Scripts for everything else
-script(type="application/javascript", async="", defer="").
+//- script(type="application/javascript", async="", defer="").
 	'use strict';
 	function init()
 	{

@@ -49,80 +49,75 @@ new ScrollMagic.Scene({triggerElement: ".parallax-lines"})
     .setTween(".parallax-lines > div.bg:nth-child(3)", {x: "5%", ease: Linear.easeNone})
     .addTo(controller);
 
+// MailChimp Form
+var form = $('#mc-embedded-subscribe-form');
 
-// @todo: figure out a new scrollspy method
+if (form.length) {
+    var formEmail = form.find('input[name="EMAIL"]');
 
-// first method: didn't give us what we needed, a little clunky
+    window.fnames = new Array();
+    window.ftypes = new Array();
 
-// section snap scrolling
-// disabled for initial release
-// see http://projects.lukehaas.me/scrollify
-// alternative if needed https://github.com/peachananr/purejs-onepage-scroll
+    fnames[0]='EMAIL';
+    ftypes[0]='email';
 
-/*
-$.scrollify({
-	section : "section",
-	easing: "easeOutExpo",
-	scrollSpeed: 1100,
-	offset : 0,
-	scrollbars: true,
-	before:function() {},
-	after:function() {},
-	afterResize:function() {}
-});
-*/
+    function enableForm() {
+        form.find('button[type="submit"]').removeAttr('disabled');
+        form.removeClass('disabled');
+    }
 
+    function disableForm() {
+        $('.mc-field-error').remove();
+        form.find('button[type="submit"]').attr('disabled', 'disabled');
+        form.addClass('disabled');
+    }
 
-// second method: strip out the fancy stuff and cut straight to jquery
+    function getAjaxSubmitUrl() {
+        var url = form.attr("action");
+        url = url.replace("/post?u=", "/post-json?u=");
+        url += "&c=submitCallback";
+        return url;
+    }
 
-// minimalistic scrollspy
-// from https://jsfiddle.net/mekwall/up4nu/
-/*
-// Cache selectors
-var lastId,
-	topMenu = $("#top-menu"),
-	topMenuHeight = topMenu.outerHeight() + 15,
-	// All list items
-	menuItems = topMenu.find("a"),
-	// Anchors corresponding to menu items
-	scrollItems = menuItems.map(function() {
-		var item = $($(this).attr("href"));
-		if (item.length) {
-			return item;
-		}
-	});
+    function showError(message) {
+        $('.mc-field-error').remove();
+        $('<div class="mc-field-error">' + message + '</div>').insertAfter(form.find('#mc_embed_signup_scroll'));
+    }
 
-// Bind click handler to menu items
-// so we can get a fancy scroll animation
-menuItems.click(function(e) {
-	var href = $(this).attr("href"),
-		offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
-	$('html, body').stop().animate({
-		scrollTop: offsetTop
-	}, 300);
-	e.preventDefault();
-});
+    window.submitCallback = function submitCallback(response) {
+        if (response.result === 'success') {
+            form.replaceWith($('<div class="email-capture" id="email-thanks"><span>Thanks for signing up. We\'re glad you love data as much as we do.</span></div>'));
+        }
+        else {
+            enableForm();
+            showError(response.msg);
+        }
+    }
 
-// Bind to scroll
-$(window).scroll(function() {
-	// Get container scroll position
-	var fromTop = $(this).scrollTop() + topMenuHeight;
+    form.on('submit', function(e) {
+        e.preventDefault();
 
-	// Get id of current scroll item
-	var cur = scrollItems.map(function() {
-		if ($(this).offset().top < fromTop)
-			return this;
-	});
-	// Get the id of the current element
-	cur = cur[cur.length - 1];
-	var id = cur && cur.length ? cur[0].id : "";
+        if (!formEmail.val() || formEmail.val().trim().length === 0) {
+            return false;
+        }
 
-	if (lastId !== id) {
-		lastId = id;
-		// Set/remove active class
-		menuItems
-			.parent().removeClass("active")
-			.end().filter("[href=#" + id + "]").parent().addClass("active");
-	}
-});
-*/
+        disableForm();
+
+        var emailRegex = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+        var valid = formEmail.val().match(emailRegex) !== null;
+
+        if (!valid) {
+            //show error message
+            enableForm();
+            showError('Please enter a valid email address.');
+            return false;
+        }
+        else {
+            $.ajax({
+                url: getAjaxSubmitUrl(),
+                dataType: 'jsonp',
+                data: form.serialize()
+            });
+        }
+    });
+}

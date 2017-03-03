@@ -18,6 +18,18 @@
   }
 }
 
+@keyframes fadeAround {
+  0% {
+    opacity: 0;
+    transform: translateZ(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateZ(1);
+  }
+}
+
 ///////////////////
 // BASELINE
 * {
@@ -800,6 +812,160 @@ section {
 	//height: 25%;
     background: @brand-base;
     text-align: center;
+
+    h2 {
+      color: #fff;
+      font-size: 1.75em;
+    }
+
+    .email-capture {
+      background: @brand-mid;
+      box-sizing: border-box;
+      color: #fff;
+      margin: 0 auto;
+      max-width: 42rem;
+      font-size: 1.25rem;
+      padding: 0.75em 1em;
+    }
+
+    form {
+      background: @brand-mid;
+      box-sizing: border-box;
+      margin: 0 auto;
+      max-width: 42rem;
+      position: relative;
+
+      input, button {
+        font-size: 1.25rem;
+      }
+
+      .mc-field-group {
+        flex: 1 1 auto;
+      }
+
+      input {
+        background: none;
+        border: 0;
+        color: #fff;
+        padding: 0.75em 1em;
+
+        &::-webkit-input-placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        &::-moz-placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        &:-ms-input-placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        &:-moz-placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+
+      #mc_embed_signup_scroll {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+      }
+
+      button {
+        appearance: none;
+        background: darken(@brand-mid, 5%);
+        border: 0;
+        color: #fff;
+        cursor: pointer;
+        flex: 0 0 auto;
+        transition: all 200ms ease;
+        padding: 0.75em 1em;
+
+        &:hover, &:focus {
+          background: @brand-mid;
+        }
+
+        @media (min-width: 900px) {
+          padding: 0.5em 2em;
+        }
+      }
+
+      .mc-field-error {
+        background: @brand-base;
+        color: #fff;
+        padding: 10px;
+
+        a {
+          display: block;
+          color: #fff;
+          text-decoration: underline;
+        }
+      }
+
+      #mc_loader {
+        display: none;
+      }
+
+      &.disabled {
+        background: lighten(@brand-base, 4%);
+
+        button {
+          background: lighten(@brand-base, 1%);
+        }
+
+        #mc_embed_signup_scroll {
+          opacity: 0.2;
+          pointer-events: none;
+          user-select: none;
+        }
+
+        #mc_loader {
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          transform: translateZ(0);
+          z-index: 99999;
+
+          svg {
+            fill: #fff;
+            max-width: 50px;
+            width: 50%;
+
+            rect,polygon {
+              animation: fadeAround 1s ease infinite alternate;
+              opacity: 0;
+
+              &.bar-1 {
+                animation-delay: 200ms;
+              }
+
+              &.bar-2 {
+                animation-delay: 400ms;
+              }
+
+              &.bar-3 {
+                animation-delay: 600ms;
+              }
+
+              &.bar-4 {
+                animation-delay: 800ms;
+              }
+
+              &.bar-5 {
+                animation-delay: 1000ms;
+              }
+            }
+          }
+        }
+      }
+    }
 }
 
 #who {
@@ -835,6 +1001,11 @@ section {
 
     .bg {
       background-position: 35% center;
+    }
+
+    ul b {
+      display: inline-block;
+      margin-right: 5px;
     }
 }
 
