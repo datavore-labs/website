@@ -26,3 +26,24 @@ if (header) {
 		changeHighlight();
 	}, 10000);
 }
+
+// Scroll watch for header
+const main = document.querySelector('main');
+const nav = document.querySelector('nav');
+let scrollThrottle = false;
+
+const setHeaderStyle = () => {
+	nav.setAttribute('data-faded', main.scrollTop < 200);
+};
+
+setHeaderStyle();
+
+main.addEventListener('scroll', () => {
+	if (!scrollThrottle) {
+		scrollThrottle = true;
+		requestAnimationFrame(() => {
+			setHeaderStyle();
+			scrollThrottle = false;
+		});
+	}
+}, { passive: true });

@@ -2,10 +2,19 @@
 	background: $brand-base;
 	text-align: center;
 	color: white;
-	padding-top: 8em;
+	padding-top: 5em;
 	padding-bottom: 5em;
 	position: relative;
 	overflow: hidden;
+
+	@media (min-width: $start-md) {
+		padding-top: 6em;
+	}
+
+	@media (min-width: $start-lg) {
+		padding-top: 8em;
+		padding-bottom: 9em;
+	}
 
 	.lines span, .lines:before, .lines:after {
 		animation: dataloop 60s linear infinite;
@@ -29,7 +38,8 @@
 
 	.lines span {
 		background-position: center 55%;
-		@media (min-width: 900px) {
+
+		@media (min-width: $start-md) {
 			animation-duration: 30s;
 			background-position: center 90%;
 		}
@@ -68,73 +78,37 @@
 	aside {
 		position: relative;
 		z-index: 2;
+
+		@media (min-width: 650px) {
+			align-items: center;
+			display: flex;
+			flex-flow: row nowrap;
+			margin: 0 auto;
+			width: 35rem;
+
+			> div {
+				margin-left: 60px;
+			}
+		}
 	}
 
-	img {
+	.logo-header {
 		display: block;
 		margin: 0 auto 3rem;
 		width: 40%;
 		max-width: 200px;
 		transform: translateX(1%);
-	}
 
-	h1 {
-		color: $white;
-		font-size: 2.5em;
-		font-weight: 100;
-		margin-bottom: 10px;
-	}
-
-	h2 {
-		font-size: 1.5em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 400px) {
-		h1 {
-			font-size: 3em;
-		}
-
-		h2 {
-			font-size: 2em;
-		}
-	}
-
-	@media (min-width: 650px) {
-		padding-top: 6em;
-	}
-
-	@media (min-width: 900px) {
-		padding-top: 8em;
-		padding-bottom: 9em;
-
-		aside {
-			align-items: center;
-			display: flex;
-			flex-flow: row nowrap;
-			margin: 0 auto;
-			width: 42rem;
-		}
-
-		h1, h2 {
-			text-align: left;
-		}
-
-		h1 {
-			font-size: 4em;
-		}
-
-		h2 {
+		@media (min-width: 650px) {
 			margin: 0;
 		}
+	}
 
-		div {
-			margin-left: 60px;
-		}
-
-		img {
-			margin: 0;
-		}
+	.tagline-header {
+		display: block;
+		margin: 0 auto;
+		max-width: 300px;
+		width: 60%;
 	}
 
 	@media (min-width: 1000px) {
@@ -174,7 +148,7 @@
 
 	.graph-1 {
 		position: absolute;
-		top: 10%;
+		top: 5%;
 		left: 0;
 		height: 130px;
 		width: 200px;
@@ -221,7 +195,7 @@
 
 	.graph-2 {
 		position: absolute;
-		bottom: 40%;
+		bottom: 38%;
 		right: 0;
 		height: 100px;
 		width: 210px;
