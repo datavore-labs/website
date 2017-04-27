@@ -1,0 +1,91 @@
+#page {
+	background: #fcfcfc;
+	display: block;
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+
+	h1 {
+		color: $black;
+		font-size: 2.25rem;
+		margin: 0.5em auto 0.5em;
+
+		sup {
+			font-size: 0.5em;
+		}
+	}
+
+	nav {
+		background: $brand-base;
+		height: $nav-height;
+		padding: 0 20px;
+
+		.container {
+			box-sizing: border-box;
+			display: flex;
+			height: 100%;
+			justify-content: space-between;
+		}
+
+		button, .btn {
+			border: 0;
+			background: none;
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+			color: $white;
+			font-size: 1rem;
+			font-weight: 300;
+			-webkit-appearance: none;
+
+			&:hover, &:focus, &.nav-active {
+				background: $brand-mid;
+				color: $white;
+				outline: none;
+			}
+		}
+
+		.logo {
+			padding: 0.625em 1em;
+			position: relative;
+			left: -1em;
+
+			&:hover, &:focus {
+				outline: none;
+			}
+
+			svg {
+				display: block;
+				height: calc(#{$nav-height} - 20);
+				fill: $white;
+			}
+		}
+
+		ul {
+			display: flex;
+			list-style: none;
+			margin: 0 -1em 0 0;
+			padding: 0;
+
+			.btn {
+				box-sizing: border-box;
+				height: 100%;
+			}
+		}
+	}
+
+	main {
+		box-sizing: border-box;
+		height: calc(100% - #{$nav-height});
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.section-introduction {
+		margin-bottom: 3rem;
+
+		p {
+			margin: 0 0 0.25rem;
+		}
+	}
+}

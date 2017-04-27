@@ -1,0 +1,60 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(name="viewport", content="width=device-width,initial-scale=1")
+		meta(name="mobile-web-app-capable", content="yes")
+		link(rel="icon", type="image/png", href="/images/favicon/32.png", sizes="32x32")
+		link(rel="icon" type="image/png" href="/images/favicon/96.png", sizes="96x96")
+		link(rel="icon", type="image/png", href="/images/favicon/16.png", sizes="16x16")
+		link(rel="apple-touch-icon-precomposed", href="/images/favicon/152.png")
+		link(rel="stylesheet", href="/css/app.min.css")
+		title Datavore&reg;
+	body
+		#page
+			a.wai(href="#content")
+			nav
+				.container
+					a.btn.logo(
+						href="http://datavorelabs.com"
+						title="Datavore® Releases Home"
+					)
+						svg(viewBox="0 0 405.2 258.3")
+							use(xlink:href="#i-logo")
+
+					ul
+						li
+							a.btn(
+							href="/#home-contact"
+							) Contact
+
+
+			main#content
+				section#header
+					.lines(aria-hidden="true"): span
+					.graphs(aria-hidden="true")
+						.graph-1
+							.bar
+							.bar
+							.bar
+							.bar
+						.graph-2
+							.bar
+							.bar
+							.bar
+							.bar
+							.bar
+
+					aside
+						img(src="/images/ui/logo_header.png" alt="Datavore Logo")
+						div
+							h1 Data Your Way
+
+				section#intro.container
+					p Datavore<sup>&reg;</sup> is an adaptive data analytics platform that enables anyone to quickly and easily explore multiple datasets and ask meaningful questions. It provides an  intuitive workflow interface enabling the consumption, normalization, analysis, and generation of visualizations.
+
+		script(
+			src="app.bundle.js",
+			async="true",
+			defer="true"
+		)

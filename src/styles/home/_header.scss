@@ -1,0 +1,330 @@
+#header {
+	background: $brand-base;
+	text-align: center;
+	color: white;
+	padding-top: 8em;
+	padding-bottom: 5em;
+	position: relative;
+	overflow: hidden;
+
+	.lines span, .lines:before, .lines:after {
+		animation: dataloop 60s linear infinite;
+		background: url("/images/ui/infinite_line_3.svg") no-repeat center center / 100% auto;
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		margin: 0;
+		opacity: 0.125;
+		width: 400%;
+		transition: opacity 500ms ease;
+
+		@media (min-width: 900px) {
+			background-position: center bottom;
+			background-size: 100% auto;
+			width: 200%;
+		}
+	}
+
+	.lines span {
+		background-position: center 55%;
+		@media (min-width: 900px) {
+			animation-duration: 30s;
+			background-position: center 90%;
+		}
+	}
+
+	.lines:after {
+		background-image: url("/images/ui/infinite_line_1.svg");
+		animation-duration: 90s;
+
+		@media (min-width: 900px) {
+			animation-duration: 45s;
+		}
+	}
+
+	.lines:before {
+		background-image: url("/images/ui/infinite_line_2.svg");
+		animation-duration: 140s;
+
+		@media (min-width: 900px) {
+			animation-duration: 70s;
+		}
+	}
+
+	&[data-highlight="1"] {
+		.lines:after {
+			opacity: 0.4;
+		}
+	}
+
+	&[data-highlight="2"] {
+		.lines span {
+			opacity: 0.4;
+		}
+	}
+
+	aside {
+		position: relative;
+		z-index: 2;
+	}
+
+	img {
+		display: block;
+		margin: 0 auto 3rem;
+		width: 40%;
+		max-width: 200px;
+		transform: translateX(1%);
+	}
+
+	h1 {
+		color: $white;
+		font-size: 2.5em;
+		font-weight: 100;
+		margin-bottom: 10px;
+	}
+
+	h2 {
+		font-size: 1.5em;
+		font-weight: 100;
+	}
+
+	@media (min-width: 400px) {
+		h1 {
+			font-size: 3em;
+		}
+
+		h2 {
+			font-size: 2em;
+		}
+	}
+
+	@media (min-width: 650px) {
+		padding-top: 6em;
+	}
+
+	@media (min-width: 900px) {
+		padding-top: 8em;
+		padding-bottom: 9em;
+
+		aside {
+			align-items: center;
+			display: flex;
+			flex-flow: row nowrap;
+			margin: 0 auto;
+			width: 42rem;
+		}
+
+		h1, h2 {
+			text-align: left;
+		}
+
+		h1 {
+			font-size: 4em;
+		}
+
+		h2 {
+			margin: 0;
+		}
+
+		div {
+			margin-left: 60px;
+		}
+
+		img {
+			margin: 0;
+		}
+	}
+
+	@media (min-width: 1000px) {
+		padding: 9em 20px 10em;
+		aside {
+			width: 49rem;
+		}
+
+		h1 {
+			font-size: 5em;
+		}
+	}
+
+	.bar {
+		background: #fff;
+		margin: 0;
+		transition: all 1s ease;
+	}
+
+	.graphs {
+		margin: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+
+		> * {
+			transform: scale(0.75);
+
+			@media (min-width: 900px) {
+				transform: scale(2);
+			}
+		}
+	}
+
+	.graph-1 {
+		position: absolute;
+		top: 10%;
+		left: 0;
+		height: 130px;
+		width: 200px;
+		margin: 0;
+		border-bottom: 1px solid #fff;
+		border-left: 1px solid #fff;
+		opacity: 0;
+		transition: opacity 500ms ease;
+
+		@media (min-width: 600px) {
+			top: 15%;
+			left: 2%;
+		}
+
+		@media (min-width: 900px) {
+			top: 20%;
+			left: 15%;
+		}
+
+		.bar {
+			position: absolute;
+			margin: 0;
+			height: 20px;
+			width: 0;
+			left: 0;
+
+			&:nth-child(1) {
+				bottom: 10px;
+			}
+
+			&:nth-child(2) {
+				bottom: 40px;
+			}
+
+			&:nth-child(3) {
+				bottom: 70px;
+			}
+
+			&:nth-child(4) {
+				bottom: 100px;
+			}
+		}
+	}
+
+	.graph-2 {
+		position: absolute;
+		bottom: 40%;
+		right: 0;
+		height: 100px;
+		width: 210px;
+		margin: 0;
+		border-bottom: 1px solid #fff;
+		border-left: 1px solid #fff;
+		opacity: 0;
+		transition: opacity 500ms ease;
+
+		@media (min-width: 600px) {
+			bottom: 57%;
+			right: 0;
+		}
+
+		@media (min-width: 900px) {
+			bottom: 35%;
+			right: 10%;
+		}
+
+		.bar {
+			bottom: 0;
+			height: 0;
+			position: absolute;
+			width: 40px;
+
+			&:nth-child(1) {
+				left: 1px;
+			}
+
+			&:nth-child(2) {
+				left: 42px;
+			}
+
+			&:nth-child(3) {
+				left: 83px;
+			}
+
+			&:nth-child(4) {
+				left: 124px;
+			}
+
+			&:nth-child(5) {
+				left: 165px;
+			}
+		}
+	}
+
+	&[data-highlight="1"] {
+		.graph-1 {
+			opacity: 0.2;
+
+			.bar {
+				&:nth-child(1) {
+					width: 35%;
+				}
+
+				&:nth-child(2) {
+					width: 70%;
+					transition-delay: 200ms;
+				}
+
+				&:nth-child(3) {
+					width: 52%;
+					transition-delay: 400ms;
+				}
+
+				&:nth-child(4) {
+					width: 86%;
+					transition-delay: 600ms;
+				}
+			}
+		}
+	}
+
+	&[data-highlight="2"] {
+		.graph-2 {
+			opacity: 0.2;
+
+			.bar {
+				&:nth-child(1) {
+					height: 20%;
+				}
+
+				&:nth-child(2) {
+					height: 45%;
+					transition-delay: 150ms;
+				}
+
+				&:nth-child(3) {
+					height: 85%;
+					transition-delay: 300ms;
+				}
+
+				&:nth-child(4) {
+					height: 62%;
+					transition-delay: 450ms;
+				}
+
+				&:nth-child(5) {
+					height: 31%;
+					transition-delay: 600ms;
+				}
+			}
+		}
+	}
+}

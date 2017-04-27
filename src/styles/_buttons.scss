@@ -1,0 +1,126 @@
+/****
+ * Buttons
+ *
+ * Style pseudo selectors in this order because they cascade
+ * :link, unvisited links
+ * :visited, visited links
+ * :hover,
+ * :focus, the user clicks or tabs to it
+ * :active, the link is being followed
+ * [disabled]
+ */
+
+.btn,button,input[type="submit"],input[type="reset"],input[type="button"] {
+	display: inline-block;
+	border-radius: 0;
+	color: $dark-grey;
+	text-align: center;
+	font-weight: 400;
+	white-space: nowrap;
+	background-color: $light-grey;
+	border: 0;
+	margin: 0;
+	padding: 0.425em 1em;
+	font-size: 1em;
+	cursor: pointer;
+	text-decoration: none;
+	transition: color $transitionSpeed / 2 ease, background $transitionSpeed / 2 ease;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+
+	&:hover,&:focus,&:active {
+		background-color: darken($light-grey, 8%);
+		color: $black;
+	}
+
+	&[disabled] {
+		background-color: $light-grey;
+		color: $black;
+		opacity: 0.25;
+		pointer-events: none;
+	}
+
+	[class^="icon-"],[class*=" icon-"] {
+		display: inline-block;
+	}
+}
+
+// primary
+.btn-primary {
+	color: $white;
+	background-color: $brand-mid;
+
+	&:hover,&:focus,&:active {
+		color: $white;
+		background-color: $brand-base;
+	}
+
+	&[disabled] {
+		background-color: $brand-mid;
+		color: $white;
+	}
+}
+
+.btn-sm {
+	font-size: 0.75rem;
+}
+
+// SVG icon buttons
+// assumes there will be an SVG reference with use xlink:href within the element
+.btn-svg-icon {
+	appearance: none;
+	background: none;
+	border: 0;
+	color: $grey;
+	display: inline-block;
+	margin: 0;
+	opacity: 0.5;
+	padding: 0;
+	position: relative;
+	height: 32px;
+	transition: opacity $transitionSpeed ease;
+	user-select: none;
+	width: 32px;
+
+	&:hover,&:focus {
+		border: 0;
+		background: none;
+		color: $grey;
+		opacity: 1;
+		outline: none;
+	}
+
+	&[disabled] {
+		background: none;
+	}
+
+	> svg {
+		display: block;
+		height: 50%;
+		left: 50%;
+		position: absolute;
+		transform: translate3d(-50%, -58%, 0);
+		stroke-width: 2;
+		top: 50%;
+		width: 50%;
+	}
+
+	&--large {
+		> svg {
+			height: 75%;
+			width: 75%;
+		}
+	}
+
+	&.btn--active {
+		color: $dark-grey;
+		opacity: 1;
+	}
+}
+
+//for text that may appear between a series of buttons
+.btn-spacer {
+	display: inline-block;
+	font-size: 0.875em;
+	margin: 0 10px;
+}

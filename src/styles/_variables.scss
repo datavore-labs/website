@@ -1,0 +1,48 @@
+// colors
+$black: #000;
+$dark-grey: #4a4a4a;
+$grey: #9b9b9b;
+$light-grey: #d8d8d8;
+$white: #fff;
+$offwhite: #f5f5f5;
+$control-bg-grey: #eee;
+$brand-base: #012946; //logo color
+$brand-mid: #09668c; //for actions
+$brand-high: #81afc4; //lighter for actions
+$error: #d00;
+$positive: #47aa31;
+$negative: #d00;
+
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif: Roboto, sans-serif;
+$font-family-monospace: Consolas, Monaco, "Courier New", monospace;
+
+// Pixel value used to responsively scale all typography. Applied to the `<html>` element.
+$font-size-root: 16px;
+$font-size-base: 0.875rem; // 14px
+$font-size-subheader: 1.5rem; // 24px
+$font-size-header: 2rem; // 32px
+$line-height: 1.375; // 3px at 16px font
+
+// Responsive breakpoints
+$start-md: 600px;
+$start-lg: 900px;
+
+// Sizing measurements
+$nav-height: 50px;
+
+// Animations
+$transitionSpeed: 200ms;
+
+%wai {
+	display: block;
+	height: 0;
+	margin: 0 !important;
+	overflow: hidden;
+	padding: 0 !important;
+	position: absolute;
+	text-align: left;
+	text-indent: -9999em;
+	width: 0;
+	z-index: -1;
+}

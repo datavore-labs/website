@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,400i');
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+html {
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-root;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-overflow-style: scrollbar;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+	color: $black;
+	font: 400 #{$font-size-base} / #{$line-height} $font-family-sans-serif;
+	background-color: $white;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+// Suppress the focus outline on elements that cannot be accessed via keyboard.
+// This prevents an unwanted focus outline from appearing around elements that
+// might still respond to pointer events.
+//
+// Credit: https://github.com/suitcss/base
+[tabindex="-1"]:focus {
+	outline: none !important;
+}
+
+//
+// Typography
+//
+
+// Remove top margins from headings
+//
+// By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
+// margin for easier control within type scales as it avoids margin collapsing.
+h1,h2,h3,h4,h5,h6 {
+	font-weight: normal;
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+}
+
+h1 {
+	color: $brand-base;
+	font-weight: 300;
+	font-size: 1.75rem;
+}
+
+h2 {
+	align-items: flex-end;
+	border-bottom: 1px solid #09668c;
+	color: $black;
+	display: flex;
+	flex-flow: row wrap;
+	font-weight: 300;
+	font-size: 1.75rem;
+	margin: 0 0 1.25rem;
+	justify-content: space-between;
+
+	a {
+		color: $brand-base;
+		display: block;
+		font-size: 1.75rem;
+		font-weight: 300;
+		text-decoration: none;
+	}
+
+	.btn-svg-icon {
+		margin-left: 5px;
+	}
+}
+
+h3 {
+	color: $brand-mid;
+	font-size: 1.375rem;
+	font-weight: 300;
+	margin: 0 0 0.25em;
+}
+
+h4 {
+	color: $black;
+	font-size: 1.1rem;
+	font-weight: 300;
+	margin: 0.75em 0 0.25em;
+}
+
+// Reset margins on paragraphs
+//
+// Similarly, the top margin on `<p>`s get reset. However, we also reset the
+// bottom margin to use `rem` units instead of `em`.
+p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+address {
+	margin-bottom: 1rem;
+	font-style: normal;
+	line-height: inherit;
+}
+
+ol,ul,dl {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+ol ol,ul ul,ol ul,ul ol {
+	margin-bottom: 0;
+}
+
+dd {
+	margin-bottom: 0.5rem;
+	margin-left: 0; // Undo browser default
+}
+
+blockquote {
+	margin: 0 0 1rem;
+}
+
+//
+// Code
+//
+
+code, pre {
+	background: $control-bg-grey;
+	color: $dark-grey;
+}
+
+code {
+	display: inline-block;
+	padding: 1px 8px;
+}
+
+pre {
+	display: block;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+	padding: 5px 10px;
+	overflow-x: auto;
+}
+
+
+//
+// Figures
+//
+
+figure {
+	// Normalize adds `margin` to `figure`s as browsers apply it inconsistently.
+	// We reset that to create a better flow in-page.
+	margin: 0 0 1rem;
+}
+
+//
+// Images
+//
+
+img {
+	// By default, `<img>`s are `inline-block`. This assumes that, and vertically
+	// centers them. This won't apply should you reset them to `block` level.
+	vertical-align: middle;
+	// Note: `<img>`s are deliberately not made responsive by default.
+	// For the rationale behind this, see the comments on the `.img-fluid` class.
+}
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
+[role="button"] {
+	cursor: pointer;
+}
+
+// Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+//
+// In particular, unlike most other browsers, IE11+Edge on Windows 10 on touch devices and IE Mobile 10-11
+// DON'T remove the click delay when `<meta name="viewport" content="width=device-width">` is present.
+// However, they DO support removing the click delay via `touch-action: manipulation`.
+// See:
+// * http://v4-alpha.getbootstrap.com/content/reboot/#click-delay-optimization-for-touch
+// * http://caniuse.com/#feat=css-touch-action
+// * http://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+
+a,area,button,[role="button"],input,label,select,summary,textarea {
+	touch-action: manipulation;
+}
+
+a {
+	color: $brand-mid;
+	text-decoration: none;
+
+	&:hover, &:focus {
+		color: $brand-base;
+	}
+}
+
+//
+// Tables
+//
+
+table {
+	// No longer part of Normalize since v4
+	border-collapse: collapse;
+	background-color: $white;
+}
+
+th {
+	// Centered by default, but left-align-ed to match the `td`s below.
+	text-align: left;
+}
+
+//
+// Forms
+//
+
+label {
+	// Allow labels to use `margin` for spacing.
+	display: inline-block;
+	margin-bottom: 0.5rem;
+}
+
+button:focus {
+	outline: 1px dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+}
+
+input,button,select,textarea {
+	font-family: $font-family-sans-serif;
+	margin: 0;
+	line-height: inherit;
+	border-radius: 0;
+}
+
+input[type="date"],input[type="time"],input[type="datetime-local"],input[type="month"] {
+	-webkit-appearance: listbox;
+}
+
+textarea {
+	// Textareas should really only resize vertically so they don't break their (horizontal) containers.
+	resize: vertical;
+}
+
+fieldset {
+	min-width: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+legend {
+	// Reset the entire legend element to match the `fieldset`
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 0.5rem;
+	font-size: 1.5rem;
+	line-height: inherit;
+}
+
+input[type="search"] {
+	-webkit-appearance: none;
+}
+
+// A simple horizontal rule
+hr {
+	border: none;
+	border-top: 0.18em solid $grey;
+}
+
+sup {
+	font-size: 0.75em;
+}
+
+// Items that should be hidden visually but should still be available to screen readers
+.wai {
+	@extend %wai;
+}
+
+.container {
+	display: block;
+	margin: 0 auto;
+	max-width: 1000px;
+	width: 100%;
+}

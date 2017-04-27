@@ -1,3 +1,26 @@
-node_modules/
+# Build Artifacts
+bin
+docs
+
+# Dependencies
+node_modules
+
+# IDE
+.tmp/
 .DS_Store
-.idea
+.idea/
+*.sublime-*
+
+# Generated / Data files
+*.meta
+*.log
+
+# Misc
+data/
+*.pem
+
+# Optional REPL history
+.node_repl_history
+
+# This file will be compiled dynamically on deploy
+Dockerrun.aws.json
