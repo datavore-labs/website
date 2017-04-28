@@ -1,3 +1,8 @@
+import ScrollMagic from 'ScrollMagic';
+import 'animation.gsap';
+import 'debug.addIndicators';
+import TimelineMax from 'TimelineMax';
+
 // Header animation
 const header = document.querySelector('#header');
 
@@ -47,3 +52,25 @@ main.addEventListener('scroll', () => {
 		});
 	}
 }, { passive: true });
+
+// Parallax for about section
+const aboutBg = document.querySelector('.about-bg');
+if (aboutBg) {
+	const controller = new ScrollMagic.Controller({
+		container: main
+	});
+
+	const tween = new TimelineMax()
+		.add([
+			TweenMax.to(aboutBg, 1, {y:'-25%'})
+		]);
+
+	const scene = new ScrollMagic.Scene({
+		triggerElement: "#solutions",
+		duration: 1000,
+		ease: Linear.easeNone,
+		offset: 500,
+	})
+		.setTween(tween)
+		.addTo(controller);
+}

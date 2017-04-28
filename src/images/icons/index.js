@@ -1,5 +1,10 @@
-import './changes.svg';
-import './close.svg';
-import './download.svg';
-import './link.svg';
+import './clock.svg';
+import './code.svg';
+import './eye.svg';
+import './linkedin.svg';
+import './location.svg';
+import './lock.svg';
 import './logo.svg';
+import './mail.svg';
+import './phone.svg';
+import './twitter.svg';

@@ -1,3 +1,5 @@
+$introSpeed: 200ms;
+
 #header {
 	background: $brand-base;
 	text-align: center;
@@ -16,6 +18,17 @@
 		padding-bottom: 9em;
 	}
 
+	@media (min-width: 1000px) {
+		padding: 9em 20px 10em;
+		aside {
+			width: 49rem;
+		}
+
+		h1 {
+			font-size: 5em;
+		}
+	}
+
 	.lines span, .lines:before, .lines:after {
 		animation: dataloop 60s linear infinite;
 		background: url("/images/ui/infinite_line_3.svg") no-repeat center center / 100% auto;
@@ -29,8 +42,8 @@
 		width: 400%;
 		transition: opacity 500ms ease;
 
-		@media (min-width: 900px) {
-			background-position: center bottom;
+		@media (min-width: $start-md) {
+			background-position: center 80%;
 			background-size: 100% auto;
 			width: 200%;
 		}
@@ -49,7 +62,7 @@
 		background-image: url("/images/ui/infinite_line_1.svg");
 		animation-duration: 90s;
 
-		@media (min-width: 900px) {
+		@media (min-width: $start-md) {
 			animation-duration: 45s;
 		}
 	}
@@ -58,7 +71,7 @@
 		background-image: url("/images/ui/infinite_line_2.svg");
 		animation-duration: 140s;
 
-		@media (min-width: 900px) {
+		@media (min-width: $start-md) {
 			animation-duration: 70s;
 		}
 	}
@@ -79,7 +92,11 @@
 		position: relative;
 		z-index: 2;
 
-		@media (min-width: 650px) {
+		> div {
+			position: relative;
+		}
+
+		@media (min-width: $start-md) {
 			align-items: center;
 			display: flex;
 			flex-flow: row nowrap;
@@ -88,6 +105,14 @@
 
 			> div {
 				margin-left: 60px;
+			}
+		}
+
+		@media (min-width: $start-lg) {
+			width: 48rem;
+
+			> div {
+				margin-left: 80px;
 			}
 		}
 	}
@@ -99,8 +124,12 @@
 		max-width: 200px;
 		transform: translateX(1%);
 
-		@media (min-width: 650px) {
+		@media (min-width: $start-md) {
 			margin: 0;
+		}
+
+		@media (min-width: $start-lg) {
+			max-width: 250px;
 		}
 	}
 
@@ -108,18 +137,89 @@
 		display: block;
 		margin: 0 auto;
 		max-width: 300px;
+		position: relative;
 		width: 60%;
+		z-index: 2;
+
+		@media (min-width: $start-md) {
+			margin: 0;
+			max-width: none;
+			width: 100%;
+		}
+
+		&--bottom, &--top {
+			animation: fadeAround $introSpeed * 2 ease;
+			animation-fill-mode: forwards;
+			opacity: 0;
+		}
+
+		&--bottom {
+			animation-delay: $introSpeed * 6;
+		}
+
+		&--top {
+			animation-delay: $introSpeed * 2;
+		}
 	}
 
-	@media (min-width: 1000px) {
-		padding: 9em 20px 10em;
-		aside {
-			width: 49rem;
+	.tagline-accent {
+		animation: growRight5 $introSpeed linear $introSpeed * 4;
+		animation-fill-mode: forwards;
+		background: $grey;
+		display: block;
+		height: 2px;
+		right: 45%;
+		position: absolute;
+		top: 33.5%;
+		width: 0;
+
+		@media (min-width: $start-md) {
+			animation-name: growRight8;
+			height: 3px;
+			right: 42%;
 		}
 
-		h1 {
-			font-size: 5em;
+		&:before, &:after {
+			background: $grey;
+			content: "";
+			display: block;
+			position: absolute;
+			height: 0;
+			width: 2px;
+
+			@media (min-width: $start-md) {
+				width: 3px;
+			}
 		}
+
+		&:before {
+			animation: growDown6x $introSpeed linear $introSpeed * 5;
+			animation-fill-mode: forwards;
+			left: 0;
+			top: 0;
+		}
+
+		&:after {
+			animation: growDown6x $introSpeed linear $introSpeed * 3;
+			animation-fill-mode: forwards;
+			top: -600%;
+			right: 0;
+		}
+
+		//.tagline-accent-inner {
+		//	animation: growFill $introSpeed linear $introSpeed * 4;
+		//	animation-fill-mode: forwards;
+		//	background: $grey;
+		//	height: 100%;
+		//	position: absolute;
+		//	right: 0;
+		//	top: 0;
+		//	width: 0;
+		//
+		//	@media (min-width: $start-md) {
+		//		animation-duration: $introSpeed * 1.1;
+		//	}
+		//}
 	}
 
 	.bar {
@@ -159,7 +259,7 @@
 		transition: opacity 500ms ease;
 
 		@media (min-width: 600px) {
-			top: 15%;
+			top: 10%;
 			left: 2%;
 		}
 
@@ -205,13 +305,13 @@
 		opacity: 0;
 		transition: opacity 500ms ease;
 
-		@media (min-width: 600px) {
-			bottom: 57%;
+		@media (min-width: $start-md) {
+			bottom: 15%;
 			right: 0;
 		}
 
-		@media (min-width: 900px) {
-			bottom: 35%;
+		@media (min-width: $start-lg) {
+			bottom: 22%;
 			right: 10%;
 		}
 

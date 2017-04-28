@@ -21,6 +21,7 @@ body {
 	margin: 0;
 	overflow: hidden;
 	padding: 0;
+	-webkit-font-smoothing: antialiased;
 }
 
 // Suppress the focus outline on elements that cannot be accessed via keyboard.

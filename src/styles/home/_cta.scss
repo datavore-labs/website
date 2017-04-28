@@ -1,0 +1,29 @@
+#cta {
+	background: $brand-base;
+	color: $white;
+	font-size: 1.875rem;
+	font-weight: 300;
+	padding: 30px;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+
+	@media (min-width: $start-md) {
+		padding: 40px 60px;
+	}
+
+	p {
+		line-height: 1.25;
+		margin-bottom: 25px;
+	}
+
+	a {
+		background: darken($brand-mid, 5%);
+		font-size: 0.75em;
+		font-weight: 300;
+		line-height: 1.5;
+
+		&:hover, &:focus {
+			background: $brand-mid;
+		}
+	}
+}

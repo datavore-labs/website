@@ -1,0 +1,157 @@
+#about {
+	background: $black;
+	color: $white;
+	font-size: .925rem;
+	line-height: 1.375;
+	overflow: hidden;
+	position: relative;
+
+	&:before {
+		background: linear-gradient(to bottom, $black, transparent);
+		content: "";
+		height: 10px;
+		left: 0;
+		opacity: 0.75;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 2;
+
+		@media (min-width: $start-md) {
+			height: 15px;
+		}
+	}
+
+	&:after {
+		background: linear-gradient(to bottom, transparent, $black);
+		bottom: 0;
+		content: "";
+		height: 30px;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		z-index: 2;
+
+		@media (min-width: $start-md) {
+			height: 60px;
+		}
+	}
+
+	.container {
+		box-sizing: border-box;
+		padding: 30px;
+		position: relative;
+		z-index: 3;
+
+		@media (min-width: $start-md) {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			padding: 60px;
+		}
+	}
+
+	.about-bg {
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 200%;
+		position: absolute;
+		background-image: url("/images/ui/about-bg.png");
+		background-size: cover;
+		background-position: top left;
+		opacity: 0.5;
+		transform: translate3d(0, 0, 0);
+		-webkit-backface-visibility: hidden;
+		z-index: 1;
+	}
+
+	h2 {
+		border: 0;
+		color: $white;
+		font-size: 1.875rem;
+		padding: 0;
+		margin: 0 0 0.25em;
+	}
+
+	.about-contact, .about-team {
+		@media (min-width: $start-md) {
+			width: calc(50% - 40px);
+		}
+	}
+
+	.about-contact {
+		margin-bottom: 2.5rem;
+
+		@media (min-width: $start-md) {
+			margin-bottom: 3rem;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0 0 0 2px;
+			padding: 0;
+		}
+
+		li {
+			display: flex;
+			flex-flow: column;
+			align-items: flex-start;
+			justify-content: center;
+
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+		}
+
+		a {
+			color: rgba(255, 255, 255, 0.875);
+			display: inline-block;
+			padding: 0 0 2px 38px;
+			position: relative;
+
+			&:after {
+				background: $white;
+				bottom: 0;
+				content: "";
+				height: 1px;
+				left: 38px;
+				opacity: 0.25;
+				position: absolute;
+				transition: all 300ms ease;
+				right: 0;
+			}
+
+			&:hover, &:focus {
+				color: $white;
+
+				&:after {
+					opacity: 1;
+				}
+			}
+
+			span {
+				display: block;
+				height: 25px;
+				left: 0;
+				text-indent: -9999em;
+				text-align: left;
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				width: 25px;
+
+				&.about-contact-linkedin {
+					svg {
+						transform: translate3d(-5%, 0, 0);
+						width: 110%;
+					}
+				}
+			}
+
+			svg {
+				@extend %fill;
+			}
+		}
+	}
+}

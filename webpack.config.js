@@ -43,13 +43,20 @@ if (buildEnv === 'prod') {
 module.exports = {
 	resolve: {
 		alias: {
-			//environment: path.resolve(process.cwd(), 'env', buildEnv)
+			//environment: path.resolve(process.cwd(), 'env', buildEnv),
+			"TweenLite": path.resolve('node_modules', 'gsap/src/uncompressed/TweenLite.js'),
+			"TweenMax": path.resolve('node_modules', 'gsap/src/uncompressed/TweenMax.js'),
+			"TimelineLite": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineLite.js'),
+			"TimelineMax": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),
+			"ScrollMagic": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'),
+			"animation.gsap": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
+			"debug.addIndicators": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js')
 		},
 		extensions: ['', '.json', '.jsx', '.js']
 	},
 	module:	{
 		loaders: [
-			{ test: /\.js$/, exclude: /node_modules/, loaders: ['babel'] },
+			{ test: /\.js$/, exclude: /node_modules/, loaders: ['babel', 'imports?define=>false'] },
 			{ test: /\.(ico|eot|woff|woff2|ttf|svg|png|jpg)(\?.*)?$/, loaders: ['file'], exclude: [path.resolve(__dirname, "src/images/icons")] },
 			{ test: /\.svg$/, loader: 'svg-sprite?name=i-[name]', include: [path.resolve(__dirname, "src/images/icons")]},
 			{ test: /\.(svg|png|jpg)$/, loader: 'file?name=/images/ui/[name].[ext]', include: [path.resolve(__dirname, "src/images/ui")]},

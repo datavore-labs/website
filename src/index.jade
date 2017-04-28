@@ -32,6 +32,7 @@ html(lang='en')
 
 
 			main#content
+				h1.wai Datavore<sup>&reg;</sup>
 				section#header
 					.lines(aria-hidden="true"): span
 					.graphs(aria-hidden="true")
@@ -50,31 +51,89 @@ html(lang='en')
 					aside
 						img.logo-header(src="/images/ui/logo_header.png" alt="Datavore Logo")
 						div
-							img.tagline-header(src="/images/ui/tagline.png" alt="Turning Data into Knowledge")
+							img.tagline-header.tagline-header--top(src="/images/ui/tagline-top.png" alt="Turning Data into")
+							img.tagline-header.tagline-header--bottom(src="/images/ui/tagline-bottom.png" alt="Knowledge")
+							span.tagline-accent(aria-hidden="true")
 
 				section#intro.container
-					p Datavore<sup>&reg;</sup> is an adaptive data analytics platform that enables anyone to quickly and easily explore multiple datasets and ask meaningful questions. It provides an  intuitive workflow interface enabling the consumption, normalization, analysis, and generation of visualizations.
+					p Datavore<sup>&reg;</sup> is an adaptive data analytics platform that enables anyone to quickly and easily explore multiple datasets and ask meaningful questions. It provides an intuitive workflow interface enabling the consumption, normalization, analysis, and generation of visualizations.
 
-				section#solutions.container
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ullamcorper risus, nec euismod risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus elementum enim a diam condimentum dictum. Praesent consectetur sapien enim, sit amet interdum ligula rutrum a. Maecenas ac eleifend eros. In vehicula efficitur placerat. Duis vulputate mi nec quam pharetra ultricies. Morbi vitae tortor porttitor, convallis velit in, pulvinar erat. In et nulla ut sem volutpat vulputate. Curabitur lectus urna, consequat vitae scelerisque non, malesuada placerat turpis. Phasellus eget odio sed diam tempus tempus. Cras tempus quam sed congue ultricies. Sed id tortor id justo volutpat tincidunt.
+				section#solutions
+					.container
+						ul
+							li
+								h2 See beyond the spreadsheet
+								.solutions-icon.solutions-icon--eye
+									svg(aria-hidden="true" viewBox="0 0 32 32")
+										use(xlink:href="#i-eye")
+								p Within seconds of importing your data, Datavore<sup>&reg;</sup> draws visualizations and can answer your data questions at the press of a button. Updates to data or charts are instantly applied to your workflow. Spend less time scratching the surface of your data and more time on deeper exploration.
 
-					Curabitur nec dictum leo. Duis vestibulum vitae nisi sit amet lobortis. Ut at risus orci. Etiam convallis eros porttitor sapien bibendum ultricies. Sed at varius nisi. Curabitur felis felis, dignissim a lectus a, accumsan varius lorem. Duis quis tempus dolor. Nullam rutrum tortor at ligula sodales rhoncus. Donec convallis, tellus ac aliquet rutrum, turpis dui sollicitudin ligula, ut condimentum nunc leo quis urna. In hac habitasse platea dictumst. Donec et diam ut odio condimentum pharetra eget vitae nibh. Nulla sagittis felis sit amet dolor egestas, sed fringilla nulla euismod. Nulla accumsan lobortis dui. Phasellus facilisis dapibus ligula in suscipit. Phasellus sodales tortor a metus tempus maximus.
+							li
+								h2 We code so you don't&nbsp;have&nbsp;to
+								.solutions-icon.solutions-icon--code
+									svg(aria-hidden="true" viewBox="0 0 32 32")
+										use(xlink:href="#i-code")
+								p Deep data analysis is not just for data scientists any more. Datavore<sup>&reg;</sup> empowers users of all levels to access, manipulate, and explore data and create repeatable processes without writing a single SQL query or Excel Macro.
 
-					Nulla eget scelerisque metus. Mauris eu lorem quam. Praesent sit amet tortor magna. Suspendisse non ante sed velit ultrices maximus eu vitae metus. Nunc aliquam, leo faucibus bibendum auctor, ipsum risus luctus neque, ut sollicitudin felis metus a justo. Praesent blandit scelerisque eros vel faucibus. Aenean egestas euismod pharetra. Nunc lobortis massa vitae eros bibendum lacinia. Duis vehicula scelerisque augue ac ultrices. Mauris blandit rutrum urna nec iaculis. In hac habitasse platea dictumst. Cras finibus commodo congue. Etiam hendrerit erat ac est condimentum, mollis consequat orci imperdiet. Nulla cursus lorem augue, consequat lacinia elit vehicula in. Sed congue nisi sit amet ipsum pharetra fermentum.
+							li
+								h2 It's your data, not&nbsp;our&nbsp;data
+								.solutions-icon.solutions-icon--lock
+									svg(aria-hidden="true" viewBox="0 0 32 32")
+										use(xlink:href="#i-lock")
+								p Datavore<sup>&reg;</sup> is a browser-based application that can be deployed in minutes to everyone on your network with no need to reach out to the cloud. Your data is yours alone, staying behind your security.
 
-					Nullam id elit nibh. In ultrices velit nibh, quis lobortis dui commodo a. Praesent ac quam at arcu dapibus tempus. Integer feugiat elit et condimentum eleifend. Morbi rhoncus felis purus, in mattis libero interdum a. Aliquam a vulputate sapien. Nullam massa est, sodales vel euismod et, egestas eget quam. Suspendisse vitae auctor quam, nec bibendum lectus. Nam massa justo, semper quis risus finibus, tristique malesuada massa. Pellentesque pellentesque aliquet ligula vel auctor. Morbi lacinia justo vel porta iaculis. Praesent nec pretium dolor, eget cursus mi. Aliquam quis quam eu augue elementum rutrum interdum at mi.
+							li
+								h2 Analyze time in&nbsp;no&nbsp;time
+								.solutions-icon.solutions-icon--clock
+									svg(aria-hidden="true" viewBox="0 0 32 32")
+										use(xlink:href="#i-clock")
+								p Datavore<sup>&reg;</sup> understands that most data is time series data, and provides tools for everything from simple graphs of values over time to advanced linear regression and projections.
 
-					Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque suscipit eu augue a elementum. Cras tincidunt malesuada lacinia. Donec mattis mi vel sem laoreet egestas. Curabitur tempor nisi nec justo consectetur, at laoreet augue posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ut quam metus. Nam venenatis blandit ligula, in facilisis dui mollis id. Morbi a efficitur odio, nec pellentesque leo. Pellentesque at sodales augue. Nunc pharetra urna ac diam fringilla convallis. Nam lobortis commodo nisi vel rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis tristique tellus.
+				section#cta
+					p See how Datavore<sup>&reg;</sup> can deliver value on Day&nbsp;1.
+					a.btn.btn-primary(href="mailto:info@datavorelabs.com") Request a Demo
 
-					Nullam quis lectus pulvinar, sagittis lorem vel, porttitor libero. Aenean lectus lacus, pulvinar eu mattis at, efficitur vel lectus. Aenean dui felis, consequat quis tristique at, aliquam sit amet lectus. Quisque metus nunc, dictum in bibendum id, scelerisque eget purus. Pellentesque sed odio enim. Duis turpis magna, bibendum et ex vel, aliquam convallis magna. Curabitur suscipit quam odio, sit amet congue nisl suscipit eu. Ut vulputate at purus eget luctus. Donec at egestas quam. Nam mattis dignissim justo vitae sollicitudin. Vestibulum condimentum urna lacus, at lobortis quam tincidunt in. Nullam elit arcu, tempus et enim vel, commodo egestas velit. Mauris vestibulum tristique erat.
+				section#about
+					.about-bg(aria-hidden="true")
+					.container
+						.about-contact
+							h2 Contact
+							ul
+								li
+									a(href="mailto:info@datavorelabs.com") info@datavorelabs.com
+										span.about-contact-email Email
+											svg(viewBox="0 0 32 32")
+												use(xlink:href="#i-mail")
+								li
+									a(href="https://www.google.com/maps/place/Rise+New+York/@40.742309,-73.993547,17z/data=!3m1!4b1!4m5!3m4!1s0x89c259a467e29ed9:0xdf27fb2d21d8eac!8m2!3d40.742305!4d-73.991353") 43 West 23rd Street, 6th Floor, New York, NY 10010
+										span.about-contact-twitter Address
+											svg(viewBox="0 0 32 32")
+												use(xlink:href="#i-location")
+								li
+									a(href="tel:2126249225") (212) 624-9225
+										span.about-contact-phone Phone
+											svg(viewBox="0 0 32 32")
+												use(xlink:href="#i-phone")
+								li
+									a(href="https://www.linkedin.com/company/datavorelabs")
+										span.about-contact-linkedin LinkedIn
+											svg(viewBox="0 0 32 32")
+												use(xlink:href="#i-linkedin")
+										| Datavore<sup>&reg;</sup> Labs
+								li
+									a(href="https://twitter.com/datavorelabs")
+										span.about-contact-twitter Twitter
+											svg(viewBox="0 0 32 32")
+												use(xlink:href="#i-twitter")
+										| @datavorelabs
 
-					Quisque sapien arcu, ornare eget viverra fermentum, pulvinar quis dui. Etiam euismod, quam in finibus luctus, dui ex feugiat tortor, vel vestibulum elit turpis sit amet dolor. Sed arcu sapien, porta eu placerat non, egestas sit amet nulla. Cras efficitur non diam ornare placerat. Donec convallis ligula quis posuere volutpat. Nam nisi leo, mattis id dui ut, vehicula mollis massa. Fusce aliquam, massa et semper rutrum, ante odio tempus magna, id dignissim risus dui vel ex. In at massa a magna facilisis dictum non non elit. Vestibulum sollicitudin est at turpis bibendum, sit amet pulvinar tellus iaculis. Praesent efficitur tincidunt sem, dictum accumsan magna sagittis a. Maecenas finibus accumsan luctus. Cras sit amet molestie justo. Ut pretium magna eget gravida maximus.
+						.about-team
+							h2 About
+							p The Datavore<sup>&reg;</sup> team has deep domain expertise in databases, time series, and analytics with a successful track record of building technology within the financial services sector. The team has experience working at companies including Goldman Sachs, Citigroup, UBS, Thomson Reuters, Ernst & Young, and KPMG.
 
-					Nam tempus turpis turpis, a blandit magna congue non. Vestibulum eleifend tempor nisl ac hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam viverra neque eu enim feugiat auctor. Nam egestas dignissim aliquam. Vestibulum varius scelerisque elit, nec finibus nulla varius eu. Donec tincidunt nulla elit. Etiam a maximus nulla. Sed in venenatis urna, in congue turpis. Etiam facilisis ipsum sed augue mattis imperdiet. Cras augue arcu, eleifend sit amet vulputate nec, pharetra quis lorem. Donec semper vehicula enim quis condimentum. Donec pretium dignissim tristique. Nullam eget diam quis dolor vehicula fermentum et ac nibh. Nam sed nisi in sem consequat mollis.
+				footer(role="contentinfo")
+					p &copy; 2017 Datavore<sup>&reg;</sup>
 
-					Maecenas arcu libero, imperdiet et fermentum ut, ultricies quis elit. Integer feugiat, augue nec sollicitudin ornare, tellus sapien fermentum elit, eget euismod quam metus quis urna. Proin et dapibus risus, sit amet tempus justo. Pellentesque orci est, bibendum id nulla non, dignissim mattis mi. Praesent consectetur blandit lacus. Vivamus et ultrices turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper at elit et pharetra.
-
-					Sed dolor ante, venenatis ac dignissim eu, interdum nec nibh. Sed viverra turpis at diam tempor sodales. Aenean tincidunt sapien in nisi sollicitudin lacinia. Quisque finibus tempor est ac eleifend. Curabitur tristique varius maximus. Duis sit amet sodales dolor. Vestibulum quis porttitor est.
 
 		script(
 			src="app.bundle.js",
