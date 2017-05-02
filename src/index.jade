@@ -12,6 +12,14 @@ html(lang='en')
 		title Datavore&reg;
 		script.
 			document.getElementsByTagName('html')[0].className = 'js';
+		script.
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject'] = r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+				ga('create', 'UA-72211801-1', 'auto');
+				ga('send', 'pageview');
 	body
 		#page
 			a.wai(href="#content")
@@ -28,6 +36,7 @@ html(lang='en')
 						li
 							a.btn(
 								href="/#about"
+								data-ga-event="Top Nav"
 							) Contact
 
 
@@ -91,7 +100,10 @@ html(lang='en')
 
 				section#cta
 					p See how Datavore<sup>&reg;</sup> can deliver value on Day&nbsp;1.
-					a.btn.btn-primary(href="mailto:info@datavorelabs.com") Request a Demo
+					a.btn.btn-primary(
+						href="mailto:info@datavorelabs.com"
+						data-ga-event="Demo Request"
+					) Request a Demo
 
 				section#about
 					.about-bg(aria-hidden="true")
@@ -100,32 +112,52 @@ html(lang='en')
 							h2 Contact
 							ul
 								li
-									a(href="mailto:info@datavorelabs.com") info@datavorelabs.com
+									a(
+										href="mailto:info@datavorelabs.com"
+										data-ga-event="Email"
+									) info@datavorelabs.com
 										span.about-contact-email Email
 											svg(viewBox="0 0 32 32")
 												use(xlink:href="#i-mail")
 								li
-									a(href="https://www.google.com/maps/place/Rise+New+York/@40.742309,-73.993547,17z/data=!3m1!4b1!4m5!3m4!1s0x89c259a467e29ed9:0xdf27fb2d21d8eac!8m2!3d40.742305!4d-73.991353") 43 West 23rd Street, 6th Floor, New York, NY 10010
+									a(
+										href="https://www.google.com/maps/place/Rise+New+York/@40.742309,-73.993547,17z/data=!3m1!4b1!4m5!3m4!1s0x89c259a467e29ed9:0xdf27fb2d21d8eac!8m2!3d40.742305!4d-73.991353"
+										data-ga-event="Address"
+										target="_blank"
+									) 43 West 23rd Street, 6th Floor, New York, NY 10010
 										span.about-contact-twitter Address
 											svg(viewBox="0 0 32 32")
 												use(xlink:href="#i-location")
+										span.wai This link opens in a new window.
 								li
-									a(href="tel:2126249225") (212) 624-9225
+									a(
+										href="tel:2126249225"
+										data-ga-event="Phone"
+									) (212) 624-9225
 										span.about-contact-phone Phone
 											svg(viewBox="0 0 32 32")
 												use(xlink:href="#i-phone")
 								li
-									a(href="https://www.linkedin.com/company/datavorelabs")
+									a(
+										href="https://www.linkedin.com/company/datavorelabs"
+										data-ga-event="LinkedIn"
+										target="_blank"
+									)
 										span.about-contact-linkedin LinkedIn
 											svg(viewBox="0 0 32 32")
 												use(xlink:href="#i-linkedin")
 										| Datavore<sup>&reg;</sup> Labs
+										span.wai This link opens in a new window.
 								li
-									a(href="https://twitter.com/datavorelabs")
+									a(
+										href="https://twitter.com/datavorelabs"
+										data-ga-event="Twitter"
+									)
 										span.about-contact-twitter Twitter
 											svg(viewBox="0 0 32 32")
 												use(xlink:href="#i-twitter")
 										| @datavorelabs
+										span.wai This link opens in a new window.
 
 						.about-team
 							h2 About

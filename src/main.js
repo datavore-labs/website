@@ -74,3 +74,15 @@ if (aboutBg) {
 		.setTween(tween)
 		.addTo(controller);
 }
+
+// Analytics
+const GA_EVENT_ATTR = 'data-ga-event';
+const eventLinks = Array.prototype.slice.call(document.querySelectorAll(`[${GA_EVENT_ATTR}]`));
+eventLinks.forEach(l => {
+	l.addEventListener('click', () => {
+		if (ga) {
+			const event = l.getAttribute(GA_EVENT_ATTR);
+			ga('send', 'event', 'Contact', 'click', event);
+		}
+	});
+});

@@ -17,8 +17,8 @@ const buildEnv = process.argv.filter(
 if (buildEnv === 'prod') {
 	wpPlugins.push(
 			new webpack.optimize.UglifyJsPlugin({
-		sourceMap: false
-		}),
+				sourceMap: false
+			}),
 		new webpack.optimize.DedupePlugin(),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': '"production"'
