@@ -64,7 +64,7 @@ module.exports = {
 			{ test: /\.tpl\.(pug|jade)$/, loaders: ['html?removeRedundantAttributes=false', 'jade-html'] },
 			{ test: /\.pug$/, loaders: ['raw'] },
 			{ test: /\.tpl\.html$/, loaders: ['html?removeRedundantAttributes=false'] },
-			{ test: /[^\.][^t][^p][^l]\.(pug|jade)$/, loaders: ['file?name=[name].html', 'jade-html' ] },
+			{ test: /[^\.][^t][^p][^l]\.(pug|jade)$/, loaders: ['file?name=[path][name].html', 'jade-html' ] },
 			{ test: /\.(sass|scss)$/, loader: ExtractTextPlugin.extract('css-loader?minimize!postcss-loader!sass-loader') },
 			{ test: /[^\.][^t][^p][^l]\.html$/, loaders: ['file?name=[name].[ext]'] }
 		]
@@ -78,6 +78,7 @@ module.exports = {
 			'./images/icons',
 			'./main.scss',
 			'./index.jade',
+			'./licenses/index.jade',
 			'./main.js',
 		]
 	},

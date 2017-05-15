@@ -1,0 +1,13 @@
+extends ../layout
+
+block vars
+	- var title='Datavore\256 Licenses'
+	- var bodyClass='licenses'
+
+block content
+	section#licenses.container
+		h1 License Information
+
+		.license-container
+			table
+				include packages.tpl.jade

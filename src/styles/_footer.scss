@@ -1,6 +1,5 @@
 footer {
-	background: $black;
-	color: $white;
+	color: $brand-base;
 	font-size: 0.75rem;
 	padding: 15px 30px;
 	text-align: center;
@@ -13,4 +12,9 @@ footer {
 	p {
 		margin: 0;
 	}
+}
+
+.page-home footer {
+	background: $black;
+	color: $white;
 }

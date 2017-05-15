@@ -38,7 +38,7 @@ const nav = document.querySelector('nav');
 let scrollThrottle = false;
 
 const setHeaderStyle = () => {
-	nav.setAttribute('data-faded', main.scrollTop < 200);
+	nav.setAttribute('data-faded', header && main.scrollTop < 200);
 };
 
 setHeaderStyle();
