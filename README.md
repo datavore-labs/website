@@ -11,6 +11,22 @@ npm run server
 open localhost:8080
 ```
 
+## Updating Licenses Page
+
+The licenses page (datavorelabs.com/licenses) uses a custom script to automatically generate the license list based on the dependencies installed in the application repositories. To update this list, you will need to have the following repositories cloned and up-to-date in the same directory as this repository:
+
+* [dv-client](https://github.com/datavore-labs/dv-client)
+* [dv-server](https://github.com/datavore-labs/dv-server)
+* [dv-js](https://github.com/datavore-labs/dv-js)
+
+To generate the license list (which will be saved to `src/licenses/packages.tpl.jade`), run:
+```
+npm install
+babel-node get-licenses.js
+```
+
+You will then need to re-compile the static site files (or restart the server, if working locally) to see changes.
+
 ## Deployment
 
 Deployment for the master branch is automated through [Semaphore CI](https://semaphoreci.com/datavore). 

@@ -8,6 +8,14 @@ block content
 	section#licenses.container
 		h1 License Information
 
+		p Datavore<sup>&reg;</sup> uses the following third-party packages, licensed as listed below.
+
 		.license-container
 			table
-				include packages.tpl.jade
+				thead
+					tr
+						th(scope="col") Package Name
+						th(scope="col") Version
+						th(scope="col") License
+				tbody
+					include packages.tpl.jade

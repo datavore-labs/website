@@ -1,3 +1,17 @@
 #licenses {
-	padding: 20px;
+	box-sizing: border-box;
+	padding: 20px 20px 0;
+
+	.license-container {
+		table {
+			border-collapse: collapse;
+			table-layout: fixed;
+			width: 100%;
+		}
+
+		td {
+			white-space: normal;
+			word-wrap: break-word;
+		}
+	}
 }

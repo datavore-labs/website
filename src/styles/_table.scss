@@ -1,0 +1,175 @@
+table {
+	color: $black;
+	width: 100%;
+
+	tr:not(:last-child) {
+		td {
+			border-bottom: none;
+		}
+	}
+
+	td {
+		padding: 5px 10px;
+		white-space: nowrap;
+		max-width: 250px;
+
+		&.selected {
+			border-left: 2px solid $brand-base;
+			border-right: 2px solid $brand-base;
+		}
+	}
+
+	tbody {
+		.DateTime,.Number {
+			text-align: right;
+		}
+
+		.String {
+			text-align: left;
+		}
+
+		tr:nth-child(even) {
+			td {
+				background-color: $offwhite;
+
+				&.selected {
+					background: lighten($brand-high, 30%);
+				}
+			}
+		}
+
+		tr:nth-child(odd) {
+			td {
+				background: $white;
+
+				&.selected {
+					background: lighten($brand-high, 37%);
+				}
+			}
+		}
+	}
+
+	td,th {
+		&:not(:first-child):not(:last-child):not(.selected) {
+			border-left: 1px solid $grey;
+			border-right: 1px solid $grey;
+		}
+	}
+
+	thead,tfoot {
+		tr:first-child {
+			td,th {
+				background: #eee;
+			}
+		}
+
+		tr {
+			td,th {
+				padding: $default-padding;
+
+				&.selected {
+					background-color: $brand-base;
+					border-left: 2px solid $brand-base;
+					border-right: 2px solid $brand-base;
+					color: $white;
+				}
+
+				&,* {
+					@include text-truncate;
+				}
+			}
+		}
+	}
+
+	thead {
+		tr {
+			td,th {
+				border-bottom: 1px solid $grey;
+				color: $black;
+				font-size: 1.125em;
+				font-weight: 300;
+				padding: 5px;
+				text-align: center;
+			}
+		}
+	}
+
+	tfoot {
+		z-index: 2;
+
+		tr {
+			td {
+				font-weight: normal;
+				padding: 5px 10px;
+				height: 7em;
+			}
+
+			&:first-child {
+				td {
+					border-top: 1px solid $grey;
+				}
+			}
+		}
+
+		ul {
+			@include list-inline;
+			padding: 0;
+
+			li {
+				align-items: center;
+				display: flex;
+				flex-flow: row-reverse;
+				justify-content: flex-end;
+				font-size: 0.875rem;
+				font-weight: 300;
+				padding: 0;
+
+				&:not(:last-child) {
+					margin-bottom: 0.25em;
+				}
+
+				b {
+					display: inline-block;
+					font-size: 0.6rem;
+					font-weight: 300;
+					margin-left: 4px;
+					width: 4.5em;
+				}
+			}
+		}
+	}
+
+	.dv-table-cell--empty {
+		color: transparent;
+
+		&:before {
+			color: darken($grey, 5%);
+			font-size: 0.875em;
+			font-style: italic;
+			text-transform: lowercase;
+			content: "no value";
+			text-indent: 0;
+		}
+	}
+}
+
+.chart-directive_table .dv-table-container {
+	height: 100% !important;
+	width: 100% !important;
+
+	&.dv-table--empty {
+		&:before {
+			@include fill();
+			align-items: center;
+			background: rgba($white, 1);
+			content: "Table cannot be generated with available data.";
+			color: $grey;
+			display: flex;
+			flex-flow: column;
+			font-size: 0.875rem;
+			justify-content: center;
+			font-style: italic;
+			z-index: 10;
+		}
+	}
+}

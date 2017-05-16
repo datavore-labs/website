@@ -1,0 +1,34 @@
+@mixin fill {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+@mixin list-unstyled {
+	padding-left: 0;
+	list-style: none;
+}
+
+@mixin list-inline($padding: $default-padding) {
+	@include list-unstyled;
+	margin: 0;
+	padding: $padding;
+
+	li {
+		display: inline-block;
+		padding-right: $padding;
+	}
+
+	li:last-child {
+		padding-right: 0;
+	}
+}
+
+@mixin text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

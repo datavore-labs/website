@@ -1,11 +1,43 @@
 const checker = require('license-checker');
 const spawn = require('child_process').spawn;
 const fs = require('fs');
+const orderBy = require('lodash.orderby');
+
+const licenseAlias = {
+	"Apache 2": "https://opensource.org/licenses/Apache-2.0",
+	"Apache 2.0": "https://opensource.org/licenses/Apache-2.0",
+	"Apache Version 2.0": "https://opensource.org/licenses/Apache-2.0",
+	"Apache Software": "https://opensource.org/licenses/Apache-2.0",
+	"Apache Software Version 2.0": "https://opensource.org/licenses/Apache-2.0",
+	"BSD": "https://opensource.org/licenses/BSD-2-Clause",
+	"BSD 3-Clause": "https://opensource.org/licenses/BSD-3-Clause",
+	"BSD style": "https://opensource.org/licenses/BSD-2-Clause",
+	"Bouncy Castle": "https://www.bouncycastle.org/licence.html",
+	"CC0": "https://creativecommons.org/publicdomain/zero/1.0/",
+	"LGPL version 2.1": "https://opensource.org/licenses/LGPL-2.1",
+	"New BSD": "https://opensource.org/licenses/BSD-3-Clause",
+	"Public Domain": "https://creativecommons.org/publicdomain/zero/1.0/",
+	"Public Domain per Creative Commons CC0": "https://creativecommons.org/publicdomain/zero/1.0/"
+};
 
 const getArgv = (name, defaultValue) => {
 	return process.argv.filter(
 			(arg, i, col) => i > 0 && col[i - 1] === `--${name}`
 		)[0] || defaultValue;
+};
+
+const getLicenseString = license => {
+	if (Array.isArray(license)) {
+		if (license.indexOf('MIT') > -1) {
+			license = 'MIT';
+		} else {
+			license = license[0];
+		}
+	}
+
+	return license.replace(/\*|,|(license)(s{0,1})|(the )/gi, '')
+		.replace(/\s{2,}/gi, ' ')
+		.trim();
 };
 
 const getNodeLicenses = rootPath => (
@@ -18,6 +50,7 @@ const getNodeLicenses = rootPath => (
 			start: rootPath,
 			production: true,
 			development: false,
+			unknown: false,
 		}, (err, json) => {
 			if (err) {
 				reject(err);
@@ -25,11 +58,11 @@ const getNodeLicenses = rootPath => (
 				const deps = [];
 				for (const dep in json) {
 					const nameComponents = dep.split('@');
-					if (prodDepKeys.indexOf(nameComponents[0]) > -1) {
+					if (prodDepKeys.indexOf(nameComponents[0]) > -1 && json[dep].licenses !== 'UNKNOWN') {
 						deps.push({
 							name: nameComponents[0],
 							version: nameComponents[1],
-							license: json[dep].licenses,
+							license: getLicenseString(json[dep].licenses),
 						});
 					}
 				}
@@ -64,7 +97,7 @@ const getSbtLicenses = rootPath => (
 					deps.push({
 						name: `${nameComponents[0]}:${nameComponents[1]}`,
 						version: nameComponents[2],
-						license
+						license: getLicenseString(license),
 					});
 				});
 			});
@@ -88,11 +121,14 @@ async function getAllLicenses (){
 	let results = await Promise.all(promises);
 	const mergedResults = [].concat.apply([], results);
 
-	let tplString = 'tr\n\tth Package Name\n\tth Version\n\tth License\n';
+	const sortedResults = orderBy(mergedResults, 'name');
 
-	mergedResults.forEach(result => {
+	let tplString = '';
+
+	sortedResults.forEach(result => {
 		if (result.name && result.version && result.license) {
-			tplString += `tr\n\ttd ${result.name}\n\ttd ${result.version}\n\ttd ${result.license}\n`;
+			const licenseUrl = licenseAlias[result.license] || `https://opensource.org/licenses/${result.license}`;
+			tplString += `tr\n\ttd ${result.name}\n\ttd ${result.version}\n\ttd: a(href="${licenseUrl}",target="_blank") ${result.license}\n`;
 		}
 	});
 
