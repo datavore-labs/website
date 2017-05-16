@@ -11,6 +11,7 @@ const licenseAlias = {
 	"Apache Software Version 2.0": "https://opensource.org/licenses/Apache-2.0",
 	"BSD": "https://opensource.org/licenses/BSD-2-Clause",
 	"BSD 3-Clause": "https://opensource.org/licenses/BSD-3-Clause",
+	"BSD 3-clause": "https://opensource.org/licenses/BSD-3-Clause",
 	"BSD style": "https://opensource.org/licenses/BSD-2-Clause",
 	"Bouncy Castle": "https://www.bouncycastle.org/licence.html",
 	"CC0": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -35,7 +36,7 @@ const getLicenseString = license => {
 		}
 	}
 
-	return license.replace(/\*|,|(license)(s{0,1})|(the )/gi, '')
+	return license.replace(/\*|,|(license)(s{0,1})|(the )|(licence)/gi, '')
 		.replace(/\s{2,}/gi, ' ')
 		.trim();
 };
@@ -109,15 +110,11 @@ const getSbtLicenses = rootPath => (
 const clientRoot = getArgv('clientRoot', '../dv-client');
 const dvjsRoot = getArgv('dvjsRoot', '../dv-js');
 const serverRoot = getArgv('serverRoot', '../dv-server');
+const ldapRoot = getArgv('ldapRoot', '../dv-ldap');
+const basicAuthRoot = getArgv('basicAuthRoot', '../dv-basic-auth');
 
 
-async function getAllLicenses (){
-	const promises = [
-		getNodeLicenses(clientRoot),
-		getNodeLicenses(dvjsRoot),
-		getSbtLicenses(serverRoot),
-	];
-
+async function getAllLicenses (promises, fileName){
 	let results = await Promise.all(promises);
 	const mergedResults = [].concat.apply([], results);
 
@@ -132,14 +129,35 @@ async function getAllLicenses (){
 		}
 	});
 
-	fs.writeFile(`${__dirname}/src/licenses/packages.tpl.jade`, tplString, 'utf-8', err => {
+	fs.writeFile(`${__dirname}/src/licenses/${fileName}`, tplString, 'utf-8', err => {
 		if (err) {
 			console.log('Error compiling dependency list: ', err);
 		}
 		else {
-			console.log('Dependencies compiled. Please re-compile app HTML to see updated license page.')
+			console.log(`Dependencies compiled to ${fileName}. Please re-compile app HTML to see updated license page.`)
 		}
 	});
 }
 
-getAllLicenses();
+getAllLicenses(
+	[
+		getNodeLicenses(clientRoot),
+		getNodeLicenses(dvjsRoot),
+		getSbtLicenses(serverRoot),
+	],
+	'core.tpl.jade'
+);
+
+getAllLicenses(
+	[
+		getSbtLicenses(ldapRoot),
+	],
+	'ldap.tpl.jade'
+);
+
+getAllLicenses(
+	[
+		getSbtLicenses(basicAuthRoot),
+	],
+	'basic-auth.tpl.jade'
+);

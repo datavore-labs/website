@@ -10,6 +10,8 @@ block content
 
 		p Datavore<sup>&reg;</sup> uses the following third-party packages, licensed as listed below.
 
+		h2 Datavore<sup>&reg;</sup> Core Applcation
+
 		.license-container
 			table
 				thead
@@ -18,4 +20,29 @@ block content
 						th(scope="col") Version
 						th(scope="col") License
 				tbody
-					include packages.tpl.jade
+					include core.tpl.jade
+
+		h2 Datavore<sup>&reg;</sup> LDAP
+
+		.license-container
+			table
+				thead
+					tr
+						th(scope="col") Package Name
+						th(scope="col") Version
+						th(scope="col") License
+				tbody
+					include ldap.tpl.jade
+
+		h2 Datavore<sup>&reg;</sup> Basic Authentication
+
+		.license-container
+			table
+				thead
+					tr
+						th(scope="col") Package Name
+						th(scope="col") Version
+						th(scope="col") License
+				tbody
+					include basic-auth.tpl.jade
+

@@ -18,8 +18,10 @@ The licenses page (datavorelabs.com/licenses) uses a custom script to automatica
 * [dv-client](https://github.com/datavore-labs/dv-client)
 * [dv-server](https://github.com/datavore-labs/dv-server)
 * [dv-js](https://github.com/datavore-labs/dv-js)
+* [dv-ldap](https://github.com/datavore-labs/dv-ldap)
+* [dv-basic-auth](https://github.com/datavore-labs/dv-basic-auth)
 
-To generate the license list (which will be saved to `src/licenses/packages.tpl.jade`), run:
+To generate the license lists (which will be saved as `.tpl` files in the  `src/licenses` directory), run:
 ```
 npm install
 babel-node get-licenses.js
