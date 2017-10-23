@@ -112,10 +112,12 @@ const dvjsRoot = getArgv('dvjsRoot', '../dv-js');
 const serverRoot = getArgv('serverRoot', '../dv-server');
 const ldapRoot = getArgv('ldapRoot', '../dv-ldap');
 const basicAuthRoot = getArgv('basicAuthRoot', '../dv-basic-auth');
+const kafkaRoot = getArgv('kafkaRoot', '../dv-kafka-connect');
 
 
 async function getAllLicenses (promises, fileName){
 	let results = await Promise.all(promises);
+
 	const mergedResults = [].concat.apply([], results);
 
 	const sortedResults = orderBy(mergedResults, 'name');
@@ -125,7 +127,7 @@ async function getAllLicenses (promises, fileName){
 	sortedResults.forEach(result => {
 		if (result.name && result.version && result.license) {
 			const licenseUrl = licenseAlias[result.license] || `https://opensource.org/licenses/${result.license}`;
-			tplString += `tr\n\ttd ${result.name}\n\ttd ${result.version}\n\ttd: a(href="${licenseUrl}",target="_blank") ${result.license}\n`;
+			tplString += `tr\n\ttd ${result.name}\n\ttd ${result.version.split('\n')[0]}\n\ttd: a(href="${licenseUrl}",target="_blank") ${result.license}\n`;
 		}
 	});
 
@@ -144,6 +146,7 @@ getAllLicenses(
 		getNodeLicenses(clientRoot),
 		getNodeLicenses(dvjsRoot),
 		getSbtLicenses(serverRoot),
+		getSbtLicenses(kafkaRoot),
 	],
 	'core.tpl.jade'
 );

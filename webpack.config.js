@@ -79,6 +79,8 @@ module.exports = {
 			'./main.scss',
 			'./index.jade',
 			'./licenses/index.jade',
+			'./legal/privacy-policy/index.jade',
+			'./legal/terms-of-use/index.jade',
 			'./main.js',
 		]
 	},

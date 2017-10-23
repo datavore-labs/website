@@ -1,6 +1,9 @@
 footer {
+	align-items: flex-end;
 	color: $brand-base;
+	display: flex;
 	font-size: 0.75rem;
+	justify-content: center;
 	padding: 15px 30px;
 	text-align: center;
 	-webkit-font-smoothing: antialiased;
@@ -12,9 +15,41 @@ footer {
 	p {
 		margin: 0;
 	}
+
+	ul {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		margin-right: 10px;
+
+		&:after {
+			content: "\2022";
+			margin-left: 10px;
+		}
+	}
+
+	a {
+		color: $black;
+
+		&:hover, &:focus {
+			color: $brand-mid;
+		}
+	}
 }
 
 .page-home footer {
 	background: $black;
 	color: $white;
+
+	a {
+		color: $white;
+
+		&:hover, &:focus {
+			color: $brand-high;
+		}
+	}
 }

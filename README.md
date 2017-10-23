@@ -17,6 +17,7 @@ The licenses page (datavorelabs.com/licenses) uses a custom script to automatica
 
 * [dv-client](https://github.com/datavore-labs/dv-client)
 * [dv-server](https://github.com/datavore-labs/dv-server)
+* [dv-kafka-connect](https://github.com/datavore-labs/dv-kafka-connect)
 * [dv-js](https://github.com/datavore-labs/dv-js)
 * [dv-ldap](https://github.com/datavore-labs/dv-ldap)
 * [dv-basic-auth](https://github.com/datavore-labs/dv-basic-auth)
@@ -28,6 +29,12 @@ babel-node get-licenses.js
 ```
 
 You will then need to re-compile the static site files (or restart the server, if working locally) to see changes.
+
+If dependencies for sbt projects are failing, open the project source and ensure that the following line appears somewhere in the project's `plugins.sbt` file:
+
+```
+addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.8.2")
+```
 
 ## Deployment
 

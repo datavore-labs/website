@@ -1,0 +1,93 @@
+.page-legal {
+	#privacy, #terms {
+		box-sizing: border-box;
+		padding: 20px 20px 0;
+	}
+
+	h1 {
+		span {
+			display: block;
+			font-size: 0.7em;
+		}
+
+		b {
+			display: block;
+			font-size: 0.5em;
+			font-weight: 300;
+			margin: 0.125em 0 1.5em;
+		}
+	}
+
+	section {
+		margin: 2em auto 4em;
+	}
+
+	li, p, .list-title {
+		margin-bottom: 1rem;
+	}
+
+	.list-title {
+		display: inline-block;
+		text-indent: 0;
+	}
+
+	p {
+		text-indent: 0;
+	}
+
+	ol {
+		counter-reset: item;
+		padding: 0 0 0 2rem;
+
+		> li {
+			padding: 0 2px 0 0;
+			text-indent: -1.5em;
+			list-style-type: none;
+			counter-increment: item;
+
+			&:before {
+				display: inline-block;
+				width: 1em;
+				padding-right: 0.5em;
+				font-weight: bold;
+				text-align: right;
+				content: counter(item) ".";
+			}
+		}
+
+		ol {
+			padding-left: 3rem;
+
+			> li {
+				display: block;
+
+				&:before {
+					content: counters(item, ".") ". ";
+					font-weight: bold;
+				}
+			}
+
+			&.letter-list {
+				> li {
+					list-style-type: lower-alpha;
+
+					&:before {
+						content: "(" counter(item, lower-alpha) ")";
+						font-weight: bold;
+					}
+				}
+			}
+
+			&.number-list {
+				> li {
+					list-style-type: decimal;
+
+					&:before {
+						content: counter(item) ". ";
+						font-weight: normal;
+					}
+				}
+			}
+		}
+	}
+}
