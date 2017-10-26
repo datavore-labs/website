@@ -2,6 +2,10 @@
 	#privacy, #terms {
 		box-sizing: border-box;
 		padding: 20px 20px 0;
+
+		li, p, .list-title {
+			margin-bottom: 1rem;
+		}
 	}
 
 	h1 {
@@ -20,10 +24,6 @@
 
 	section {
 		margin: 2em auto 4em;
-	}
-
-	li, p, .list-title {
-		margin-bottom: 1rem;
 	}
 
 	.list-title {
