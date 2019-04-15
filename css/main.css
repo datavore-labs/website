@@ -1,0 +1,135 @@
+
+.container-fluid{
+	padding: 0 !important;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+}
+
+section {
+  display: flex;
+}
+
+.image {
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.stuff {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: left;
+  justify-content: center;
+  width: 100%;
+  max-width: 80%;
+  z-index: 1;
+  margin: 0 auto;
+  position: relative;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+h2 {
+	font-size: 34px;	
+}
+
+h3{
+	font-size: 22px;
+}
+
+h4{
+	font-size: 20px;
+}
+
+h5{
+	font-size: 16px;
+}
+
+/* Codefree style*/
+.codefree {
+	height: 100vh;
+}
+
+.codefree .stuff {
+	justify-content: center;
+}
+
+.codefree .image{
+	background-color: #000;	
+	background-image: url('../img/bg-waves.png');		
+	height: 100vh;
+}
+
+/* Intution style*/
+.intution {
+	height: 60vh;
+}
+
+.intution .stuff{
+	text-align: center;
+	justify-content: center;
+}
+
+.intution .image{
+	background-image: url('../img/bg-bars.png');	
+	height: 60vh;	
+}
+
+
+/* Toolup style*/
+.toolup {
+	/*height: 60vh;*/
+}
+
+.toolup .stuff {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	text-align: left;
+}
+
+.toolup .image{
+	background-image: url('../img/bg-color-stripe.png');		
+	background-color: #000;	
+	height: 100%;
+	width: 100%;
+}
+
+/* insidedatavore style*/
+.insidedatavore {
+	height: 80vh;
+}
+
+.insidedatavore .stuff {
+	text-align: left;
+}
+
+.insidedatavore .image{
+	background-image: url('../img/bg-color-splash.png');		
+	height: 80vh;
+}
+
+.insidedatavore{
+	height: 80vh;	
+}
+
+/* Never seen style*/
+.neversee {
+	/*height: 40vh;*/
+}
+
+.neversee .stuff {
+	text-align: left;
+	padding-top: 30px;
+}
+
+.neversee .image{
+	background-color: #000;	
+	background-image: url('../img/bg-waves-sm.png');		
+	height: 40vh;
+}
+
