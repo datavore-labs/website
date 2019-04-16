@@ -68,17 +68,19 @@ h5{
 
 /* Intution style*/
 .intution {
-	height: 60vh;
+	/*height: 60vh;*/
 }
 
 .intution .stuff{
 	text-align: center;
 	justify-content: center;
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 
 .intution .image{
 	background-image: url('../img/bg-bars.png');	
-	height: 60vh;	
+	/*height: 60vh;	*/
 }
 
 
@@ -96,26 +98,26 @@ h5{
 .toolup .image{
 	background-image: url('../img/bg-color-stripe.png');		
 	background-color: #000;	
-	height: 100%;
-	width: 100%;
 }
 
 /* insidedatavore style*/
 .insidedatavore {
-	height: 80vh;
+	/*height: 80vh;*/
 }
 
 .insidedatavore .stuff {
 	text-align: left;
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 
 .insidedatavore .image{
 	background-image: url('../img/bg-color-splash.png');		
-	height: 80vh;
+	/*height: 80vh;*/
 }
 
 .insidedatavore{
-	height: 80vh;	
+	/*height: 80vh;	*/
 }
 
 /* Never seen style*/
@@ -131,6 +133,6 @@ h5{
 .neversee .image{
 	background-color: #000;	
 	background-image: url('../img/bg-waves-sm.png');		
-	height: 40vh;
+	/*height: 40vh;*/
 }
 

@@ -1,15 +1,12 @@
 function sizePanels() {
   // create variables
-  var $fwindow = $(window);
-  // on window scroll event
-  $fwindow.on('resize', function() {
-    $('[data-type="dynamicBgHeight"]').each(function(){
-      var $section = $(this);
-      var height = $section.outerHeight() || $section.height();
-      $section.find('[data-type="background"]').css('height', height+"px");
-    }); 
-  });  
+  $('[data-type="dynamicBgHeight"]').each(function(){
+    var $section = $(this);
+    var height = $section.outerHeight() || $section.height();
+    $section.find('[data-type="background"]').css('height', height+"px");
+  });
 }
+
 
 // makes the parallax elements
 function parallaxIt() {
@@ -83,6 +80,13 @@ function submitDemoRequest() {
   })
   
 }
+
+//Size Panels
+var $fwindow = $(window);
+// on window scroll event
+$fwindow.on('resize scroll', function() {
+  sizePanels();
+});  
 
 sizePanels();
 
