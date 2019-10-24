@@ -55,7 +55,7 @@ function parallaxIt() {
 };
 
 function submitDemoRequest() {
-  var url = 'https://script.google.com/macros/s/AKfycbxuHrfHLCPgk3veeS5ABO5d8MC8I6CzQylb4GczUre-qzbEP_E/exec'
+  // var url = 'https://script.google.com/macros/s/AKfycbxuHrfHLCPgk3veeS5ABO5d8MC8I6CzQylb4GczUre-qzbEP_E/exec'
 
 
   $('#demorequest').on('shown.bs.modal', function () {

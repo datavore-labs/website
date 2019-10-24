@@ -86,7 +86,7 @@ h5{
 
 /* Toolup style*/
 .toolup {
-	/*height: 60vh;*/
+	height: 60vh;
 }
 
 .toolup .stuff {
@@ -133,6 +133,7 @@ h5{
 .neversee .image{
 	background-color: #000;	
 	background-image: url('../img/bg-waves-sm.png');		
-	/*height: 40vh;*/
+	height: 40vh;
+	background-position: 40% 0px !important;
 }
 
