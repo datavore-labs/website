@@ -9,6 +9,12 @@ section {
   display: flex;
 }
 
+.logo {
+	position: absolute;
+	top: 25px;
+	left: -20px;
+}
+
 .image {
   background-attachment: fixed;
   background-size: cover;
@@ -85,8 +91,10 @@ h5{
 
 
 /* Toolup style*/
+
+
 .toolup {
-	height: 60vh;
+	height: 100vh;
 }
 
 .toolup .stuff {
@@ -102,7 +110,7 @@ h5{
 
 /* insidedatavore style*/
 .insidedatavore {
-	/*height: 80vh;*/
+	height: 80vh;
 }
 
 .insidedatavore .stuff {
@@ -119,6 +127,11 @@ h5{
 .insidedatavore{
 	/*height: 80vh;	*/
 }
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+	#my-content { display: block; }  /* show it on small screens */
+  }
+
 
 /* Never seen style*/
 .neversee {
