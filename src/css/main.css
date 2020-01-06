@@ -156,4 +156,7 @@ h5{
 		margin-top: 8px;
 		margin-bottom: 8px;
 	}
+	.toolup {
+		min-height: 800px;
+	}
   }
