@@ -128,10 +128,6 @@ h5{
 	/*height: 80vh;	*/
 }
 
-@media screen and (min-width: 0px) and (max-width: 400px) {
-	#my-content { display: block; }  /* show it on small screens */
-  }
-
 
 /* Never seen style*/
 .neversee {
@@ -150,3 +146,14 @@ h5{
 	background-position: 40% 0px !important;
 }
 
+@media only screen and (max-width: 600px) {
+	h1 {
+		font-size: 40px;
+	}
+	.tool-img {
+		width: 70px;
+		height: 70px;
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+  }
